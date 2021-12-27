@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa8e3dfc16d1144f984b6c7447d2e3d, type: 3}
+  m_Name: Pause1SecVector3Seeker
+  m_EditorClassIdentifier: 
+  Duration: 2
+  ProgressCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0059944093
+      outSlope: 0.0059944093
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50301534
+      value: 0.0030152798
+      inSlope: 0.0059944093
+      outSlope: 4.808341
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.047098838
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.68257487
+      outSlope: 0.68257487
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13904993
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

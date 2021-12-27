@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6089223669796112708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995129741305969142}
+  - component: {fileID: 657898982900377834}
+  - component: {fileID: 6155219491839174572}
+  - component: {fileID: 6155219491839174573}
+  - component: {fileID: 3090792073704058525}
+  m_Layer: 0
+  m_Name: System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995129741305969142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089223669796112708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1211224, y: -0.4853667, z: -0.85753447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657898982900377834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089223669796112708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe901d02ccffc8b41aead01dd196d83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultCardZ: 0
+  CardPopupDistance: 1
+  UseGrabOffset: 1
+  GrabOffset: {x: 0, y: 0, z: 0}
+  SetNewOffsetOnGrab: 1
+  DragHomingStrategy: {fileID: 11400000, guid: bdfff31d81ccf7f4a97fc021aceea5ac, type: 2}
+--- !u!114 &6155219491839174572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089223669796112708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa553a8a71f6834ebab61fb6be15b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroupPopulationList:
+  - Group: {fileID: 0}
+    CardPrefab: {fileID: 0}
+    CardCount: 0
+  - Group: {fileID: 0}
+    CardPrefab: {fileID: 0}
+    CardCount: 0
+  GroupsToShuffle: []
+--- !u!114 &6155219491839174573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089223669796112708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc4ce26b0bfa5949a2615ac084286a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllPhaseDependentButtons: []
+  Phases: []
+--- !u!114 &3090792073704058525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089223669796112708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46203d4ae4f0b8141a8b431e5e465304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Groups:
+  - PlayerIndex: 0
+    Name: 1
+    Group: {fileID: 0}
+  - PlayerIndex: 0
+    Name: 2
+    Group: {fileID: 0}
+  - PlayerIndex: 0
+    Name: 3
+    Group: {fileID: 0}
+  - PlayerIndex: 1
+    Name: 1
+    Group: {fileID: 0}

@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7177214705092376834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3277734308889379007, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: Cost.Array.data[0].Cost.Amount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592313519390129391, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: OnPlay.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592313519390129391, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: OnPlay.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3825156473895449214}
+    - target: {fileID: 5592313519390129391, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: OnPlay.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592313519390129391, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: OnPlay.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ResourceOperator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592313519390129391, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: OnPlay.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818426954848, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_text
+      value: Chi Charge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.335939
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28670305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.32651114
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629296, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301818958629299, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_Name
+      value: DeckbuilderSpellManaRefill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301819268947709, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_text
+      value: Refill mana
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352301819478543398, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5360b9ee00ec554498c1f69aba4792cf, type: 3}
+    m_RemovedComponents:
+    - {fileID: 248900021, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+--- !u!1 &4304735796942172337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6352301818958629299, guid: 71e349bc48377ea48a7d839dc129a540, type: 3}
+  m_PrefabInstance: {fileID: 7177214705092376834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3825156473895449214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304735796942172337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419678879959354588595bcb8c19346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourcesToRefill:
+  - {fileID: 11400000, guid: 212771e626ce09b4fb35a62643ee67d0, type: 2}

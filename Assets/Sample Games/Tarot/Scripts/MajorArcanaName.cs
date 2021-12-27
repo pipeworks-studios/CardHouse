@@ -1,0 +1,26 @@
+public enum MajorArcanaName
+{
+    None,
+    Fool,
+    Magician,
+    HighPriestess,
+    Empress,
+    Emperor,
+    Hierophant,
+    Lovers,
+    Chariot,
+    Strength,
+    Hermit,
+    WheelOfFortune,
+    Justice,
+    HangedMan,
+    Death,
+    Temperance,
+    Devil,
+    Tower,
+    Star,
+    Moon,
+    Judgement,
+    World,
+    Sun
+}
