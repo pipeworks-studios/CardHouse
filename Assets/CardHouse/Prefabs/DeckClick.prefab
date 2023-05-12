@@ -222,10 +222,9 @@ MonoBehaviour:
   GrabFrom: 1
   SendTo: 1
   NumberToTransfer: 1
+  FlipSpeed: 1
   PopPushHomingOverride: {fileID: 0}
-  OnSourceDepleted:
-    m_PersistentCalls:
-      m_Calls: []
+  OnSourceDepletedEventChain: []
   TryAgainAfterSourceDepleted: 0
 --- !u!1001 &7300884179644596935
 PrefabInstance:
@@ -329,8 +328,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6507200944356153306}
-        m_TargetAssemblyTypeName: BlardTransfer, Assembly-CSharp
-        m_MethodName: Transfer
+        m_TargetAssemblyTypeName: Activatable, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
