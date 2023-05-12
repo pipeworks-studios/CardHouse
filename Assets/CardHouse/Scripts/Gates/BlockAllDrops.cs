@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CardGroup))]
-public class PhaseGateCardDrop : Gate<DropParams>
+public class BlockAllDrops : Gate<DropParams>
 {
     CardGroup MyGroup;
 
@@ -12,6 +12,6 @@ public class PhaseGateCardDrop : Gate<DropParams>
 
     public override bool IsUnlocked(DropParams gateParams)
     {
-        return PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true;
+        return false;
     }
 }

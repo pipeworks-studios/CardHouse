@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -178,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -204,6 +212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -252,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -278,6 +294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -325,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -385,6 +409,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -433,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -459,6 +491,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -507,6 +543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -533,6 +573,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -580,6 +624,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -702,6 +750,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -749,6 +801,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -798,6 +854,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -845,6 +905,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -937,6 +1001,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -985,6 +1053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1011,6 +1083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1059,6 +1135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1085,6 +1165,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1133,6 +1217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1170,6 +1258,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1221,6 +1313,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -1446,7 +1542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e4b4cfc33632b489617ebcd7c13405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Delay: 0
   Groups:
   - {fileID: 800574391}
   - {fileID: 1292944706}
@@ -1507,6 +1602,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1554,6 +1653,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -1636,6 +1739,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1683,6 +1790,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -1732,6 +1843,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1780,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1806,6 +1925,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1854,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1880,6 +2007,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -1928,6 +2059,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -1954,6 +2089,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2002,6 +2141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2039,6 +2182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2087,6 +2234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2113,6 +2264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2161,6 +2316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2187,6 +2346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2234,6 +2397,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -2283,6 +2450,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2330,6 +2501,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -2502,6 +2677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2550,6 +2729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2576,6 +2759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2624,6 +2811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2650,6 +2841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2697,6 +2892,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -2792,6 +2991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2840,6 +3043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2866,6 +3073,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2914,6 +3125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
       value: 1
@@ -2940,6 +3155,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -2987,6 +3206,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit
@@ -3218,6 +3441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: DropGates.Gates.Array.size
       value: 0
@@ -3265,6 +3492,10 @@ PrefabInstance:
     - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: m_Name
       value: Slot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
       propertyPath: CardLimit

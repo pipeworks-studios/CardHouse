@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290452778544506915, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
       propertyPath: m_Name
-      value: BlardStackDiscard
+      value: CardStackDiscard
       objectReference: {fileID: 0}
     - target: {fileID: 1290452778544506918, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
       propertyPath: m_RootOrder
@@ -82,6 +82,22 @@ PrefabInstance:
     - target: {fileID: 1290452778544506918, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_text
+      value: Discard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_fontSize
+      value: 2.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192699721283699340, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}

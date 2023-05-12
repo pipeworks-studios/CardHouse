@@ -79,5 +79,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_text
+      value: 'Deck
+
+        <Drag>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_fontSize
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210624195095107310, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192699721283699340, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192699721283699340, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.091
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49c7ccac93783e488d6f8662ea52cab, type: 3}
