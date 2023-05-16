@@ -1,7 +1,7 @@
 # CardHouse
 
 ## Getting Started
-To get started, try one of the following:
+To get started, open the CardHouse Unity project or import the Unity package. Then try one of the following:
 - Launch the "Tutorial" scene to familiarize yourself with the basics via the "CardHouse -> Launch Tutorial" menu option
 - Duplicate a sample game and start modifying it
 - Make a blank scene, throw the "System" prefab in, and drag in the card groups you'll need from the Prefabs folder. Most of what you'll need to set up a game's rules can be hooked up with CardTransferOperators and the PhaseManager.
