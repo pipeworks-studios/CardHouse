@@ -202,7 +202,7 @@ public class CardGroup : MonoBehaviour
         }
     }
 
-    int? GetClosestMountedCardIndex(Vector3 position)
+    public int? GetClosestMountedCardIndex(Vector3 position)
     {
         var closestDist = Mathf.Infinity;
         int? closestIndex = null;

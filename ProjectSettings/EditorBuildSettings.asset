@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestScenes/CardGroupTest.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Tutorial/Tutorial.unity
+    guid: 4a787debae6a2f64688a70d8564cca17
+  - enabled: 1
+    path: Assets/Tutorial/Overlay/TutorialOverlay.unity
+    guid: ed0eb5d6be61d474d945521cebd20a9b
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/1.2 - Card Flip/(1.2) Card Flip.unity
+    guid: 54fe5f34725fb0c428884045cf0ebdc1
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/2.2 - Group Facing/(2.2) Group Facing.unity
+    guid: 4e9f85fae8060f4418ecc98c1e573a87
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/2.1 - Card Groups/(2.1) Card Groups.unity
+    guid: 3075dfb3e58a34b45877655c0bafdf83
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/1.1 - Card Drag/(1.1) Card Drag.unity
+    guid: 716025a2a3ebe2c4fb538d5319809c0b
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/2.3 - Group Interactivity/(2.3) Group Interactivity.unity
+    guid: 5b158345f48ced44f9557b5232f31be5
+  - enabled: 1
+    path: Assets/Tutorial/Sandboxes/2.4 - Mounting Mode/(2.4) Mounting Mode.unity
+    guid: 690b375c84bc5e44e89a5f645c1182d8
   m_configObjects: {}

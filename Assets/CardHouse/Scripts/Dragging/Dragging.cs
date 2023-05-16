@@ -30,6 +30,11 @@ public class Dragging : MonoBehaviour
         MyStrategy = DragHomingStrategy.GetStrategy();
     }
 
+    public void UpdateStrategy()
+    {
+        MyStrategy = DragHomingStrategy.GetStrategy();
+    }
+
     public Homing GetTarget()
     {
         return IsDragging ? TargetHoming : null;

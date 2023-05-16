@@ -1399,6 +1399,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.915
       objectReference: {fileID: 0}
+    - target: {fileID: 5749372205373354925, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
+      propertyPath: MarginalCardOffset.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749372205373354925, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
+      propertyPath: MarginalCardOffset.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6507200944356153306, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
       propertyPath: Transition.Destination
       value: 
@@ -2728,6 +2736,14 @@ PrefabInstance:
       propertyPath: ShuffleStrategy
       value: 
       objectReference: {fileID: 11400000, guid: 8a92c661e864fd44f833d2e4508e44a3, type: 2}
+    - target: {fileID: 5749372205373354925, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
+      propertyPath: MarginalCardOffset.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749372205373354925, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
+      propertyPath: MarginalCardOffset.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6507200944356153306, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
       propertyPath: SendTo
       value: 1

@@ -4564,18 +4564,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
-      propertyPath: MarginalCardOffset.x
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
-      propertyPath: MarginalCardOffset.y
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
-      propertyPath: MarginalCardOffset.z
-      value: -0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
       propertyPath: ForcedInteractability
       value: 2
       objectReference: {fileID: 0}
