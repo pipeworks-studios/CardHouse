@@ -565,7 +565,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 10.8282, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &217767725
 MonoBehaviour:
@@ -1495,8 +1495,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2004264105}
   m_HandleRect: {fileID: 2004264104}
   m_Direction: 0
-  m_Value: 0.0000004802082
-  m_Size: 0.9374927
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1984,6 +1984,9 @@ MonoBehaviour:
   - (2.2) Group Facing
   - (2.3) Group Interactivity
   - (2.4) Mounting Mode
+  - (2.5) Stack Settings
+  - (2.6) Splay Settings
+  - (2.7) Grid Settings
   SidebarAnimator: {fileID: 2066119329}
   TitleText: {fileID: 1582204432}
 --- !u!1 &1974235978

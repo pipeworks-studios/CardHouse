@@ -23,6 +23,9 @@ public class CardGroup : MonoBehaviour
     public static Action<Card, Card> OnCardUsedOnTarget;
 
     static List<CardGroup> GroupsHoveredWithObjects = new List<CardGroup>();
+
+    int CollidersEntered = 0;
+
     public static CardGroup HilightedGroup
     {
         get
@@ -73,6 +76,7 @@ public class CardGroup : MonoBehaviour
             return;
         }
 
+        Dragging.Instance.OnDrag += HandleDragStart;
         Dragging.Instance.OnDrop += HandleDragDrop;
         Dragging.Instance.PostDrop += HandlePostDrop;
     }
@@ -82,6 +86,7 @@ public class CardGroup : MonoBehaviour
         OnNewActiveGroup -= HandleNewActiveGroup;
         if (Dragging.Instance != null)
         {
+            Dragging.Instance.OnDrag -= HandleDragStart;
             Dragging.Instance.OnDrop -= HandleDragDrop;
             Dragging.Instance.PostDrop += HandlePostDrop;
         }
@@ -93,6 +98,11 @@ public class CardGroup : MonoBehaviour
         {
             Hilight.SetActive(false);
         }
+    }
+
+    void HandleDragStart(DragDetector draggedCard)
+    {
+        CollidersEntered = 0;
     }
 
     void HandleDragDrop(DragDetector dragDetector)
@@ -228,16 +238,32 @@ public class CardGroup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        HandleTriggerEnter2D(col);
+    }
+
+    public void HandleTriggerEnter2D(Collider2D col)
+    {
         var draggable = col.gameObject.GetComponent<DragOperator>();
         if ((draggable == null || draggable.DragAction == DragAction.Mount) && !HasRoom())
             return;
+
+        CollidersEntered++;
 
         RespondToObjectCrossingBoundary(col, true);
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        RespondToObjectCrossingBoundary(col, false);
+        HandleTriggerExit2D(col);
+    }
+
+    public void HandleTriggerExit2D(Collider2D col)
+    {
+        CollidersEntered--;
+        if (CollidersEntered <= 0)
+        {
+            RespondToObjectCrossingBoundary(col, false);
+        }
     }
 
     void RespondToObjectCrossingBoundary(Collider2D col, bool isEntry)

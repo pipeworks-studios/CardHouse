@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: LaunchData
   m_EditorClassIdentifier: 
   LaunchedTutorial: 0
-  ActiveScene: Assets/Tutorial/Sandboxes/2.4 - Mounting Mode/(2.4) Mounting Mode.unity
+  ActiveScene: Assets/Sample Games/CCG/Ccg.unity
   OpenScenes:
-  - Assets/Tutorial/Sandboxes/2.4 - Mounting Mode/(2.4) Mounting Mode.unity
-  - Assets/Tutorial/Overlay/TutorialOverlay.unity
+  - Assets/Sample Games/CCG/Ccg.unity

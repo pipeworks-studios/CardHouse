@@ -12,8 +12,11 @@ public class CardDragTutorial : MonoBehaviour
     public Slider SeekerGainSlider;
     public TMP_Text SeekerGainText;
     public Toggle GrabOffsetToggle;
-    public TMP_InputField XInput;
-    public TMP_InputField YInput;
+    public Slider XOffsetSlider;
+    public TMP_Text XOffsetText;
+    public Slider YOffsetSlider;
+    public TMP_Text YOffsetText;
+
     public Card Card;
 
     bool HasInteractedWithSwellSlider;
@@ -44,8 +47,8 @@ public class CardDragTutorial : MonoBehaviour
     public void OnGrabOffsetToggled()
     {
         Dragging.Instance.SetNewOffsetOnGrab = GrabOffsetToggle.isOn;
-        YInput.interactable = !GrabOffsetToggle.isOn;
-        XInput.interactable = !GrabOffsetToggle.isOn;
+        XOffsetSlider.interactable = !GrabOffsetToggle.isOn;
+        YOffsetSlider.interactable = !GrabOffsetToggle.isOn;
         GameObject.Find("Reticle").GetComponent<SpriteRenderer>().enabled = !GrabOffsetToggle.isOn;
         GameObject.Find("SwellReticle").GetComponent<SpriteRenderer>().enabled = !GrabOffsetToggle.isOn;
         if (!GrabOffsetToggle.isOn)
@@ -57,20 +60,22 @@ public class CardDragTutorial : MonoBehaviour
 
     public void AdjustOffsetX()
     {
-        Dragging.Instance.GrabOffset.x = float.Parse(XInput.text);
+        Dragging.Instance.GrabOffset.x = XOffsetSlider.value;
+        XOffsetText.text = $"X Offset: {XOffsetSlider.value:0.0}";
         UpdateOffsetReticle();
     }
 
     public void AdjustOffsetY()
     {
-        Dragging.Instance.GrabOffset.y = float.Parse(YInput.text);
+        Dragging.Instance.GrabOffset.y = YOffsetSlider.value;
+        XOffsetText.text = $"Y Offset: {YOffsetSlider.value:0.0}";
         UpdateOffsetReticle();
     }
 
     void UpdateOffsetReticle()
     {
-        GameObject.Find("Reticle").transform.localPosition = new Vector3(-float.Parse(XInput.text), -float.Parse(YInput.text), 0);
-        GameObject.Find("SwellReticle").transform.localPosition = new Vector3(-1f / DragSwellSlider.value * float.Parse(XInput.text), -1f / DragSwellSlider.value * float.Parse(YInput.text), 0);
+        GameObject.Find("Reticle").transform.localPosition = new Vector3(-XOffsetSlider.value, -YOffsetSlider.value, 0);
+        GameObject.Find("SwellReticle").transform.localPosition = new Vector3(-1f / DragSwellSlider.value * XOffsetSlider.value, -1f / DragSwellSlider.value * YOffsetSlider.value, 0);
     }
 
     public void ShowSwellOutline()

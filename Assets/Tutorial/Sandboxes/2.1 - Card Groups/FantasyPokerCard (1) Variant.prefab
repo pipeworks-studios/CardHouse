@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 62638a8bcdd484042a868d3a52ca773e, type: 3}
     - target: {fileID: 6462243022253552644, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
       propertyPath: m_Name
-      value: FantasyPokerCard (1)
+      value: FantasyPokerCard (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6462243022253552647, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
       propertyPath: m_RootOrder
@@ -99,8 +99,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9139029649930435944, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
+      propertyPath: BackImage
+      value: 
+      objectReference: {fileID: 6065991252046119370}
     m_RemovedComponents:
-    - {fileID: 9139029649930435944, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
     - {fileID: 3024928638207673461, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
 --- !u!114 &4725034375048677605 stripped
@@ -114,3 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629ff1b3646a21a47a5bdec8da361d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &6065991252046119370 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6462243021217859703, guid: 2aba3fedf125a024f95abd68fd1a3d0e, type: 3}
+  m_PrefabInstance: {fileID: 972994318977862077}
+  m_PrefabAsset: {fileID: 0}

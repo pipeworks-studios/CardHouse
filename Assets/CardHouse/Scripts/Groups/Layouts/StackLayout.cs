@@ -4,6 +4,7 @@ using UnityEngine;
 public class StackLayout : CardGroupSettings
 {
     public Vector3 MarginalCardOffset = new Vector3(0.01f, 0.01f, -0.01f);
+    public TriggerEnterRelay SecondaryCollider;
 
     protected override void ApplySpacing(List<Card> cards, SeekerSetList seekerSets = null)
     {
@@ -13,6 +14,11 @@ public class StackLayout : CardGroupSettings
             cards[i].Homing.StartSeeking(transform.position + Vector3.back * MountedCardAltitude + MarginalCardOffset * i, seekerSet?.Homing);
             cards[i].Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
             cards[i].Scaling.StartSeeking(1, seekerSet?.Scaling);
+        }
+
+        if (SecondaryCollider != null && cards.Count > 0)
+        {
+            SecondaryCollider.transform.position = transform.position + Vector3.forward + MarginalCardOffset * (cards.Count - 1);
         }
     }
 }
