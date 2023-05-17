@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ed064c33f58944782595c00e9e10ef, type: 3}
+  m_Name: TutorialSceneList
+  m_EditorClassIdentifier: 
+  MyList:
+  - (1.1) Card Drag
+  - (1.2) Card Flip
+  - (2.1) Card Groups
+  - (2.2) Group Facing
+  - (2.3) Group Interactivity
+  - (2.4) Mounting Mode
+  - (2.5) Stack Settings
+  - (2.6) Splay Settings
+  - (2.7) Grid Settings
