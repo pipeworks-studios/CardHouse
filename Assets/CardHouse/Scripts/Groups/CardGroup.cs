@@ -247,8 +247,6 @@ public class CardGroup : MonoBehaviour
         if ((draggable == null || draggable.DragAction == DragAction.Mount) && !HasRoom())
             return;
 
-        CollidersEntered++;
-
         RespondToObjectCrossingBoundary(col, true);
     }
 
@@ -259,11 +257,7 @@ public class CardGroup : MonoBehaviour
 
     public void HandleTriggerExit2D(Collider2D col)
     {
-        CollidersEntered--;
-        if (CollidersEntered <= 0)
-        {
-            RespondToObjectCrossingBoundary(col, false);
-        }
+        RespondToObjectCrossingBoundary(col, false);
     }
 
     void RespondToObjectCrossingBoundary(Collider2D col, bool isEntry)
@@ -283,7 +277,8 @@ public class CardGroup : MonoBehaviour
             && DropGates.AllUnlocked(dropParams)
             && dragHandler.GetComponent<DragDetector>().DropGates.AllUnlocked(dropParams))
         {
-            SetAsActiveGroup(isEntry);
+            CollidersEntered += isEntry ? 1 : -1;
+            SetAsActiveGroup(CollidersEntered > 0);
         }
     }
 
