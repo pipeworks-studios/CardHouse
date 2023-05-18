@@ -655,8 +655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.88409996, y: 1.4722}
-  m_SizeDelta: {x: 549.3336, y: 164.3075}
+  m_AnchoredPosition: {x: 0.88409996, y: -0.3975}
+  m_SizeDelta: {x: 549.3336, y: 135.6385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888044470
 MonoBehaviour:
@@ -682,7 +682,11 @@ MonoBehaviour:
 
     Press
     the Next button in the top right corner to begin, or use the index sidebar to
-    jump to a lesson.'
+    jump to a lesson.
+
+
+    Hint: Try running this tutorial Focused instead of Maximized
+    to poke around with the Scene objects as you go.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
@@ -709,11 +713,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.8
+  m_fontSize: 15.45
   m_fontSizeBase: 20.8
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -745,7 +749,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 14.542614, z: 0, w: 9.15522}
+  m_margin: {x: 0, y: 2.0778577, z: 0, w: 1.6763458}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

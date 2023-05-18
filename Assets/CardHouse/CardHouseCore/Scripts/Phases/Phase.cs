@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 [Serializable]
 public class Phase
 {
+    public int PlayerIndex;
     public string Name;
     public Transform CameraPosition;
     public Transform CardPresentationPosition;

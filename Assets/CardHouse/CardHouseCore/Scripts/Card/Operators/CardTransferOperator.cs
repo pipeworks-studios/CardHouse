@@ -44,7 +44,7 @@ public class CardTransferOperator : Activatable
     {
         foreach (var card in cards)
         {
-            Transition.Destination.Mount(card, SendTo == GroupTargetType.First ? -1 : SendTo == GroupTargetType.Last ? null : UnityEngine.Random.Range(0, Transition.Destination.MountedCards.Count), seekerSets: new SeekerSetList { new SeekerSet { Card = card, Homing = PopPushHomingOverride?.GetStrategy(), FlipSpeed = FlipSpeed } });
+            Transition.Destination.Mount(card, SendTo == GroupTargetType.First ? -1 : SendTo == GroupTargetType.Last ? null : UnityEngine.Random.Range(0, Transition.Destination.MountedCards.Count + 1), seekerSets: new SeekerSetList { new SeekerSet { Card = card, Homing = PopPushHomingOverride?.GetStrategy(), FlipSpeed = FlipSpeed } });
         }
     }
 }

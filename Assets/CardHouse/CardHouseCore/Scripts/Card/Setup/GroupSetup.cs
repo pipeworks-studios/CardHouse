@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,16 +19,28 @@ public class GroupSetup : MonoBehaviour
 
     public List<TimedEvent> OnSetupCompleteEventChain;
 
-    void Start()
+    IEnumerator Start()
     {
         var homing = new InstantVector3Seeker();
         var turning = new InstantFloatSeeker();
+        var newThingDict = new Dictionary<GroupPopulationData, List<GameObject>>();
         foreach (var group in GroupPopulationList)
         {
+            newThingDict[group] = new List<GameObject>();
             for (var i = 0; i < group.CardCount; i++)
             {
-                var newThing = Instantiate(group.CardPrefab);
-                group.Group.Mount(newThing.GetComponent<Card>(), instaFlip: true, seekerSets: new SeekerSetList { new SeekerSet { Homing = homing, Turning = turning } });
+                var newThing = Instantiate(group.CardPrefab, Vector3.down * 10, Quaternion.identity);
+                newThingDict[group].Add(newThing);
+            }
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        foreach (var kvp in newThingDict)
+        {
+            foreach (var newThing in kvp.Value)
+            {
+                kvp.Key.Group.Mount(newThing.GetComponent<Card>(), instaFlip: true, seekerSets: new SeekerSetList { new SeekerSet { Homing = homing, Turning = turning } });
             }
         }
 

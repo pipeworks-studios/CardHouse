@@ -22,6 +22,6 @@ public class MountDetector : MonoBehaviour
 
     void HandleMount(Card card, CardGroup group)
     {
-        OnMount.Invoke();
+        OnMount?.Invoke();
     }
 }

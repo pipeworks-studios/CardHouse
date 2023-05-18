@@ -43,6 +43,15 @@ public class SandboxManager : MonoBehaviour
         }
     }
 
+    public void GoToPrevious()
+    {
+        if (currentTutorial > 0)
+        {
+            currentTutorial--;
+            SetupCurrentTutorial();
+        }
+    }
+
     public void GoTo(string name)
     {
         currentTutorial = Tutorials.MyList.IndexOf(name);

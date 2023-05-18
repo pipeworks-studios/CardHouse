@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DragDetector : MonoBehaviour
+public class DragDetector : Toggleable
 {
     public GateCollection<NoParams> DragGates;
     public UnityEvent OnDragStart;
@@ -11,7 +11,7 @@ public class DragDetector : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!DragGates.AllUnlocked(null))
+        if (!IsActive || !DragGates.AllUnlocked(null))
             return;
 
         OnDragStart.Invoke();
@@ -19,7 +19,7 @@ public class DragDetector : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (!DragGates.AllUnlocked(null))
+        if (!IsActive || !DragGates.AllUnlocked(null))
             return;
 
         OnDragEnd.Invoke();

@@ -96,7 +96,7 @@ public class CardGroup : MonoBehaviour
     {
         if (newActiveGroup != this)
         {
-            Hilight.SetActive(false);
+            Hilight?.SetActive(false);
         }
     }
 
@@ -233,7 +233,7 @@ public class CardGroup : MonoBehaviour
     void HandlePostDrop(DragDetector dragDetector)
     {
         GroupsHoveredWithObjects.Clear();
-        Hilight.SetActive(false);
+        Hilight?.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D col)

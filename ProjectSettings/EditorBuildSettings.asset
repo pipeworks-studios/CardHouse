@@ -47,14 +47,41 @@ EditorBuildSettings:
     path: Assets/CardHouse/Tutorial/Sandboxes/3.2 - Hover Focus/(3.2) Hover Focus.unity
     guid: 21d34fd5aa88d734f86a5b9b93a4e934
   - enabled: 1
-    path: Assets/CardHouse/Tutorial/Sandboxes/4.2 - Cameras and Presentation Points/(4.2)
+    path: Assets/CardHouse/Tutorial/Sandboxes/6.2 - Cameras and Presentation Points/(6.2)
       Cameras and Presentation Points.unity
     guid: 574b6a6ee6d899243aa3a66d2e856bb4
   - enabled: 1
-    path: Assets/CardHouse/Tutorial/Sandboxes/3.3 - Transparent Dragging/(3.3) Transparent
-      Dragging.unity
+    path: Assets/CardHouse/Tutorial/Sandboxes/5.1 - Valid Drags by Phase/(5.1) Valid
+      Drags by Phase.unity
     guid: 2ac36dcf3b7feeb4f9e96ca34369bd23
   - enabled: 1
-    path: Assets/CardHouse/Tutorial/Sandboxes/4.1 - Group Ownership/(4.1) Group Ownership.unity
+    path: Assets/CardHouse/Tutorial/Sandboxes/6.1 - Group Ownership/(6.1) Group Ownership.unity
     guid: 8f12405d0fee51c479004cb5eadbb971
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/3.3 - Conditional Behavior/(3.3) Conditional
+      Behavior.unity
+    guid: c88a1b30566a2ef4d8728f5be6115bcd
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/3.5 - Transparent Dragging/(3.5) Transparent
+      Dragging.unity
+    guid: 148c7a56271aba549a360fb7c1c7027f
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/3.4 - Clickable Focus/(3.4) Clickable
+      Focus.unity
+    guid: 8d88754f88b6de34ca1b6059a607e7dc
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/4.1 - Card Transfer Operators/(4.1)
+      Card Transfer Operators.unity
+    guid: 08c5ab2d897d7fb4989ef12a04168a83
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/5.1 - Valid Drags by Phase/(5.1) Valid
+      Drags by Phase.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/6.1 - Group Ownership/(6.1) Group Ownership.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/6.2 - Cameras and Presentation Points/(6.2)
+      Cameras and Presentation Points.unity
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

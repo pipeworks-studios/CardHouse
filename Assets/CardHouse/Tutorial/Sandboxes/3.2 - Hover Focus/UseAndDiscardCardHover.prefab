@@ -928,7 +928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7481133210957152229
 Transform:
   m_ObjectHideFlags: 0
@@ -1728,6 +1728,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889190d452e7e043bfd08f17f291482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DiscardSeekers:
+    Homing: {fileID: 0}
+    Turning: {fileID: 0}
+    Scaling: {fileID: 0}
+  TargetDiscardSeekers:
+    Homing: {fileID: 0}
+    Turning: {fileID: 0}
+    Scaling: {fileID: 0}
 --- !u!1 &6125735047600767736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2420,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <b>Destroy</b> all creatures
+  m_text: <b>Drag Action:\nUse and Discard</b>\nDrag to a new group to activate.
+    Moves all cards from Grid to Discard, including itself.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2439,7 +2448,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.15
+  m_fontSize: 0.45
   m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 1

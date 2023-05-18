@@ -658,18 +658,6 @@ MonoBehaviour:
     EntryEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7317278285713653942}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 7792825694837662623}
           m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
           m_MethodName: SetIsActive
@@ -685,18 +673,6 @@ MonoBehaviour:
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7317278285713653942}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 5838541771692857350}
           m_TargetAssemblyTypeName: Blard, Assembly-CSharp
           m_MethodName: SetFocus
@@ -1102,9 +1078,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Flying</b>
+  m_text: '<b>Drag Action: Mount</b>
 
-    Whenever <b>Skull Bat</b> attacks, draw a card.'
+    Drag this card to a new group and it will
+    join it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1131,7 +1108,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.7
+  m_fontSize: 0.6
   m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1761,6 +1738,10 @@ PrefabInstance:
     - target: {fileID: 5314154583660913173, guid: 87f1a8534e86b1647b89173caa696976, type: 3}
       propertyPath: m_Name
       value: CostJewel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314154583660913173, guid: 87f1a8534e86b1647b89173caa696976, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5370569472804913498, guid: 87f1a8534e86b1647b89173caa696976, type: 3}
       propertyPath: m_SortingOrder

@@ -8,11 +8,11 @@ public class PhaseManager : MonoBehaviour
 {
     public List<Button> AllPhaseDependentButtons;
     public List<Phase> Phases;
-    public Phase CurrentPhase { get; private set; }
+    public Phase CurrentPhase => (CurrentPhaseIndex >= 0 && CurrentPhaseIndex < Phases.Count) ? Phases[CurrentPhaseIndex] : null;
     int CurrentPhaseIndex = 0;
     public int PlayerIndex
     {
-        get { return CurrentPhaseIndex; } // stub. Replace when turn phases are more sophisticated
+        get { return CurrentPhase.PlayerIndex; }
     }
 
     public Action<Phase> OnPhaseChanged;
@@ -21,10 +21,6 @@ public class PhaseManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        if (Phases.Count > 0)
-        {
-            CurrentPhase = Phases[0];
-        }
     }
 
     IEnumerator Start()
@@ -50,7 +46,6 @@ public class PhaseManager : MonoBehaviour
     {
         yield return CurrentPhase.End();
         CurrentPhaseIndex = (CurrentPhaseIndex + 1) % Phases.Count;
-        CurrentPhase = Phases[CurrentPhaseIndex];
         yield return CurrentPhase.Start();
         OnPhaseChanged?.Invoke(CurrentPhase);
     }
