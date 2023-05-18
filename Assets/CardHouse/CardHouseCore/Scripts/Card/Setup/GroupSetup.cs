@@ -16,6 +16,8 @@ public class GroupSetup : MonoBehaviour
 
     public List<CardGroup> GroupsToShuffle;
 
+    public List<TimedEvent> OnSetupCompleteEventChain;
+
     void Start()
     {
         var homing = new InstantVector3Seeker();
@@ -33,5 +35,7 @@ public class GroupSetup : MonoBehaviour
         {
             group.Shuffle(true);
         }
+
+        StartCoroutine(TimedEvent.ExecuteChain(OnSetupCompleteEventChain));
     }
 }

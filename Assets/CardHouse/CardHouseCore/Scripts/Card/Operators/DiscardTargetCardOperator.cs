@@ -9,7 +9,7 @@ public class DiscardTargetCardOperator : CardTargetCardOperator
         var discardGroup = GroupRegistry.Instance?.Get(GroupName.Discard, GroupRegistry.Instance.GetOwnerIndex(Target.Group));
         if (discardGroup != null)
         {
-            var seekerSets = new SeekerSetList { new SeekerSet { Card = Target, Homing = TargetDiscardSeekers.Homing.GetStrategy() } };
+            var seekerSets = new SeekerSetList { new SeekerSet { Card = Target, Homing = TargetDiscardSeekers.Homing?.GetStrategy() } };
             var presentationTransform = PhaseManager.Instance?.CurrentPhase?.CardPresentationPosition;
             if (presentationTransform != null)
             {
@@ -23,7 +23,7 @@ public class DiscardTargetCardOperator : CardTargetCardOperator
             }
             discardGroup.Mount(Target,
                 seekerSets: seekerSets,
-                seekersForUnmounting: new SeekerSet { Homing = DiscardSeekers.Homing.GetStrategy() }
+                seekersForUnmounting: new SeekerSet { Homing = DiscardSeekers.Homing?.GetStrategy() }
             );
         }
     }

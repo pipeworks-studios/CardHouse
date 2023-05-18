@@ -6,6 +6,11 @@ public class MultiSpriteOperator : MonoBehaviour
 {
     public List<SpriteOperator> SpriteOperators;
 
+    public void Activate(string name)
+    {
+        Activate(name, this);
+    }
+
     public void Activate(string name, Object voter)
     {
         foreach (var handler in SpriteOperators)

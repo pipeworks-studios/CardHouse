@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LaunchData
   m_EditorClassIdentifier: 
   LaunchedTutorial: 0
-  ActiveScene: Assets/CardHouse/Tutorial/Sandboxes/1.1 - Card Drag/(1.1) Card Drag.unity
+  ActiveScene: Assets/CardHouse/Tutorial/Sandboxes/4.1 - Group Ownership/(4.1) Group
+    Ownership.unity
   OpenScenes:
-  - Assets/CardHouse/Tutorial/Sandboxes/1.1 - Card Drag/(1.1) Card Drag.unity
-  - Assets/CardHouse/Tutorial/Overlay/TutorialOverlay.unity
+  - Assets/CardHouse/Tutorial/Sandboxes/4.1 - Group Ownership/(4.1) Group Ownership.unity
