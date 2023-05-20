@@ -127,7 +127,24 @@ public class CardGroup : MonoBehaviour
                 Card = cardComponent,
                 DragType = cardDragHandler == null ? DragAction.None : cardDragHandler.DragAction
             };
-            if (!DropGates.AllUnlocked(dropParams) || !dragDetector.DropGates.AllUnlocked(dropParams)) // Return to sender
+
+            var isTargetable = true;
+            if (dropParams.DragType == DragAction.UseOnTargetAndDiscard)
+            {
+                var closestIndex = GetClosestMountedCardIndex(cardComponent.transform.position);
+                if (closestIndex != null)
+                {
+                    var targetCardParams = new TargetCardParams
+                    {
+                        Source = cardComponent,
+                        Target = MountedCards[(int)closestIndex]
+                    };
+                    isTargetable = targetCardParams.Source.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams)
+                        && targetCardParams.Target.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams);
+                }
+            }
+
+            if (!DropGates.AllUnlocked(dropParams) || !dragDetector.GroupDropGates.AllUnlocked(dropParams) || !isTargetable) // Return to sender
             {
                 cardComponent.Group.ApplyStrategy();
                 return;
@@ -275,7 +292,7 @@ public class CardGroup : MonoBehaviour
         if (cardComponent != null 
             && dragHandler != null 
             && DropGates.AllUnlocked(dropParams)
-            && dragHandler.GetComponent<DragDetector>().DropGates.AllUnlocked(dropParams))
+            && dragHandler.GetComponent<DragDetector>().GroupDropGates.AllUnlocked(dropParams))
         {
             CollidersEntered += isEntry ? 1 : -1;
             SetAsActiveGroup(CollidersEntered > 0);
@@ -464,7 +481,7 @@ public class CardGroup : MonoBehaviour
             }
         }
 
-        Strategy.Apply(MountedCards, seekerSets: seekerSetList);
+        Strategy.Apply(MountedCards, instaFlip: isInstant, seekerSets: seekerSetList);
     }
 
     public void ShuffleIn(List<Card> cards, bool isInstant = false)

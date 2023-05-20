@@ -1878,12 +1878,10 @@ GameObject:
   - component: {fileID: 193180750947567704}
   - component: {fileID: 3895638037943379013}
   - component: {fileID: 194493654048672733}
-  - component: {fileID: 8178620520155035969}
   - component: {fileID: 3195112066680277051}
-  - component: {fileID: 7500708513888770814}
   - component: {fileID: -6180973182035260825}
   - component: {fileID: 1516337794219620355}
-  - component: {fileID: 4290066014971582080}
+  - component: {fileID: 4642119401287235480}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -1967,18 +1965,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 8178620520155035969}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
@@ -1997,18 +1983,6 @@ MonoBehaviour:
         - m_Target: {fileID: 8024721734433360161}
           m_TargetAssemblyTypeName: Blard, Assembly-CSharp
           m_MethodName: SetFocus
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8178620520155035969}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2149,7 +2123,9 @@ MonoBehaviour:
           m_StringArgument: Clear
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2290,22 +2266,6 @@ MonoBehaviour:
     Homing: {fileID: 11400000, guid: 7dd340ca7c90d724a9eeca31625d1754, type: 2}
     Turning: {fileID: 11400000, guid: e4e6cb9e74942c94dab5dffd25857085, type: 2}
     Scaling: {fileID: 11400000, guid: 41d89798c9e86ac4aa94126e4982fd14, type: 2}
---- !u!114 &8178620520155035969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8841057933929937425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97247fe53d8fc4a4c8685da719d8da7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsActive: 1
-  Handler: {fileID: 1250553340464857545}
-  ActiveMessage: Active
-  InactiveMessage: Dim
 --- !u!114 &3195112066680277051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,33 +2282,6 @@ MonoBehaviour:
   Handler: {fileID: 1250553340464857545}
   ActiveMessage: Active
   InactiveMessage: Dim
---- !u!114 &7500708513888770814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8841057933929937425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d10206812c52f4db2c694dc352148a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8178620520155035969}
-        m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
-        m_MethodName: UpdateHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &-6180973182035260825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,7 +2297,7 @@ MonoBehaviour:
   OnPhaseChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8178620520155035969}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
         m_MethodName: UpdateHandler
         m_Mode: 1
@@ -2392,7 +2325,7 @@ MonoBehaviour:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
     Scaling: {fileID: 0}
---- !u!114 &4290066014971582080
+--- !u!114 &4642119401287235480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2401,24 +2334,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8841057933929937425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d10206812c52f4db2c694dc352148a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8296bdaf097c0fb4cbeac807c87d33c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8178620520155035969}
-        m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
-        m_MethodName: UpdateHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8898517276109315669
 GameObject:
   m_ObjectHideFlags: 0

@@ -1743,7 +1743,6 @@ GameObject:
   - component: {fileID: 1234020037007916200}
   - component: {fileID: 7066895870867672628}
   - component: {fileID: 4595278156180193102}
-  - component: {fileID: 8900585088029765003}
   - component: {fileID: 8585544174864861090}
   m_Layer: 0
   m_Name: UseOnTargetCardHoverClear
@@ -1955,6 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4188835b46cc64a82eb952f5843450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   DragGates:
     Gates: []
   OnDragStart:
@@ -2008,7 +2008,9 @@ MonoBehaviour:
           m_StringArgument: Clear
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2181,33 +2183,6 @@ MonoBehaviour:
   Handler: {fileID: 200480547735582396}
   ActiveMessage: Active
   InactiveMessage: Dim
---- !u!114 &8900585088029765003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7575999073081838948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d10206812c52f4db2c694dc352148a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7066895870867672628}
-        m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
-        m_MethodName: UpdateHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8585544174864861090
 MonoBehaviour:
   m_ObjectHideFlags: 0

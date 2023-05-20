@@ -934,9 +934,7 @@ GameObject:
   - component: {fileID: 3620362087167933951}
   - component: {fileID: 468474254793282018}
   - component: {fileID: 3612650027700223610}
-  - component: {fileID: 4688248287961828582}
   - component: {fileID: 2073658600265956764}
-  - component: {fileID: 6379228315396697945}
   - component: {fileID: 6063905927286539632}
   - component: {fileID: 6056940817944876470}
   m_Layer: 0
@@ -1022,18 +1020,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 4688248287961828582}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
@@ -1052,18 +1038,6 @@ MonoBehaviour:
         - m_Target: {fileID: 6903390523650882694}
           m_TargetAssemblyTypeName: Blard, Assembly-CSharp
           m_MethodName: SetFocus
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4688248287961828582}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1149,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4188835b46cc64a82eb952f5843450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   DragGates:
     Gates:
     - {fileID: 6056940817944876470}
@@ -1203,7 +1178,9 @@ MonoBehaviour:
           m_StringArgument: Clear
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -1344,22 +1321,6 @@ MonoBehaviour:
     Homing: {fileID: 11400000, guid: 7dd340ca7c90d724a9eeca31625d1754, type: 2}
     Turning: {fileID: 11400000, guid: e4e6cb9e74942c94dab5dffd25857085, type: 2}
     Scaling: {fileID: 11400000, guid: 41d89798c9e86ac4aa94126e4982fd14, type: 2}
---- !u!114 &4688248287961828582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341818521972707254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97247fe53d8fc4a4c8685da719d8da7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsActive: 1
-  Handler: {fileID: 2434924981639312494}
-  ActiveMessage: Active
-  InactiveMessage: Dim
 --- !u!114 &2073658600265956764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,33 +1337,6 @@ MonoBehaviour:
   Handler: {fileID: 2434924981639312494}
   ActiveMessage: Active
   InactiveMessage: Dim
---- !u!114 &6379228315396697945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341818521972707254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d10206812c52f4db2c694dc352148a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4688248287961828582}
-        m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
-        m_MethodName: UpdateHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6063905927286539632
 MonoBehaviour:
   m_ObjectHideFlags: 0

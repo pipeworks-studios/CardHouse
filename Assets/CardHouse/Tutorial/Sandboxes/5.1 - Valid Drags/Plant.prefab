@@ -703,7 +703,6 @@ MonoBehaviour:
   DragGates:
     Gates:
     - {fileID: 7721758382416967494}
-    - {fileID: -5019384712329001018}
   OnDragStart:
     m_PersistentCalls:
       m_Calls:
@@ -743,7 +742,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:

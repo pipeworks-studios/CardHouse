@@ -55,7 +55,7 @@ public class GroupDropGateDimmer : MonoBehaviour
         };
 
         var gatesUnlocked = MyGroup.DropGates.AllUnlocked(dropParams)
-            && dragDetector.DropGates.AllUnlocked(dropParams);
+            && dragDetector.GroupDropGates.AllUnlocked(dropParams);
 
         Handler.Activate(
             gatesUnlocked && MyGroup.HasRoom()

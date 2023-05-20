@@ -9,13 +9,16 @@ public class CardDropGateDimmer : Toggleable
 
     DragDetector ThingBeingDragged;
     bool IsGroupTargetable;
+    bool AmITargetable;
 
     Dragging MyDragging;
     Card MyCard;
+    DragDetector MyDragDetector;
 
     void Start()
     {
         MyCard = GetComponent<Card>();
+        MyDragDetector = GetComponent<DragDetector>();
         MyDragging = Dragging.Instance;
         if (MyDragging == null)
         {
@@ -55,10 +58,22 @@ public class CardDropGateDimmer : Toggleable
             Card = draggedCard,
             DragType = dragHandler == null ? DragAction.None : dragHandler.DragAction
         };
-        IsGroupTargetable = draggable.DropGates.AllUnlocked(dropParams)
+        IsGroupTargetable = draggable.GroupDropGates.AllUnlocked(dropParams)
             && MyCard.Group.DropGates.AllUnlocked(dropParams);
 
-        Handler.Activate(IsGroupTargetable ? ActiveMessage : InactiveMessage, this);
+        AmITargetable = true;
+        if (dropParams.DragType == DragAction.UseOnTargetAndDiscard)
+        {
+            var targetCardParams = new TargetCardParams
+            {
+                Source = draggedCard,
+                Target = MyCard
+            };
+            AmITargetable = targetCardParams.Source.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams)
+                && targetCardParams.Target.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams);
+        }
+
+        Handler.Activate(IsGroupTargetable && AmITargetable ? ActiveMessage : InactiveMessage, this);
     }
 
     void Update()
@@ -68,11 +83,11 @@ public class CardDropGateDimmer : Toggleable
 
         if (MyCard.Group == CardGroup.HilightedGroup)
         {
-            Handler.Activate(CardGroup.GetActiveCard(ThingBeingDragged) == MyCard ? ActiveMessage : InactiveMessage, this);
+            Handler.Activate((AmITargetable && CardGroup.GetActiveCard(ThingBeingDragged) == MyCard) ? ActiveMessage : InactiveMessage, this);
         }
-        else
+        else if (ThingBeingDragged != MyDragDetector)
         {
-            Handler.Activate(IsGroupTargetable ? ActiveMessage: InactiveMessage, this);
+            Handler.Activate(IsGroupTargetable && AmITargetable ? ActiveMessage: InactiveMessage, this);
         }
     }
 

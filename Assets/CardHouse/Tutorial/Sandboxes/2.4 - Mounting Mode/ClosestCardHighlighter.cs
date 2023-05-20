@@ -20,6 +20,7 @@ public class ClosestCardHighlighter : MonoBehaviour
 
     void Update()
     {
+        
         var dragTarget = Dragging.Instance?.GetTarget();
         if (IsActive && dragTarget != null)
         {
@@ -43,6 +44,7 @@ public class ClosestCardHighlighter : MonoBehaviour
                 SetHighlightState(card, true);
             }
         }
+        
     }
 
     void SetHighlightState(Card card, bool state)
