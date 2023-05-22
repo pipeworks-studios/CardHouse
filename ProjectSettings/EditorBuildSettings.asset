@@ -51,7 +51,8 @@ EditorBuildSettings:
       Cameras and Presentation Points.unity
     guid: 574b6a6ee6d899243aa3a66d2e856bb4
   - enabled: 1
-    path: Assets/CardHouse/Tutorial/Sandboxes/5.1 - Valid Drags/(5.1) Valid Drags.unity
+    path: Assets/CardHouse/Tutorial/Sandboxes/5.2 - Valid Drag Gates/(5.2) Valid
+      Drag Gates.unity
     guid: 2ac36dcf3b7feeb4f9e96ca34369bd23
   - enabled: 1
     path: Assets/CardHouse/Tutorial/Sandboxes/6.1 - Group Ownership/(6.1) Group Ownership.unity
@@ -84,6 +85,9 @@ EditorBuildSettings:
       Cameras and Presentation Points.unity
     guid: 574b6a6ee6d899243aa3a66d2e856bb4
   - enabled: 1
-    path: Assets/CardHouse/Tutorial/Sandboxes/5.2 - Gates/(5.2) Gates.unity
+    path: Assets/CardHouse/Tutorial/Sandboxes/5.3 - Custom Gates/(5.3) Custom Gates.unity
     guid: e4f798da135594a4da5b3ac5c9a986cc
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/5.1 - Valid Drags/(5.1) Valid Drags.unity
+    guid: d8bc954c72fde9f4ca3c90ec4eb62223
   m_configObjects: {}
