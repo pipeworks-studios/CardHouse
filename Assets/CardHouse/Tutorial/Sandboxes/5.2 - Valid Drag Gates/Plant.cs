@@ -2,15 +2,20 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Mono.Cecil;
 
 public class Plant : MonoBehaviour
 {
     public TMP_Text NameText;
     public TMP_Text DescriptionText;
     public SpriteRenderer Sprite;
+    public GameObject CostJewel;
+    public TMP_Text CostText;
 
     public List<PlantGrowthScriptable> PossiblePlants;
     List<PlantMaturityInfo> Stages;
+
+    public int Value = 10;
 
     int WaterLevel = -1;
 
@@ -28,7 +33,23 @@ public class Plant : MonoBehaviour
             NameText.text = Stages[WaterLevel].Name;
             DescriptionText.text = Stages[WaterLevel].Description;
             Sprite.sprite = Stages[WaterLevel].Sprite;
+
+            if (!CanBeWatered() && CostJewel != null)
+            {
+                CostJewel.SetActive(true);
+                CostText.text = Value.ToString();
+            }
         }
+    }
+
+    public void HideCost()
+    {
+        CostJewel.SetActive(false);
+    }
+
+    public void Payoff()
+    {
+        CurrencyRegistry.Instance.AdjustCurrency("Gold", PhaseManager.Instance.PlayerIndex, Value);
     }
 
     public bool CanBeWatered()

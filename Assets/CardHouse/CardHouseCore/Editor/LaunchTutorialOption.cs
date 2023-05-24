@@ -94,6 +94,30 @@ public static class LaunchTutorialOption
         EditorApplication.isPlaying = true;
     }
 
+    [MenuItem("CardHouse/Remove Tutorial Scenes from Build Settings")]
+    static void RemoveTutorialScenesFromBuildSettings()
+    {
+        var scenes = new List<string> { "Assets/CardHouse/Tutorial/Overlay/TutorialOverlay.unity" };
+        var tutorials = AssetDatabase.LoadAssetAtPath<StringListScriptable>("Assets/CardHouse/Tutorial/TutorialSceneList.asset");
+        foreach (var tutorialScene in tutorials.MyList)
+        {
+            var sceneSubfolder = tutorialScene.Replace("(", "").Replace(")", " -");
+            scenes.Add($"Assets/CardHouse/Tutorial/Sandboxes/{sceneSubfolder}/{tutorialScene}.unity");
+        }
+
+        var buildScenes = EditorBuildSettings.scenes.ToList();
+        foreach (var requiredScene in scenes)
+        {
+            var result = buildScenes.FirstOrDefault(x => x.path == requiredScene);
+            if (result != null)
+            {
+                buildScenes.Remove(result);
+            }
+        }
+
+        EditorBuildSettings.scenes = buildScenes.ToArray();
+    }
+
     static LaunchDataScriptable GetLaunchData()
     {
         return AssetDatabase.LoadAssetAtPath<LaunchDataScriptable>("Assets/CardHouse/Tutorial/LaunchData.asset");

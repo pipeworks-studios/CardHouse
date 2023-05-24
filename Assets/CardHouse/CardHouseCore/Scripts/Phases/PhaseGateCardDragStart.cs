@@ -12,7 +12,7 @@ public class PhaseGateCardDragStart : Gate<NoParams>
         MyDraggable = GetComponent<DragOperator>();
     }
 
-    public override bool IsUnlocked(NoParams gateParams)
+    protected override bool IsUnlockedInternal(NoParams gateParams)
     {
         return PhaseManager.Instance.IsValidDragStart(MyCard.Group, MyDraggable.DragAction);
     }

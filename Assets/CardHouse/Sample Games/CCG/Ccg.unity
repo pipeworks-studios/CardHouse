@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da92f2eed749b0429810c27aff86ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &53362525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1822226586, guid: 8ef9c204c9cbcf643a6eb79764f29c97, type: 3}
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da92f2eed749b0429810c27aff86ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &341062265 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6840036618326548686, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
@@ -836,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &1549370656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &1684115159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7272184987812359525, guid: 0ba2a742026126f498ca76981686a7ad, type: 3}
@@ -1122,6 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &1724480967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &1873821907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,6 +1903,10 @@ PrefabInstance:
       value: P2Turn
       objectReference: {fileID: 0}
     - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[1].PlayerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: AllPhaseDependentButtons.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2420,53 +2430,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPlayerLabel: {fileID: 1555906546}
-  ResourceDisplayParent: {fileID: 705257894}
-  ResourceDisplayPrefab: {fileID: 6200430330349752375, guid: bea1a4e8744f8d44dafc531dc0ea9604, type: 3}
-  PlayerResources:
-  - Resources:
-    - ResourceType: {fileID: 11400000, guid: f66e6e18bb53e3541afcb59796d42820, type: 2}
-      Amount: 8
-      HasMax: 1
-      Max: 10
-      HasMin: 1
-      Min: 0
-      RefillValue: 0
+  CurrencyDisplayParent: {fileID: 705257894}
+  CurrencyDisplayPrefab: {fileID: 6200430330349752375, guid: bea1a4e8744f8d44dafc531dc0ea9604, type: 3}
+  PlayerCurrencies:
+  - Currencies:
     - ResourceType: {fileID: 11400000, guid: 212771e626ce09b4fb35a62643ee67d0, type: 2}
       Amount: 5
-      HasMax: 1
-      Max: 7
-      HasMin: 1
-      Min: 0
-      RefillValue: 0
-    - ResourceType: {fileID: 11400000, guid: ccb9a2a71ed2c9748aa9af75280a6abf, type: 2}
-      Amount: 2
       HasMax: 0
-      Max: 3
-      HasMin: 1
+      Max: 0
+      HasMin: 0
       Min: 0
-      RefillValue: 3
-  - Resources:
-    - ResourceType: {fileID: 11400000, guid: f66e6e18bb53e3541afcb59796d42820, type: 2}
-      Amount: 5
-      HasMax: 1
-      Max: 10
-      HasMin: 1
-      Min: 0
-      RefillValue: 0
+      RefillValue: 5
+  - Currencies:
     - ResourceType: {fileID: 11400000, guid: 212771e626ce09b4fb35a62643ee67d0, type: 2}
-      Amount: 3
-      HasMax: 1
-      Max: 7
-      HasMin: 1
-      Min: 0
-      RefillValue: 0
-    - ResourceType: {fileID: 11400000, guid: ccb9a2a71ed2c9748aa9af75280a6abf, type: 2}
-      Amount: 0
+      Amount: 5
       HasMax: 0
-      Max: 3
-      HasMin: 1
+      Max: 0
+      HasMin: 0
       Min: 0
-      RefillValue: 3
+      RefillValue: 5
 --- !u!114 &6155219491839174573 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}

@@ -1,6 +1,14 @@
 using UnityEngine;
 
-public abstract class Gate<T> : MonoBehaviour
+public abstract class Gate<T> : Toggleable
 {
-    public abstract bool IsUnlocked(T argObject);
+    public bool IsUnlocked(T argObject)
+    {
+        if (!IsActive)
+            return true;
+
+        return IsUnlockedInternal(argObject);
+    }
+
+    protected abstract bool IsUnlockedInternal(T argObject);
 }

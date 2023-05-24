@@ -140,7 +140,7 @@ public class CardGroup : MonoBehaviour
                         Target = MountedCards[(int)closestIndex]
                     };
                     isTargetable = targetCardParams.Source.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams)
-                        && targetCardParams.Target.GetComponent<DragDetector>().TargetCardGates.AllUnlocked(targetCardParams);
+                        && (targetCardParams.Target.GetComponent<DragDetector>()?.TargetCardGates.AllUnlocked(targetCardParams) ?? true);
                 }
             }
 

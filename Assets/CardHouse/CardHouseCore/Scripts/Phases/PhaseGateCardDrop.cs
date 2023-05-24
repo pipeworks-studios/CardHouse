@@ -10,7 +10,7 @@ public class PhaseGateCardDrop : Gate<DropParams>
         MyGroup = GetComponent<CardGroup>();
     }
 
-    public override bool IsUnlocked(DropParams gateParams)
+    protected override bool IsUnlockedInternal(DropParams gateParams)
     {
         return PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true;
     }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class SolitaireScorePileDropGate : Gate<DropParams>
 {
-    public override bool IsUnlocked(DropParams gateParams)
+    protected override bool IsUnlockedInternal(DropParams gateParams)
     {
         var topCard = gateParams.Target.Get();
         var pokerCard = gateParams.Card.GetComponent<PokerCard>();

@@ -11,7 +11,7 @@ public class MatureCropDragGate : Gate<NoParams>
         MyCard = GetComponent<Card>();
     }
 
-    public override bool IsUnlocked(NoParams gateParams)
+    protected override bool IsUnlockedInternal(NoParams gateParams)
     {
         if (MyCard.Group != GroupRegistry.Instance.Get(GroupName.Board, null))
             return true;

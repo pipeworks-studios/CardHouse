@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WaterTargetPlantGate : Gate<TargetCardParams>
 {
-    public override bool IsUnlocked(TargetCardParams gateParams)
+    protected override bool IsUnlockedInternal(TargetCardParams gateParams)
     {
         return gateParams.Target.GetComponent<Plant>()?.CanBeWatered() ?? false;
     }

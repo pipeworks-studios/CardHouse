@@ -10,7 +10,7 @@ public class PhaseGateClick : Gate<NoParams>
     {
         MyClickDetector = GetComponent<ClickDetector>();
     }
-    public override bool IsUnlocked(NoParams gateParams)
+    protected override bool IsUnlockedInternal(NoParams gateParams)
     {
         return PhaseManager.Instance.IsValidClick(MyClickDetector);
     }

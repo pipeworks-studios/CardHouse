@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
 public class PlantGrowthScriptable : ScriptableObject
 {
     public List<PlantMaturityInfo> Stages;

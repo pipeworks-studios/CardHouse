@@ -11,7 +11,7 @@ public class LoyaltyGateCardDrop : Gate<DropParams>
     {
     }
 
-    public override bool IsUnlocked(DropParams gateParams)
+    protected override bool IsUnlockedInternal(DropParams gateParams)
     {
         var groupLoyalty = GroupRegistry.Instance.GetLoyalty(gateParams.Target, PhaseManager.Instance.PlayerIndex);
         return (Loyalty & groupLoyalty) != 0;

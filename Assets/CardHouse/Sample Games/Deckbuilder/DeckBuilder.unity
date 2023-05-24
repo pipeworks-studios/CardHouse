@@ -582,7 +582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172168332481799914, guid: 84c907ed25fea4f40aa2238aa2527f04, type: 3}
       propertyPath: m_Name
-      value: ResourceCanvas
+      value: CurrencyCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8172168332481799918, guid: 84c907ed25fea4f40aa2238aa2527f04, type: 3}
       propertyPath: m_Pivot.x
@@ -2197,17 +2197,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPlayerLabel: {fileID: 708441845}
-  ResourceDisplayParent: {fileID: 708441846}
-  ResourceDisplayPrefab: {fileID: 6200430330349752375, guid: bea1a4e8744f8d44dafc531dc0ea9604, type: 3}
-  PlayerResources:
-  - Resources:
+  CurrencyDisplayParent: {fileID: 708441846}
+  CurrencyDisplayPrefab: {fileID: 6200430330349752375, guid: bea1a4e8744f8d44dafc531dc0ea9604, type: 3}
+  PlayerCurrencies:
+  - Currencies:
     - ResourceType: {fileID: 11400000, guid: 212771e626ce09b4fb35a62643ee67d0, type: 2}
-      Amount: 3
-      HasMax: 1
-      Max: 3
+      Amount: 5
+      HasMax: 0
+      Max: 0
       HasMin: 0
       Min: 0
-      RefillValue: 3
+      RefillValue: 5
 --- !u!114 &6155219491839174573 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}

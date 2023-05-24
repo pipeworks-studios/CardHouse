@@ -984,18 +984,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 8122493599733598070}
           m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
           m_MethodName: SetIsActive
@@ -1026,18 +1014,6 @@ MonoBehaviour:
         - m_Target: {fileID: 5592313519390129391}
           m_TargetAssemblyTypeName: Blard, Assembly-CSharp
           m_MethodName: SetFocus
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1159,6 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4188835b46cc64a82eb952f5843450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   DragGates:
     Gates:
     - {fileID: 663868926226718742}
@@ -1202,7 +1179,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -1282,6 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c048e32eadd5cfc4fb362463ec56b520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &8723886579660153951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,6 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62983fb42843ad42af58b203cedad95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &3277734308889379007
 MonoBehaviour:
   m_ObjectHideFlags: 0
