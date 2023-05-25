@@ -19,7 +19,17 @@ public class GroupSetup : MonoBehaviour
 
     public List<TimedEvent> OnSetupCompleteEventChain;
 
-    IEnumerator Start()
+    void Start()
+    {
+        DoSetup();
+    }
+
+    public void DoSetup()
+    {
+        StartCoroutine(SetupCoroutine());
+    }
+
+    IEnumerator SetupCoroutine()
     {
         var homing = new InstantVector3Seeker();
         var turning = new InstantFloatSeeker();
