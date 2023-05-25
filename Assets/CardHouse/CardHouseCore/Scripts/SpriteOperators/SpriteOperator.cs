@@ -26,15 +26,45 @@ public abstract class SpriteOperator : MonoBehaviour
         if (SpriteTarget == null)
             return;
         
+        UpdateState();
+    }
+
+    public void Remove(Object voter)
+    {
+        Votes.Remove(voter);
+
+        UpdateState();
+    }
+
+    void UpdateState()
+    {
         var allVotes = Votes.Values.ToList();
-        if (allVotes.Contains(FavoredState))
+        if (allVotes.Contains(FavoredState) || allVotes.Count == 0)
         {
             ChangeSprite(FavoredState);
         }
-        else if (allVotes.All(x => x == name))
+        else if (AllSame(allVotes))
         {
-            ChangeSprite(name);
+            ChangeSprite(allVotes[0]);
         }
+    }
+
+    bool AllSame(List<string> stringList)
+    {
+        var counts = new Dictionary<string, int>();
+        foreach (var item in stringList)
+        {
+            if (!counts.ContainsKey(item))
+            {
+                counts[item] = 1;
+            }
+            else
+            {
+                counts[item] += 1;
+            }
+        }
+
+        return counts.Count == 1;
     }
 
     protected abstract void ChangeSprite(string name);

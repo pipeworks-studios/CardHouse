@@ -18,4 +18,12 @@ public class MultiSpriteOperator : MonoBehaviour
             handler?.Activate(name, voter);
         }
     }
+
+    public void Remove(Object voter)
+    {
+        foreach (var handler in SpriteOperators)
+        {
+            handler?.Remove(voter);
+        }
+    }
 }

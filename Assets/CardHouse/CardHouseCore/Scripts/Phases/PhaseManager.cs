@@ -73,6 +73,21 @@ public class PhaseManager : MonoBehaviour
 
         return CurrentPhase.ValidClickTargets.Contains(blutton);
     }
+    
+    public void SetCameraPosition(Transform cameraPosition)
+    {
+        if (cameraPosition != null)
+        {
+            var homing = Camera.main.GetComponent<Homing>();
+            var turning = Camera.main.GetComponent<Turning>();
+
+            if (homing != null && turning != null)
+            {
+                homing.StartSeeking(cameraPosition.position + Vector3.forward * (-10 - cameraPosition.position.z));
+                turning.StartSeeking(cameraPosition.rotation.eulerAngles.z);
+            }
+        }
+    }
 
     void Update()
     {

@@ -1,37 +1,54 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Homing)), RequireComponent(typeof(Turning)), RequireComponent(typeof(DragDetector))]
+[RequireComponent(typeof(Homing)), RequireComponent(typeof(Turning)), RequireComponent(typeof(Scaling))]
 public class DragOperator : MonoBehaviour
 {
+    public DragDetector MyDragDetector;
+
     public DragAction DragAction;
     public float DragSwell = 1.2f;
+    public bool PointUpWhenDragged = true;
 
     public SeekerScriptableSet PresentationSeekers;
 
     Homing MyHoming;
     Turning MyTurning;
     Scaling MyScaling;
-    DragDetector MyDragDetector;
+    
 
     private void Awake()
     {
         MyHoming = GetComponent<Homing>();
         MyTurning = GetComponent<Turning>();
         MyScaling = GetComponent<Scaling>();
-        MyDragDetector = GetComponent<DragDetector>();
+        if (MyDragDetector == null)
+        {
+            MyDragDetector = GetComponent<DragDetector>();
+        }
     }
 
     public void SetDragState(bool newState)
     {
+        if (MyDragDetector == null)
+            return;
+
         if (newState)
         {
-            MyScaling.StartSeeking(DragSwell);
-            Dragging.Instance.BeginDragging(MyDragDetector, MyHoming, MyTurning);
+            if (UseDragSwell)
+            {
+                MyScaling.StartSeeking(DragSwell);
+            }
+            Dragging.Instance.BeginDragging(MyDragDetector, MyHoming, MyTurning, PointUpWhenDragged);
         }
         else
         {
-            MyScaling.StartSeeking(1f);
+            if (UseDragSwell)
+            {
+                MyScaling.StartSeeking(1f);
+            }
             Dragging.Instance.StopDragging();
         }
     }
+
+    bool UseDragSwell => DragSwell > 0 && DragSwell != 1;
 }

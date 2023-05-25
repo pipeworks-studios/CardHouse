@@ -16,20 +16,22 @@ MonoBehaviour:
   - (1.1) Card Drag
   - (1.2) Card Flip
   - (2.1) Card Groups
-  - (2.2) Group Facing
-  - (2.3) Group Interactivity
-  - (2.4) Mounting Mode
-  - (2.5) Stack Settings
-  - (2.6) Splay Settings
-  - (2.7) Grid Settings
+  - (2.4) Group Facing
+  - (2.5) Group Interactivity
+  - (2.6) Mounting Mode
+  - (2.7) Stack Settings
+  - (2.8) Splay Settings
+  - (2.9) Grid Settings
   - (3.1) Drag Actions
   - (3.2) Hover Focus
   - (3.3) Conditional Behavior
   - (3.4) Clickable Focus
-  - (3.5) Transparent Dragging
+  - (3.5) Sprite Operators
+  - (3.6) Transparent Dragging
   - (4.1) Card Transfer Operators
   - (5.1) Valid Drags
   - (5.2) Valid Drag Gates
   - (5.3) Custom Gates
   - (6.1) Currencies
   - (7.1) Group Ownership
+  - (8.1) Cameras and Presentation Points

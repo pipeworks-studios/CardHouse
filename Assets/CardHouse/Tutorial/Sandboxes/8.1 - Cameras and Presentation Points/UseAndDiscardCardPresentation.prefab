@@ -1267,8 +1267,6 @@ GameObject:
   - component: {fileID: 8137890170747105753}
   - component: {fileID: 4921725392554352193}
   - component: {fileID: 3999141348720831709}
-  - component: {fileID: 7685622178335792551}
-  - component: {fileID: 3380056517386293090}
   - component: {fileID: 6666224711236925161}
   - component: {fileID: -6770959071054849910}
   m_Layer: 0
@@ -1405,49 +1403,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Group: 4
-    EntryEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 7685622178335792551}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    ExitEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3814103342597102891, guid: 7a8f343f94a0dc744971006b1df24d33, type: 3}
-          m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
-          m_MethodName: SetIsActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   OnFlipUp:
     m_PersistentCalls:
       m_Calls: []
@@ -1481,6 +1436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4188835b46cc64a82eb952f5843450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   DragGates:
     Gates:
     - {fileID: -6770959071054849910}
@@ -1523,7 +1479,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -1668,49 +1626,6 @@ MonoBehaviour:
   Handler: {fileID: 6315553534881125461}
   ActiveMessage: Active
   InactiveMessage: Dim
---- !u!114 &7685622178335792551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345479414080974733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79447bd02085354da554fbc67da38d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsActive: 0
-  Handler: {fileID: 6315553534881125461}
-  ActiveMessage: Active
-  InactiveMessage: Dim
---- !u!114 &3380056517386293090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345479414080974733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d10206812c52f4db2c694dc352148a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3999141348720831709}
-        m_TargetAssemblyTypeName: DragGateDimmer, Assembly-CSharp
-        m_MethodName: UpdateHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6666224711236925161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1743,6 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c048e32eadd5cfc4fb362463ec56b520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!1 &4432214424819289033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ice Shard
+  m_text: Ice Storm
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

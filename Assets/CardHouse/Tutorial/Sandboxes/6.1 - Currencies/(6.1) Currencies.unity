@@ -386,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.0398, y: -0.2341}
-  m_SizeDelta: {x: 1.0624, y: 2.2705}
+  m_AnchoredPosition: {x: -5.0398, y: -0.058}
+  m_SizeDelta: {x: 1.0624, y: 1.9184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255471296
 MonoBehaviour:
@@ -409,14 +409,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A Currency Registry tracks each player''s Wallet, which is a collection
-    of currencies with min/max and refill rules. It''s written to work with a canvas
-    to display the current player''s currencies. CardHouse provides a default CurrencyCanvas
+  m_text: A Currency Registry tracks each player's Wallet, which is a collection
+    of currencies with min/max and refill rules. It's written to work with a canvas
+    to display the current player's currencies. CardHouse provides a default CurrencyCanvas
     for prototyping.
-
-
-    See the Chi Charge card in the Deckbuilder sample game
-    for an example of currency refilling.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
@@ -443,7 +439,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.9
+  m_fontSize: 1
   m_fontSizeBase: 1.87
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1508,8 +1504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.9372, y: -1.7911}
-  m_SizeDelta: {x: 3.2676, y: 0.7196}
+  m_AnchoredPosition: {x: -3.4842, y: -1.7346}
+  m_SizeDelta: {x: 2.1384, y: 0.6611}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665230840
 MonoBehaviour:
@@ -1561,14 +1557,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.15
+  m_fontSize: 0.9
   m_fontSizeBase: 1.87
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1845,6 +1841,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1030469738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030469740}
+  - component: {fileID: 1030469739}
+  m_Layer: 0
+  m_Name: RefillGold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1030469739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030469738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419678879959354588595bcb8c19346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrenciesToRefill:
+  - {fileID: 11400000, guid: 46734fb024052f846914ce661f628449, type: 2}
+--- !u!4 &1030469740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030469738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2081726596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054359142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6089223669796112708, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
@@ -2429,6 +2471,133 @@ Transform:
   m_Father: {fileID: 647503745}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1645976731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1030469739}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: UpdatePhaseLabel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: CurrencyOperator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PhaseLabelUpdater, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358641, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320231805358642, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_Radius
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232668284018, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232668284019, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_text
+      value: 'Refill
+
+        Gold'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232668284019, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192488, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_Name
+      value: RefillGoldButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.657
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275320232783192490, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13ab4b90f5baff846a28692968435cdf, type: 3}
 --- !u!1 &1831257913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,7 +2946,7 @@ MonoBehaviour:
       Max: 0
       HasMin: 0
       Min: 0
-      RefillValue: 0
+      RefillValue: 5
 --- !u!1 &2004251488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,7 +2972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004251488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.02, y: -2.56, z: 0.03831373}
+  m_LocalPosition: {x: -3.466, y: -2.492, z: 0.03831373}
   m_LocalScale: {x: 0.5197, y: 0.5197, z: 0.5197}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2892,6 +3061,7 @@ Transform:
   m_Children:
   - {fileID: 251330504}
   - {fileID: 873348378}
+  - {fileID: 1030469740}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

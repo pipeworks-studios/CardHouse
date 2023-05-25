@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class Phase
@@ -22,17 +20,7 @@ public class Phase
 
     public IEnumerator Start()
     {
-        if (CameraPosition != null)
-        {
-            var homing = Camera.main.GetComponent<Homing>();
-            var turning = Camera.main.GetComponent<Turning>();
-
-            if (homing != null && turning != null)
-            {
-                homing.StartSeeking(CameraPosition.position);
-                turning.StartSeeking(CameraPosition.rotation.eulerAngles.z);
-            }
-        }
+        PhaseManager.Instance?.SetCameraPosition(CameraPosition);
         yield return TimedEvent.ExecuteChain(OnPhaseStartEventChain);
         foreach (var button in ActiveButtons)
         {

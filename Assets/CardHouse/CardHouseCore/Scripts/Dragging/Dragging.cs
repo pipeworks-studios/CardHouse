@@ -40,7 +40,7 @@ public class Dragging : MonoBehaviour
         return IsDragging ? TargetHoming : null;
     }
 
-    public void BeginDragging(DragDetector draggable, Homing homing, Turning turning, float? startingZ = null)
+    public void BeginDragging(DragDetector draggable, Homing homing, Turning turning, bool pointUpWhenDragged = true, float? startingZ = null)
     {
         TargetDraggable = draggable;
         TargetHoming = homing;
@@ -51,7 +51,10 @@ public class Dragging : MonoBehaviour
         {
             GrabOffset = homing.transform.position - mouseWorldPosition;
         }
-        TargetTurning.StartSeeking(Camera.main.transform.rotation.eulerAngles.z);
+        if (pointUpWhenDragged)
+        {
+            TargetTurning.StartSeeking(Camera.main.transform.rotation.eulerAngles.z);
+        }
 
         IsDragging = true;
 
