@@ -37,7 +37,7 @@ public class SplayLayout : CardGroupSettings
             var newAngle = Mathf.Atan2(newPos.y - ArcCenterOffset.y, newPos.x - ArcCenterOffset.x) * Mathf.Rad2Deg - 90;
             cards[i].Turning.StartSeeking(newAngle, seekerSet?.Turning);
 
-            cards[i].Scaling.StartSeeking(1, seekerSet?.Scaling);
+            cards[i].Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
         }
     }
 }

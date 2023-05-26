@@ -11,7 +11,7 @@ public class SlotLayout : CardGroupSettings
             var seekerSet = seekerSets?.GetSeekerSetFor(card);
             card.Homing.StartSeeking(transform.position + Vector3.back * MountedCardAltitude, seekerSet?.Homing);
             card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
-            card.Scaling.StartSeeking(1, seekerSet?.Scaling);
+            card.Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
         }
     }
 }

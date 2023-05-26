@@ -42,7 +42,7 @@ public class GridLayout : CardGroupSettings
                 var seekerSet = seekerSets?.GetSeekerSetFor(card);
                 card.Homing.StartSeeking(newPos, seekerSet?.Homing);
                 card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
-                card.Scaling.StartSeeking(1, seekerSet?.Scaling);
+                card.Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
             }
         }
     }

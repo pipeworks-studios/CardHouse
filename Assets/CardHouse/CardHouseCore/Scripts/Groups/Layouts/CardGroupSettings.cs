@@ -9,6 +9,7 @@ public abstract class CardGroupSettings : MonoBehaviour
     public CardFacing ForcedFacing;
     public GroupInteractability ForcedInteractability;
     public MountingMode DragMountingMode = MountingMode.Top;
+    public bool UseMyScale = false;
 
     public void Apply(List<Card> cards, bool instaFlip = false, SeekerSetList seekerSets = null)
     {

@@ -99,4 +99,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CardHouse/Tutorial/Sandboxes/2.3 - Deck Setup/(2.3) Deck Setup.unity
     guid: bee1fe0db5b5564489728a07b0316559
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/4.2 - Seekers/(4.2) Seekers.unity
+    guid: ba2e50c5cab1f0d4f9f6829831cbcd8d
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/4.3 - Event Chains/(4.3) Event Chains.unity
+    guid: cb58e7d65e288e5499522780f63b1913
   m_configObjects: {}

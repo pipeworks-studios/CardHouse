@@ -13,7 +13,7 @@ public class StackLayout : CardGroupSettings
             var seekerSet = seekerSets?.GetSeekerSetFor(cards[i]);
             cards[i].Homing.StartSeeking(transform.position + Vector3.back * MountedCardAltitude + MarginalCardOffset * i, seekerSet?.Homing);
             cards[i].Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
-            cards[i].Scaling.StartSeeking(1, seekerSet?.Scaling);
+            cards[i].Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
         }
 
         if (SecondaryCollider != null && cards.Count > 0)
