@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventChain : MonoBehaviour
 {
     public List<TimedEvent> Events = new List<TimedEvent>();
 
+    public UnityEvent OnChainFinished;
+
     public void Activate()
     {
-        StartCoroutine(TimedEvent.ExecuteChain(Events));
+        StartCoroutine(TimedEvent.ExecuteChain(Events, () => OnChainFinished?.Invoke()));
     }
 }

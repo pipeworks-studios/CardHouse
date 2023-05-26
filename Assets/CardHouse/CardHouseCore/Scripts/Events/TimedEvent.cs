@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,13 @@ public class TimedEvent
         yield return new WaitForSeconds(Duration);
     }
 
-    public static IEnumerator ExecuteChain(List<TimedEvent> events)
+    public static IEnumerator ExecuteChain(List<TimedEvent> events, Action callback = null)
     {
         foreach (var e in events)
         {
             yield return e.ActivateAfterDelay();
         }
+
+        callback?.Invoke();
     }
 }

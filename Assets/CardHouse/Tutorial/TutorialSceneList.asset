@@ -31,6 +31,7 @@ MonoBehaviour:
   - (3.5) Sprite Operators
   - (3.6) Transparent Dragging
   - (4.1) Card Transfer Operators
+  - (4.2) Event Chains
   - (5.1) Valid Drags
   - (5.2) Valid Drag Gates
   - (5.3) Custom Gates

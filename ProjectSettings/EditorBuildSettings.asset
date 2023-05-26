@@ -93,4 +93,10 @@ EditorBuildSettings:
     path: Assets/CardHouse/Tutorial/Sandboxes/3.5 - Sprite Operators/(3.5) Sprite
       Operators.unity
     guid: 70db6b7d6f76c23409e9a190ddf8232a
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/2.2 - Group Setup/(2.2) Group Setup.unity
+    guid: 85485aa037e5f394db7af78f13a17542
+  - enabled: 1
+    path: Assets/CardHouse/Tutorial/Sandboxes/2.3 - Deck Setup/(2.3) Deck Setup.unity
+    guid: bee1fe0db5b5564489728a07b0316559
   m_configObjects: {}
