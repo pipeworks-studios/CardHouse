@@ -678,15 +678,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CardHouse is a set of tools designed to make constructing card games easier.
-
-    Press
-    the Next button in the top right corner to begin, or use the index sidebar to
-    jump to a lesson.
-
-
-    Hint: Try running this tutorial Focused instead of Maximized
-    to poke around with the Scene objects as you go.'
+  m_text: "CardHouse is a set of tools designed to make constructing card games easier.\nPress
+    the Next button in the top right corner to begin, or use the index sidebar on
+    the left to jump to a lesson. \n\nHint: If you don't see a Next button or the
+    Index and you're in the Unity editor, try launching from the CardHouse menu."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
