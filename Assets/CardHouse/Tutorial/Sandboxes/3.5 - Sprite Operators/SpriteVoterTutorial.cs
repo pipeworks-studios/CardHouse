@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class SpriteVoterTutorial : MonoBehaviour
 {
+    public UnityEvent OnStart;
+
+    private void Start()
+    {
+        OnStart?.Invoke();
+    }
+
     public void OnColorDropdownUpdated()
     {
         var value = GetComponent<TMP_Dropdown>().value;

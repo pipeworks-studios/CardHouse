@@ -9,6 +9,7 @@ public class SpriteOperatorTutorial : MonoBehaviour
 
     public static SpriteOperatorTutorial Instance;
 
+
     private void Awake()
     {
         Instance = this;
