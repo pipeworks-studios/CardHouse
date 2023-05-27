@@ -716,6 +716,7 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 1
   DragMountingMode: 0
+  UseMyScale: 0
   CardsPerRow: 4
   MarginalCardOffset: 0.05
 --- !u!114 &558556780 stripped
@@ -946,6 +947,7 @@ MonoBehaviour:
   ForcedFacing: 2
   ForcedInteractability: 2
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.002, y: 0.002, z: -0.01}
   SecondaryCollider: {fileID: 0}
 --- !u!212 &957101974
@@ -1607,8 +1609,8 @@ MonoBehaviour:
   m_text: Here's a Valid Drag setup for a solitaire farming game. You can mount seed
     cards to the field, play water cards on them to make them grow, and move plants
     to the sales box to sell them. Phases cycle, so pressing the Next Turn button
-    will trigger the a card transfer operator that draws 3 cards. Then you'll start
-    your next turn.
+    will trigger a card transfer operator that draws 3 cards. Then you'll start your
+    next turn.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}

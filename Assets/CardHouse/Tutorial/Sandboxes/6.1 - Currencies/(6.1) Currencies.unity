@@ -386,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.0398, y: -0.058}
-  m_SizeDelta: {x: 1.0624, y: 1.9184}
+  m_AnchoredPosition: {x: -5.0398, y: -0.1131}
+  m_SizeDelta: {x: 1.0624, y: 1.8082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255471296
 MonoBehaviour:
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
+  m_fontSize: 0.95
   m_fontSizeBase: 1.87
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -733,7 +733,7 @@ Transform:
   m_GameObject: {fileID: 343152086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.624, y: 1.22, z: 0.03831373}
-  m_LocalScale: {x: 0.3164, y: 0.3164, z: 0.3164}
+  m_LocalScale: {x: 0.41461056, y: 0.41461056, z: 0.41461056}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 647503745}
@@ -1414,6 +1414,7 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 1
   DragMountingMode: 0
+  UseMyScale: 0
   CardsPerRow: 4
   MarginalCardOffset: 0.05
 --- !u!114 &558556780 stripped
@@ -1787,6 +1788,7 @@ MonoBehaviour:
   ForcedFacing: 2
   ForcedInteractability: 2
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.002, y: 0.002, z: -0.01}
   SecondaryCollider: {fileID: 0}
 --- !u!212 &957101974
@@ -2633,8 +2635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.353, y: 1.9147}
-  m_SizeDelta: {x: 1.7096, y: 0.6845}
+  m_AnchoredPosition: {x: -4.353, y: 1.9471}
+  m_SizeDelta: {x: 1.7096, y: 0.6197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831257915
 MonoBehaviour:
@@ -2684,7 +2686,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.1
+  m_fontSize: 1
   m_fontSizeBase: 1.87
   m_fontWeight: 400
   m_enableAutoSizing: 1
