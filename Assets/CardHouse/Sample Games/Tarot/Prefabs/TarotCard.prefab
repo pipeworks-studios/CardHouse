@@ -463,6 +463,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 2241088108827915393}
+  CanBeUpsideDown: 1
+  UpsideDownChance: 0.1
+  RootToRotateWhenUpsideDown: {fileID: 8760211600781583232}
   FaceHoming: {fileID: 7792711141432044011}
   FaceTurning: {fileID: 8922238288351519658}
   FaceScaling: {fileID: 902705501117539568}
@@ -488,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4188835b46cc64a82eb952f5843450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   DragGates:
     Gates: []
   OnDragStart:
@@ -517,7 +521,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -585,8 +591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}

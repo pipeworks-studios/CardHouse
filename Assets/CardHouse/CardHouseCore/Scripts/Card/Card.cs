@@ -23,6 +23,11 @@ public class Card : MonoBehaviour
 
     public Animator FlipAnimator;
 
+    public bool CanBeUpsideDown;
+    [Range(0f, 1f)]
+    public float UpsideDownChance = 0.5f;
+    public Transform RootToRotateWhenUpsideDown;
+
     public Homing FaceHoming;
     public Turning FaceTurning;
     public Scaling FaceScaling;
@@ -85,6 +90,19 @@ public class Card : MonoBehaviour
             OnFlipDown?.Invoke();
         }
     }
+
+    public void SetUpsideDown(bool isUpsideDown)
+    {
+        if (!CanBeUpsideDown)
+            return;
+
+        var currentRotation = RootToRotateWhenUpsideDown.localRotation.eulerAngles;
+        currentRotation += Vector3.forward * ((isUpsideDown ? 180f : 0f) - RootToRotateWhenUpsideDown.localRotation.eulerAngles.z);
+
+        RootToRotateWhenUpsideDown.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    public bool IsUpsideDown => CanBeUpsideDown && (Mathf.Abs(RootToRotateWhenUpsideDown.localRotation.eulerAngles.z) - 180f) < 1f;
 
     public void HandlePlayed()
     {
