@@ -12,6 +12,9 @@ public class SandboxManager : MonoBehaviour
     int currentTutorial = -1;
     public Animator SidebarAnimator;
     public TMP_Text TitleText;
+    public GameObject NextButton;
+    public GameObject PreviousButton;
+    public GameObject ResetButton;
 
     public void Start()
     {
@@ -27,6 +30,8 @@ public class SandboxManager : MonoBehaviour
         }
 
         TitleText.text = "";
+        PreviousButton.SetActive(false);
+        ResetButton.SetActive(false);
     }
 
     public void Reset()
@@ -60,6 +65,9 @@ public class SandboxManager : MonoBehaviour
 
     void SetupCurrentTutorial()
     {
+        PreviousButton.SetActive(currentTutorial > 0);
+        NextButton.SetActive(currentTutorial < Tutorials.MyList.Count - 1);
+        ResetButton.SetActive(currentTutorial >= 0);
         TitleText.text = Tutorials.MyList[currentTutorial];
         SceneManager.LoadScene(Tutorials.MyList[currentTutorial]);
     }

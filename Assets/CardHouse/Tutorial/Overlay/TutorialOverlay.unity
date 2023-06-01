@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -1875,6 +1875,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 404215656}
     m_Modifications:
     - target: {fileID: 790403394286526709, guid: 4afbc97b71f29c04f80c2f99db2429c1, type: 3}
@@ -1978,6 +1979,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4afbc97b71f29c04f80c2f99db2429c1, type: 3}
 --- !u!224 &1736398098 stripped
 RectTransform:
@@ -2182,6 +2186,9 @@ MonoBehaviour:
   Tutorials: {fileID: 11400000, guid: fcc91d03279a12345b005168ebbcc141, type: 2}
   SidebarAnimator: {fileID: 2066119329}
   TitleText: {fileID: 1582204432}
+  NextButton: {fileID: 1993281926}
+  PreviousButton: {fileID: 1791155790}
+  ResetButton: {fileID: 303831772}
 --- !u!1 &1974235978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2513,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -2535,7 +2544,7 @@ RectTransform:
   m_Pivot: {x: 0, y: 0}
 --- !u!95 &2066119329
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2552,12 +2561,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &527314409372263957
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1846474198}
     m_Modifications:
     - target: {fileID: 527314410011217994, guid: 90297d653f6674f47bc3ae0d66e198a4, type: 3}
@@ -2609,6 +2620,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90297d653f6674f47bc3ae0d66e198a4, type: 3}
 --- !u!4 &527314409372263958 stripped
 Transform:
