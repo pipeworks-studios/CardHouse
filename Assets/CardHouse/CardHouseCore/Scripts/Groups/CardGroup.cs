@@ -88,7 +88,7 @@ public class CardGroup : MonoBehaviour
         {
             Dragging.Instance.OnDrag -= HandleDragStart;
             Dragging.Instance.OnDrop -= HandleDragDrop;
-            Dragging.Instance.PostDrop += HandlePostDrop;
+            Dragging.Instance.PostDrop -= HandlePostDrop;
         }
     }
 
@@ -146,7 +146,7 @@ public class CardGroup : MonoBehaviour
 
             if (!DropGates.AllUnlocked(dropParams) || !dragDetector.GroupDropGates.AllUnlocked(dropParams) || !isTargetable) // Return to sender
             {
-                cardComponent.Group.ApplyStrategy();
+                cardComponent.Group?.ApplyStrategy();
                 return;
             }
 
@@ -180,7 +180,7 @@ public class CardGroup : MonoBehaviour
                     if (discardGroup == null)
                     {
                         Debug.LogWarningFormat("{0}: Could not find Discard group to discard this card", name);
-                        cardComponent.Group.ApplyStrategy();
+                        cardComponent.Group?.ApplyStrategy();
                         break;
                     }
 
@@ -204,7 +204,7 @@ public class CardGroup : MonoBehaviour
                     var closestIndex1 = GetClosestMountedCardIndex(dragDetector.transform.position);
                     if (discardGroup1 == null || closestIndex1 == null)
                     {
-                        cardComponent.Group.ApplyStrategy();
+                        cardComponent.Group?.ApplyStrategy();
                         break;
                     }
 
@@ -279,7 +279,7 @@ public class CardGroup : MonoBehaviour
 
     void RespondToObjectCrossingBoundary(Collider2D col, bool isEntry)
     {
-        var thingBeingDragged = Dragging.Instance.GetTarget();
+        var thingBeingDragged = Dragging.Instance?.GetTarget();
         var cardComponent = thingBeingDragged?.GetComponent<Card>();
         var dragHandler = thingBeingDragged?.GetComponent<DragOperator>();
         var dropParams = new DropParams
