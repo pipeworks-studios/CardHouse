@@ -58,7 +58,11 @@ public static class LaunchTutorialOption
             return;
 
         launchData.LaunchedTutorial = true;
-        launchData.OpenScenes = EditorSceneManager.GetAllScenes().Select(x => x.path).ToList();
+        launchData.OpenScenes = new List<string>();
+        for (var i = 0; i < EditorSceneManager.sceneCount; i++)
+        {
+            launchData.OpenScenes.Add(EditorSceneManager.GetSceneAt(i).path);
+        }
         launchData.ActiveScene = EditorSceneManager.GetActiveScene().path;
         EditorUtility.SetDirty(launchData);
         AssetDatabase.SaveAssetIfDirty(launchData);

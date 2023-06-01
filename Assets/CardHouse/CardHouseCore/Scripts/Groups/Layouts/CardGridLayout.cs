@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridLayout : CardGroupSettings
+public class CardGridLayout : CardGroupSettings
 {
     public int CardsPerRow = 5;
     public float MarginalCardOffset = 0.05f;

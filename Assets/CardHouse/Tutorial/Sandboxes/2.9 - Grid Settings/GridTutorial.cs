@@ -16,7 +16,7 @@ public class GridTutorial : MonoBehaviour
     public TMP_Text YScaleText;
 
     public CardGroup Deck;
-    public GridLayout Grid;
+    public CardGridLayout Grid;
     CardGroup Group;
 
     void Start()
