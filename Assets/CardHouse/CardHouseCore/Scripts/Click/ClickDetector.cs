@@ -12,7 +12,7 @@ public class ClickDetector : Toggleable
 
     void OnMouseDown()
     {
-        if (ClickGates.AllUnlocked(null))
+        if (IsActive && ClickGates.AllUnlocked(null))
         {
             OnPress.Invoke();
         }
@@ -20,7 +20,7 @@ public class ClickDetector : Toggleable
 
     void OnMouseUpAsButton()
     {
-        if (ClickGates.AllUnlocked(null))
+        if (IsActive && ClickGates.AllUnlocked(null))
         {
             OnButtonClicked.Invoke();
         }
