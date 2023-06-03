@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class DiscardAllCardsOperator : MonoBehaviour
 {
@@ -35,11 +32,9 @@ public class DiscardAllCardsOperator : MonoBehaviour
                     seekerSets.Add(new SeekerSet { Card = target, Homing = TargetDiscardSeekers.Homing?.GetStrategy() });
                 }
 
-                var discardGroup = GroupRegistry.Instance?.Get(GroupName.Discard, GroupRegistry.Instance?.GetOwnerIndex(boardGroup));
-
                 foreach (var target in boardGroup.MountedCards.ToArray())
                 {
-                    discardGroup.Mount(target,
+                    target.GetDiscardGroup()?.Mount(target,
                         seekerSets: seekerSets,
                         seekersForUnmounting: new SeekerSet { Homing = DiscardSeekers.Homing?.GetStrategy() }
                     );

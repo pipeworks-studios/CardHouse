@@ -109,6 +109,17 @@ public class Card : MonoBehaviour
         OnPlay.Invoke();
     }
 
+    public CardGroup GetDiscardGroup()
+    {
+        var ownerIndex = GroupRegistry.Instance.GetOwnerIndex(Group);
+        if (ownerIndex == null && GetComponent<CardLoyalty>() != null)
+        {
+            ownerIndex = GetComponent<CardLoyalty>().PlayerIndex;
+        }
+        var discardGroup = GroupRegistry.Instance?.Get(GroupName.Discard, ownerIndex);
+        return discardGroup;
+    }
+
     public void SetFocus(bool isFocused)
     {
         IsFocused = isFocused;

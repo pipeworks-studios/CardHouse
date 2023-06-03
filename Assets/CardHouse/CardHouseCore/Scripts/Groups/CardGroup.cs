@@ -172,6 +172,13 @@ public class CardGroup : MonoBehaviour
                             break;
                     }
 
+                    if (cardComponent.GetComponent<CardLoyalty>() != null 
+                        && GroupRegistry.Instance?.GetOwnerIndex(cardComponent.Group) != null
+                        && GroupRegistry.Instance?.GetOwnerIndex(this) == null)
+                    {
+                        cardComponent.GetComponent<CardLoyalty>().PlayerIndex = (int)GroupRegistry.Instance.GetOwnerIndex(cardComponent.Group);
+                    }
+
                     Mount(cardComponent, insertPoint);
                     cardComponent.HandlePlayed();
                     break;

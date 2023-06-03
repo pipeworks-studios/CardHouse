@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,10 +13,21 @@ public class DeckSetup : MonoBehaviour
 
     void Start()
     {
+        DoSetup();
+    }
+
+    public void DoSetup()
+    {
+        StartCoroutine(SetupCoroutine());
+    }
+
+    IEnumerator SetupCoroutine()
+    {
+        var newCardList = new List<Card>();
         foreach (var cardDef in DeckDefinition.CardCollection)
         {
             var newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation);
-            Deck.Mount(newThing.GetComponent<Card>(), instaFlip: true);
+            newCardList.Add(newThing.GetComponent<Card>());
             var card = newThing.GetComponent<CardSetup>();
             
             if (card != null)
@@ -29,6 +41,13 @@ public class DeckSetup : MonoBehaviour
                 }
                 card.Apply(copyCardDef);
             }
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        foreach (var card in newCardList)
+        {
+            Deck.Mount(card, instaFlip: true);
         }
 
         Deck.Shuffle();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [Serializable]
-public class CurrencyWallet
+public class CurrencyWallet : ICloneable
 {
     public List<CurrencyContainer> Currencies;
 
@@ -32,5 +32,10 @@ public class CurrencyWallet
         }
 
         return true;
+    }
+
+    public object Clone()
+    {
+        return new CurrencyWallet { Currencies = Currencies.Select(x => (CurrencyContainer)x.Clone()).ToList() };
     }
 }

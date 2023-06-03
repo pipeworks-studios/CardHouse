@@ -7,7 +7,7 @@ public class DiscardCardOperator : MonoBehaviour
     public void Activate()
     {
         var card = GetComponentInParent<Card>();
-        var discardGroup = GroupRegistry.Instance?.Get(GroupName.Discard, GroupRegistry.Instance.GetOwnerIndex(card.Group));
+        var discardGroup = card.GetDiscardGroup();
         if (discardGroup != null)
         {
             discardGroup.Mount(card);

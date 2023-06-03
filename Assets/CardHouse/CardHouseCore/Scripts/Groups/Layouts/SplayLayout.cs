@@ -16,7 +16,10 @@ public class SplayLayout : CardGroupSettings
         {
             Debug.LogWarningFormat("{0}:{1} needs Collider2D on its game object to function.", gameObject.name, "SplayLayout");
         }
+    }
 
+    private void Start()
+    {
         ArcCenterOffset = transform.position + transform.right * ArcCenterOffset.x + transform.up * ArcCenterOffset.y;
     }
 

@@ -21,4 +21,9 @@ public class CurrencyContainer : CurrencyQuantity
             Amount = Max;
         }
     }
+
+    public override object Clone()
+    {
+        return new CurrencyContainer { CurrencyType = CurrencyType, Amount = Amount, HasMax = HasMax, Max = Max, HasMin = HasMin, Min = Min, RefillValue = RefillValue };
+    }
 }

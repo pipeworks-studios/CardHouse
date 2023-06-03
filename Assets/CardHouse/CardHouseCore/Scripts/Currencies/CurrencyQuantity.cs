@@ -2,9 +2,14 @@ using System;
 using UnityEngine.Serialization;
 
 [Serializable]
-public class CurrencyQuantity
+public class CurrencyQuantity : ICloneable
 {
     [FormerlySerializedAs("ResourceType")]
     public CurrencyScriptable CurrencyType;
     public int Amount;
+
+    public virtual object Clone()
+    {
+        return new CurrencyQuantity { CurrencyType = CurrencyType, Amount = Amount };
+    }
 }

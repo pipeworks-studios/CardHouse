@@ -6,7 +6,7 @@ public class DiscardTargetCardOperator : CardTargetCardOperator
 
     protected override void ActOnTarget()
     {
-        var discardGroup = GroupRegistry.Instance?.Get(GroupName.Discard, GroupRegistry.Instance.GetOwnerIndex(Target.Group));
+        var discardGroup = Target.GetDiscardGroup();
         if (discardGroup != null)
         {
             var seekerSets = new SeekerSetList { new SeekerSet { Card = Target, Homing = TargetDiscardSeekers.Homing?.GetStrategy() } };

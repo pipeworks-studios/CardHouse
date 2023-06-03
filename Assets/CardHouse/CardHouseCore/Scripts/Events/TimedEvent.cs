@@ -10,7 +10,7 @@ public class TimedEvent
     public float Duration;
     public UnityEvent Event;
 
-    public IEnumerator ActivateAfterDelay()
+    public IEnumerator ActivateAndDelay()
     {
         Event.Invoke();
         yield return new WaitForSeconds(Duration);
@@ -18,9 +18,12 @@ public class TimedEvent
 
     public static IEnumerator ExecuteChain(List<TimedEvent> events, Action callback = null)
     {
-        foreach (var e in events)
+        if (events != null)
         {
-            yield return e.ActivateAfterDelay();
+            foreach (var e in events)
+            {
+                yield return e.ActivateAndDelay();
+            }
         }
 
         callback?.Invoke();
