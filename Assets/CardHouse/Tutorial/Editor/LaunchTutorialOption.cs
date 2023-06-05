@@ -72,7 +72,7 @@ public static class LaunchTutorialOption
         foreach (var tutorialScene in tutorials.MyList)
         {
             var sceneSubfolder = tutorialScene.Replace("(", "").Replace(")", " -");
-            requiredScenes.Add($"Assets/CardHouse/Tutorial/Sandboxes/{sceneSubfolder}/{tutorialScene}.unity");
+            requiredScenes.Add($"Assets/CardHouse/Tutorial/Lessons/{sceneSubfolder}/{tutorialScene}.unity");
         }
 
         var buildScenes = EditorBuildSettings.scenes.ToList();
@@ -106,7 +106,7 @@ public static class LaunchTutorialOption
         foreach (var tutorialScene in tutorials.MyList)
         {
             var sceneSubfolder = tutorialScene.Replace("(", "").Replace(")", " -");
-            scenes.Add($"Assets/CardHouse/Tutorial/Sandboxes/{sceneSubfolder}/{tutorialScene}.unity");
+            scenes.Add($"Assets/CardHouse/Tutorial/Lessons/{sceneSubfolder}/{tutorialScene}.unity");
         }
 
         var buildScenes = EditorBuildSettings.scenes.ToList();
