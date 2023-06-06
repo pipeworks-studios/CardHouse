@@ -5,4 +5,8 @@ public enum GroupName
     Deck,
     Hand,
     Board,
+    A,
+    B,
+    C,
+    D
 }

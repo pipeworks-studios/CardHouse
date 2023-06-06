@@ -32,6 +32,22 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
+    public void HardReset()
+    {
+        StartCoroutine(HardResetRoutine());
+    }
+
+    IEnumerator HardResetRoutine()
+    {
+        CurrentPhaseIndex = 0;
+        yield return new WaitForEndOfFrame();
+        if (CurrentPhase != null)
+        {
+            StartCoroutine(CurrentPhase.Start());
+            OnPhaseChanged?.Invoke(CurrentPhase);
+        }
+    }
+
     public void NextPhase()
     {
         foreach (var button in AllPhaseDependentButtons)
@@ -39,7 +55,6 @@ public class PhaseManager : MonoBehaviour
             button.interactable = false;
         }
         StartCoroutine(PhaseTransition());
-        
     }
 
     IEnumerator PhaseTransition()

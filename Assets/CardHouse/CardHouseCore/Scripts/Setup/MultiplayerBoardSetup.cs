@@ -1,4 +1,5 @@
 using CardHouse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,11 +8,20 @@ using UnityEngine.UI;
 
 public class MultiplayerBoardSetup : MonoBehaviour
 {
+    [Serializable]
     public class GroupTransitionByName
     {
+        public int PhaseIndex;
         public GroupName Source;
         public GroupName Destination;
         public DragAction DragAction;
+        public PvpMode Mode;
+    }
+
+    public enum PvpMode
+    {
+        PlayerToEnemy,
+        EnemyToPlayer
     }
 
     public GameObject PlayerBoard;
@@ -20,18 +30,33 @@ public class MultiplayerBoardSetup : MonoBehaviour
 
     public List<GroupTransitionByName> PlayerToPlayerInteractions;
 
+    List<GameObject> SpawnedBoards = new List<GameObject>();
+    List<GroupSetup> SpawnedGroupSetups = new List<GroupSetup>();
+    List<DeckSetup> SpawnedDeckSetups = new List<DeckSetup>();
+    List<Phase> SpawnedPhases = new List<Phase>();
+    Dictionary<int, List<DragTransition>> PvpDragTransitionsAddedToTemplate = new Dictionary<int, List<DragTransition>>();
+
     Vector3 Size;
     Vector3 Offset;
 
-    private void Start()
+    public GameObject[] GetAllBoards()
     {
-        Setup();
+        var boards = new List<GameObject> { PlayerBoard };
+        boards.AddRange(SpawnedBoards);
+        return boards.ToArray();
     }
 
-    public void Setup()
+    private void Start()
+    {
+        Setup(false);
+    }
+
+    public void Setup(bool callSetupScripts = true)
     {
         if (PlayerCount <= 0)
             return;
+
+        Teardown();
 
         // Find bounds
         var bottom = 0f;
@@ -49,13 +74,42 @@ public class MultiplayerBoardSetup : MonoBehaviour
         Size = new Vector3(right - left, top - bottom, 0);
         Offset = new Vector3(left + Size.x / 2f - PlayerBoard.transform.position.x, bottom + Size.y / 2f - PlayerBoard.transform.position.y, 0);
 
-        // Analyze group registry
-        var originalBoardTransforms = PlayerBoard.GetComponentsInChildren<Transform>();
+        // Analyze template board
         var originalBoardGroups = PlayerBoard.GetComponentsInChildren<CardGroup>();
         var originalBoardButtons = PlayerBoard.GetComponentsInChildren<Button>();
         var originalBoardClickables = PlayerBoard.GetComponentsInChildren<ClickDetector>();
         var originalBoardComponents = PlayerBoard.GetComponentsInChildren<MonoBehaviour>();
+        var originalBoardGroupSetups = PlayerBoard.GetComponentsInChildren<GroupSetup>();
+        var originalBoardDeckSetups = PlayerBoard.GetComponentsInChildren<DeckSetup>();
+        
+        // Find external setup scripts
+        var oddGroupSetups = SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<GroupSetup>()).Where(x => !originalBoardGroupSetups.Contains(x)).ToArray();
+        var oddDeckSetups = SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<DeckSetup>()).Where(x => !originalBoardDeckSetups.Contains(x)).ToArray();
 
+        // Find external card groups
+        var oddGroups = SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<CardGroup>()).Where(x => !originalBoardGroups.Contains(x)).ToArray();
+
+        if (callSetupScripts)
+        {
+            foreach (var setup in originalBoardGroupSetups)
+            {
+                setup.DoSetup();
+            }
+            foreach (var setup in oddGroupSetups)
+            {
+                setup.DoSetup();
+            }
+            foreach (var setup in originalBoardDeckSetups)
+            {
+                setup.DoSetup();
+            }
+            foreach (var setup in oddDeckSetups)
+            {
+                setup.DoSetup();
+            }
+        }
+
+        // Analyze Group Registry
         var registeredGroups = new Dictionary<GroupName, CardGroup>();
         if (GroupRegistry.Instance != null)
         {
@@ -68,20 +122,18 @@ public class MultiplayerBoardSetup : MonoBehaviour
             }
         }
 
-        // Find general group setup scripts
-        var excludedGroupSetupScripts = PlayerBoard.GetComponentsInChildren<GroupSetup>();
-        var oddGroupSetupScripts = SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<GroupSetup>()).Where(x => !excludedGroupSetupScripts.Contains(x)).ToArray();
-
-        var excludedDeckSetupScripts = PlayerBoard.GetComponentsInChildren<DeckSetup>();
-        var oddDeckSetupScripts = SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<DeckSetup>()).Where(x => !excludedDeckSetupScripts.Contains(x)).ToArray();
-
         // Setup boards
+        var newPhases = new Dictionary<int, List<Phase>>();
+
         var marginalAngle = 360f / PlayerCount;
+        var centerOfCircle = PlayerBoard.transform.position + Offset + Vector3.up * Size.y * 110f * SpacingMultiplier / marginalAngle;
+
         for (var i = 1; i < PlayerCount; i++)
         {
             // Duplicate and space
-            var newBoard = Instantiate(PlayerBoard);
-            newBoard.transform.RotateAround(PlayerBoard.transform.position + Offset + Vector3.up * Size.y * 110f * SpacingMultiplier / marginalAngle, Vector3.forward, marginalAngle * i);
+            var newBoard = Instantiate(PlayerBoard.gameObject);
+            SpawnedBoards.Add(newBoard);
+            newBoard.transform.RotateAround(centerOfCircle, Vector3.forward, marginalAngle * i);
 
             var boardGroups = newBoard.GetComponentsInChildren<CardGroup>();
             var boardTransforms = newBoard.GetComponentsInChildren<Transform>();
@@ -103,7 +155,7 @@ public class MultiplayerBoardSetup : MonoBehaviour
             }
 
             // Group Setup
-            foreach (var groupSetup in oddGroupSetupScripts)
+            foreach (var groupSetup in oddGroupSetups)
             {
                 var groupSetupEntriesToAdd = new List<GroupSetup.GroupPopulationData>();
 
@@ -117,6 +169,7 @@ public class MultiplayerBoardSetup : MonoBehaviour
                 }
 
                 var newGroupSetup = groupSetup.gameObject.AddComponent<GroupSetup>();
+                SpawnedGroupSetups.Add(newGroupSetup);
                 newGroupSetup.GroupPopulationList = groupSetupEntriesToAdd;
                 newGroupSetup.GroupsToShuffle = new List<CardGroup>();
 
@@ -130,24 +183,33 @@ public class MultiplayerBoardSetup : MonoBehaviour
                 }
 
                 newGroupSetup.OnSetupCompleteEventChain = CopyEvents(groupSetup.OnSetupCompleteEventChain, originalBoardComponents, boardComponents);
+                if (callSetupScripts)
+                {
+                    newGroupSetup.DoSetup();
+                }
             }
 
             // Deck Setup
-            foreach (var deckSetup in oddDeckSetupScripts)
+            foreach (var deckSetup in oddDeckSetups)
             {
                 if (originalBoardGroups.Contains(deckSetup.Deck))
                 {
                     var correspondingGroup = boardGroups.GetComponentForName(deckSetup.Deck.gameObject.name);
                     var newDeckSetup = deckSetup.gameObject.AddComponent<DeckSetup>();
+                    SpawnedDeckSetups.Add(newDeckSetup);
                     newDeckSetup.Deck = correspondingGroup;
                     newDeckSetup.CardPrefab = deckSetup.CardPrefab;
                     newDeckSetup.DeckDefinition = deckSetup.DeckDefinition;
                     newDeckSetup.OnSetupCompleteEventChain = CopyEvents(deckSetup.OnSetupCompleteEventChain, originalBoardComponents, boardComponents);
+                    if (callSetupScripts)
+                    {
+                        newDeckSetup.DoSetup();
+                    }
                 }
             }
 
             // Resource Manager
-            if (CurrencyRegistry.Instance != null)
+            if (CurrencyRegistry.Instance != null && CurrencyRegistry.Instance.PlayerWallets.Count > 0)
             {
                 CurrencyRegistry.Instance.PlayerWallets.Add((CurrencyWallet)CurrencyRegistry.Instance.PlayerWallets[0].Clone());
             }
@@ -155,16 +217,18 @@ public class MultiplayerBoardSetup : MonoBehaviour
             // Phase Manager
             if (PhaseManager.Instance != null)
             {
-                var p1Phases = PhaseManager.Instance.Phases.Where(x => x.PlayerIndex == 0).ToArray();
-                foreach (var phase in p1Phases)
+                var p1Phases = PhaseManager.Instance.Phases.Where(x => x.PlayerIndex == 0).Select(x => PhaseManager.Instance.Phases.IndexOf(x)).ToArray();
+                foreach (var phaseIndex in p1Phases)
                 {
+                    var phase = PhaseManager.Instance.Phases[phaseIndex];
                     var newPhase = new Phase
                     {
-                        Name = $"Player {i + 1}",
+                        Name = phase.Name.Replace("1", (i + 1).ToString()),
                         PlayerIndex = i,
                         CameraPosition = boardTransforms.GetComponentForName(phase.CameraPosition.gameObject.name),
                         CardPresentationPosition = boardTransforms.GetComponentForName(phase.CardPresentationPosition.gameObject.name),
                     };
+                    SpawnedPhases.Add(newPhase);
 
                     newPhase.ActiveButtons = phase.ActiveButtons.ToList();
                     for (var j = 0; j < newPhase.ActiveButtons.Count; j++)
@@ -203,13 +267,72 @@ public class MultiplayerBoardSetup : MonoBehaviour
                     newPhase.OnPhaseStartEventChain = CopyEvents(phase.OnPhaseStartEventChain, originalBoardComponents, boardComponents);
                     newPhase.OnPhaseEndEventChain = CopyEvents(phase.OnPhaseEndEventChain, originalBoardComponents, boardComponents);
 
-
-                    PhaseManager.Instance.Phases.Add(newPhase);
+                    if (newPhases.ContainsKey(phaseIndex))
+                    {
+                        newPhases[phaseIndex].Add(newPhase);
+                    }
+                    else
+                    {
+                        newPhases[phaseIndex] = new List<Phase> { newPhase };
+                    }
                 }
             }
-
         }
 
+        var phasesByIndex = new Dictionary<int, List<Phase>>();
+        var reversedKeys = newPhases.Keys.ToList();
+        reversedKeys.Sort();
+        reversedKeys.Reverse();
+        foreach (var phaseIndex in reversedKeys)
+        {
+            PhaseManager.Instance.Phases.InsertRange(phaseIndex + 1, newPhases[phaseIndex]);
+            phasesByIndex[phaseIndex] = PhaseManager.Instance.Phases.GetRange(phaseIndex, newPhases[phaseIndex].Count + 1);
+        }
+
+        // Set up player-to-player interactions
+        reversedKeys.Reverse();
+        foreach (var pvp in PlayerToPlayerInteractions)
+        {
+            if (phasesByIndex.ContainsKey(pvp.PhaseIndex))
+            {
+                foreach (var phase in phasesByIndex[pvp.PhaseIndex])
+                {
+                    for (var i = 0; i < PlayerCount; i++)
+                    {
+                        if (i == phase.PlayerIndex)
+                            continue;
+
+                        var sourceIndex = pvp.Mode == PvpMode.PlayerToEnemy ? phase.PlayerIndex : i;
+                        var destinationIndex = pvp.Mode == PvpMode.PlayerToEnemy ? i : phase.PlayerIndex;
+                        var newDragTransition = new DragTransition
+                        {
+                            Source = GroupRegistry.Instance.Get(pvp.Source, sourceIndex),
+                            Destination = GroupRegistry.Instance.Get(pvp.Destination, destinationIndex),
+                            DragAction = pvp.DragAction
+                        };
+                        phase.ValidDrags.Add(newDragTransition);
+
+                        if (phase == phasesByIndex[pvp.PhaseIndex][0])
+                        {
+                            if (PvpDragTransitionsAddedToTemplate.ContainsKey(pvp.PhaseIndex))
+                            {
+                                PvpDragTransitionsAddedToTemplate[pvp.PhaseIndex].Add(newDragTransition);
+                            }
+                            else
+                            {
+                                PvpDragTransitionsAddedToTemplate.Add(pvp.PhaseIndex, new List<DragTransition> { newDragTransition });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Move odd groups to center
+        foreach (var group in oddGroups)
+        {
+            group.gameObject.transform.Translate(centerOfCircle - oddGroups[0].transform.position);
+        }
     }
 
     List<TimedEvent> CopyEvents(IEnumerable<TimedEvent> source, IEnumerable<MonoBehaviour> sourceComponents, IEnumerable<MonoBehaviour> destinationComponents)
@@ -235,10 +358,70 @@ public class MultiplayerBoardSetup : MonoBehaviour
         return output;
     }
 
-    void Update()
+    void Teardown()
     {
-        //Debug.DrawLine(PlayerBoard.transform.position + Offset, PlayerBoard.transform.position + Offset + Size / 2f, Color.red);
-        //Debug.DrawLine(PlayerBoard.transform.position - Offset + Vector3.right * -1f, PlayerBoard.transform.position - Offset + Vector3.right * 1f, Color.red);
+        foreach (var group in SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(x => x.GetComponentsInChildren<CardGroup>()))
+        {
+            foreach (var card in group.MountedCards.ToArray())
+            {
+                group.MountedCards.Remove(card);
+                Destroy(card.gameObject);
+            }
+        }
+
+        foreach (var board in SpawnedBoards)
+        {
+            Destroy(board.gameObject);
+        }
+        SpawnedBoards.Clear();
+
+        if (GroupRegistry.Instance != null)
+        {
+            foreach (var group in GroupRegistry.Instance.Groups.ToArray())
+            {
+                if (group.PlayerIndex > 0)
+                {
+                    GroupRegistry.Instance.Groups.Remove(group);
+                }
+            }
+        }
+
+        if (CurrencyRegistry.Instance != null && CurrencyRegistry.Instance.PlayerWallets.Count > 0)
+        {
+            CurrencyRegistry.Instance.PlayerWallets = new List<CurrencyWallet> { CurrencyRegistry.Instance.PlayerWallets[0] };
+        }
+
+        foreach (var setup in SpawnedGroupSetups)
+        {
+            DestroyImmediate(setup);
+        }
+        SpawnedGroupSetups.Clear();
+
+        foreach (var setup in SpawnedDeckSetups)
+        {
+            DestroyImmediate(setup);
+        }
+        SpawnedDeckSetups.Clear();
+
+        if (PhaseManager.Instance != null)
+        {
+            foreach (var phase in SpawnedPhases)
+            {
+                PhaseManager.Instance.Phases.Remove(phase);
+            }
+            SpawnedPhases.Clear();
+
+            foreach (var phaseIndex in PvpDragTransitionsAddedToTemplate.Keys)
+            {
+                foreach (var transition in PvpDragTransitionsAddedToTemplate[phaseIndex])
+                {
+                    PhaseManager.Instance.Phases[phaseIndex].ValidDrags.Remove(transition);
+                }
+            }
+            PvpDragTransitionsAddedToTemplate.Clear();
+
+            PhaseManager.Instance.HardReset();
+        }
     }
 
 }
