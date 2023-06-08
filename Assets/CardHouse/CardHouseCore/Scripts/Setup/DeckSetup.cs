@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class DeckSetup : MonoBehaviour
 {
+    public bool RunOnStart = true;
     public GameObject CardPrefab;
     public DeckDefinition DeckDefinition;
     public CardGroup Deck;
@@ -13,7 +14,10 @@ public class DeckSetup : MonoBehaviour
 
     void Start()
     {
-        DoSetup();
+        if (RunOnStart)
+        {
+            DoSetup();
+        }
     }
 
     public void DoSetup()

@@ -24,6 +24,7 @@ public class MultiplayerBoardSetup : MonoBehaviour
         EnemyToPlayer
     }
 
+    public bool RunOnStart = true;
     public GameObject PlayerBoard;
     public int PlayerCount = 2;
     public float SpacingMultiplier = 1.0f;
@@ -48,7 +49,10 @@ public class MultiplayerBoardSetup : MonoBehaviour
 
     private void Start()
     {
-        Setup(false);
+        if (RunOnStart)
+        {
+            Setup(false);
+        }
     }
 
     public void Setup(bool callSetupScripts = true)
@@ -126,7 +130,18 @@ public class MultiplayerBoardSetup : MonoBehaviour
         var newPhases = new Dictionary<int, List<Phase>>();
 
         var marginalAngle = 360f / PlayerCount;
-        var centerOfCircle = PlayerBoard.transform.position + Offset + Vector3.up * Size.y * 110f * SpacingMultiplier / marginalAngle;
+        var distanceToCenter = Size.y * 110f * SpacingMultiplier / marginalAngle;
+        var centerOfCircle = PlayerBoard.transform.position + Offset + Vector3.up * distanceToCenter;
+
+        // Scale camera and camera points
+        Camera.main.orthographicSize = distanceToCenter + Size.y / 2f;
+        foreach (var phase in PhaseManager.Instance.Phases)
+        {
+            if (phase.CameraPosition == null)
+                continue;
+
+            phase.CameraPosition.localPosition = Offset + Vector3.up * (distanceToCenter);
+        }
 
         for (var i = 1; i < PlayerCount; i++)
         {
@@ -170,6 +185,7 @@ public class MultiplayerBoardSetup : MonoBehaviour
 
                 var newGroupSetup = groupSetup.gameObject.AddComponent<GroupSetup>();
                 SpawnedGroupSetups.Add(newGroupSetup);
+                newGroupSetup.RunOnStart = groupSetup.RunOnStart;
                 newGroupSetup.GroupPopulationList = groupSetupEntriesToAdd;
                 newGroupSetup.GroupsToShuffle = new List<CardGroup>();
 
@@ -197,6 +213,7 @@ public class MultiplayerBoardSetup : MonoBehaviour
                     var correspondingGroup = boardGroups.GetComponentForName(deckSetup.Deck.gameObject.name);
                     var newDeckSetup = deckSetup.gameObject.AddComponent<DeckSetup>();
                     SpawnedDeckSetups.Add(newDeckSetup);
+                    newDeckSetup.RunOnStart = deckSetup.RunOnStart;
                     newDeckSetup.Deck = correspondingGroup;
                     newDeckSetup.CardPrefab = deckSetup.CardPrefab;
                     newDeckSetup.DeckDefinition = deckSetup.DeckDefinition;
@@ -332,6 +349,15 @@ public class MultiplayerBoardSetup : MonoBehaviour
         foreach (var group in oddGroups)
         {
             group.gameObject.transform.Translate(centerOfCircle - oddGroups[0].transform.position);
+        }
+
+        // Scale presentation points
+        foreach (var phase in PhaseManager.Instance.Phases)
+        {
+            if (phase.CardPresentationPosition == null)
+                continue;
+
+            phase.CardPresentationPosition.localScale = Vector3.one * 1.5f * Camera.main.orthographicSize / 4f;
         }
     }
 

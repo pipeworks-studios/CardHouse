@@ -6,6 +6,7 @@ public class CardGridLayout : CardGroupSettings
     public int CardsPerRow = 5;
     public float MarginalCardOffset = 0.05f;
     Collider2D MyCollider;
+    public bool Straighten = true;
 
     void Awake()
     {
@@ -41,7 +42,10 @@ public class CardGridLayout : CardGroupSettings
                 var card = cards[cardIndex];
                 var seekerSet = seekerSets?.GetSeekerSetFor(card);
                 card.Homing.StartSeeking(newPos, seekerSet?.Homing);
-                card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
+                if (Straighten)
+                {
+                    card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
+                }
                 card.Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
             }
         }

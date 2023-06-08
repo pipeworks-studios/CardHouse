@@ -13,6 +13,8 @@ public class GroupSetup : MonoBehaviour
         public int CardCount;
     }
 
+    public bool RunOnStart = true;
+
     public List<GroupPopulationData> GroupPopulationList;
 
     public List<CardGroup> GroupsToShuffle;
@@ -21,7 +23,10 @@ public class GroupSetup : MonoBehaviour
 
     void Start()
     {
-        DoSetup();
+        if (RunOnStart)
+        {
+            DoSetup();
+        }
     }
 
     public void DoSetup()

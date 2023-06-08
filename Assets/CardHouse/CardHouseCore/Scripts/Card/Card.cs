@@ -125,7 +125,7 @@ public class Card : MonoBehaviour
         IsFocused = isFocused;
         FaceHoming.StartSeeking(isFocused ? Camera.main.transform.position + Vector3.forward * 2f : Vector3.zero, useLocalSpace: !isFocused);
         FaceTurning.StartSeeking(isFocused ? Camera.main.transform.rotation.eulerAngles.z : 0, useLocalSpace: !isFocused);
-        FaceScaling.StartSeeking(isFocused ? 2f : 1f, useLocalSpace: !isFocused);
+        FaceScaling.StartSeeking(isFocused ? 2f * Camera.main.orthographicSize / 4f : 1f, useLocalSpace: !isFocused);
         if (isFocused)
         {
             OnCardFocused?.Invoke(this);
