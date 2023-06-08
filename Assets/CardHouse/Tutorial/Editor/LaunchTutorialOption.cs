@@ -1,18 +1,14 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
 using System.Linq;
 using System.Collections.Generic;
-using NUnit.Framework;
 using System.Reflection;
-using System;
-#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
 [InitializeOnLoadAttribute]
 public static class LaunchTutorialOption
 {
-
     static LaunchTutorialOption()
     {
         EditorApplication.playModeStateChanged += ReloadScenes;
@@ -27,7 +23,7 @@ public static class LaunchTutorialOption
         if (launchData == null)
             return;
 
-        if (launchData.LaunchedTutorial) 
+        if (launchData.LaunchedTutorial)
         {
             launchData.LaunchedTutorial = false;
             EditorUtility.SetDirty(launchData);
@@ -47,6 +43,7 @@ public static class LaunchTutorialOption
                }
             }
             EditorSceneManager.SetActiveScene(EditorSceneManager.GetSceneByPath(launchData.ActiveScene));
+            RemoveTutorialScenesFromBuildSettings();
         }
     }
 
@@ -98,7 +95,6 @@ public static class LaunchTutorialOption
         EditorApplication.isPlaying = true;
     }
 
-    [MenuItem("CardHouse/Remove Tutorial Scenes from Build Settings")]
     static void RemoveTutorialScenesFromBuildSettings()
     {
         var scenes = new List<string> { "Assets/CardHouse/Tutorial/Overlay/TutorialOverlay.unity" };
@@ -125,6 +121,12 @@ public static class LaunchTutorialOption
     static LaunchDataScriptable GetLaunchData()
     {
         return AssetDatabase.LoadAssetAtPath<LaunchDataScriptable>("Assets/CardHouse/Tutorial/LaunchData.asset");
+    }
+
+    [MenuItem("CardHouse/Report a Bug")]
+    static void OpenIssuesPage()
+    {
+        Application.OpenURL("https://github.com/pipeworks-studios/CardHouse/issues");
     }
 }
 #endif
