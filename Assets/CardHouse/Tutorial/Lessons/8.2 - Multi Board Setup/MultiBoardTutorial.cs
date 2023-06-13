@@ -25,22 +25,30 @@ public class MultiBoardTutorial : MonoBehaviour
     public Image InstructionsImage;
     public TMP_Text InstructionsText;
     public List<InstructionImagePair> Instructions;
+    public TMP_Text PageNumberText;
     public Button ForwardButton;
     public Button BackButton;
-    int InstructionIndex;
+    public int InstructionIndex;
 
     public GameObject CommonArea;
 
 
     private void Start()
     {
+        SandboxManager.MultiBoardTutorial = this;
         UpdateInstructions();
+    }
+
+    private void OnDestroy()
+    {
+        SandboxManager.MultiBoardTutorial = null;
     }
 
     void UpdateInstructions()
     {
         InstructionsImage.sprite = Instructions[InstructionIndex].Image;
         InstructionsText.text = Instructions[InstructionIndex].Text;
+        PageNumberText.text = $"{InstructionIndex + 1} / {Instructions.Count}";
         BackButton.gameObject.SetActive(InstructionIndex > 0);
         ForwardButton.gameObject.SetActive(InstructionIndex < Instructions.Count - 1);
 

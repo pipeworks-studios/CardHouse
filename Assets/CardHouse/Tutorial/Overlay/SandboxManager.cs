@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +13,8 @@ public class SandboxManager : MonoBehaviour
     public GameObject NextButton;
     public GameObject PreviousButton;
     public GameObject ResetButton;
+
+    public static MultiBoardTutorial MultiBoardTutorial;
 
     public void Start()
     {
@@ -41,19 +41,33 @@ public class SandboxManager : MonoBehaviour
 
     public void GoToNext()
     {
-        if (currentTutorial < Tutorials.MyList.Count - 1) 
+        if (MultiBoardTutorial != null && MultiBoardTutorial.InstructionIndex < MultiBoardTutorial.Instructions.Count - 1)
         {
-            currentTutorial++;
-            SetupCurrentTutorial();
+            MultiBoardTutorial.InstructionsForward();
+        }
+        else
+        {
+            if (currentTutorial < Tutorials.MyList.Count - 1)
+            {
+                currentTutorial++;
+                SetupCurrentTutorial();
+            }
         }
     }
 
     public void GoToPrevious()
     {
-        if (currentTutorial > 0)
+        if (MultiBoardTutorial != null && MultiBoardTutorial.InstructionIndex > 0)
         {
-            currentTutorial--;
-            SetupCurrentTutorial();
+            MultiBoardTutorial.InstructionsBackward();
+        }
+        else
+        {
+            if (currentTutorial > 0)
+            {
+                currentTutorial--;
+                SetupCurrentTutorial();
+            }
         }
     }
 
