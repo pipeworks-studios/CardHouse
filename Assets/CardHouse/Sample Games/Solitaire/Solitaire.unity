@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -128,6 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -281,6 +282,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2085151762}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 155004883}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 155004884}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &155004881 stripped
 GameObject:
@@ -309,7 +325,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &155004884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +357,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -491,6 +511,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871146896}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192811579}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192811580}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &192811577 stripped
 GameObject:
@@ -519,7 +554,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &192811580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e4b4cfc33632b489617ebcd7c13405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Groups:
+  GroupsToShuffleIntoDeck:
   - {fileID: 1462302603}
   - {fileID: 1460759427}
   - {fileID: 155004891}
@@ -606,6 +644,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -759,6 +798,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275903921}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254810155}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254810156}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &254810153 stripped
 GameObject:
@@ -787,7 +841,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &254810156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +957,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -1053,6 +1111,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616537831}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 446892755}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 446892756}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &446892753 stripped
 GameObject:
@@ -1081,7 +1154,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &446892756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,9 +1221,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1454,8 +1538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6894986c8c3e4248bd3ec61ceac255d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunOnStart: 1
   CardPrefab: {fileID: 6327775823156628206, guid: 9aa574bc89835f149ae9c0f36af8abd3, type: 3}
-  DeckDefinition: {fileID: 11400000, guid: 705d63ccdaceefa49be36802cf202833, type: 2}
+  DeckDefinition: {fileID: 11400000, guid: 495c412a13163034fa6583f19cbf5437, type: 2}
   Deck: {fileID: 1551031834517146001}
   OnSetupCompleteEventChain:
   - Duration: 4
@@ -1515,6 +1600,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -1640,6 +1726,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2056645585}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756446530}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &756446528 stripped
 GameObject:
@@ -1668,7 +1766,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 3
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.01, y: 0.01, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &756446538 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -1811,6 +1912,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  OnChainFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &916884727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9760a2d33cef3240944698bab4c0744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!4 &916884729
 Transform:
   m_ObjectHideFlags: 0
@@ -2012,6 +2117,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -2165,6 +2271,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1944544254}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1066845585}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1066845586}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1066845583 stripped
 GameObject:
@@ -2193,7 +2314,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1066845586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2346,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -2375,6 +2500,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 691316296}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075769793}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075769794}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1075769791 stripped
 GameObject:
@@ -2403,7 +2543,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1075769794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2456,6 +2599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182f10aee6057944eae121d32cf692d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!4 &1142402309
 Transform:
   m_ObjectHideFlags: 0
@@ -2576,6 +2720,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  OnChainFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1295238433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2862,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -2868,6 +3016,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934001575}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460759419}
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460759420}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1460759418 stripped
 GameObject:
@@ -2891,7 +3054,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.21, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1460759420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2925,6 +3091,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
@@ -3019,6 +3186,12 @@ PrefabInstance:
     - {fileID: 8810276264457499711, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 6434116258965713194, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 2118785339087565572, guid: 979624791065b604c86842ec546f76a9, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6771553595360687229, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 979624791065b604c86842ec546f76a9, type: 3}
 --- !u!114 &1462302603 stripped
 MonoBehaviour:
@@ -3036,6 +3209,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -3161,6 +3335,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1842959917}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1525692099}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1525692097 stripped
 GameObject:
@@ -3189,7 +3375,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 3
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.01, y: 0.01, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1525692107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -3396,6 +3585,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  OnChainFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1786859141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,6 +3869,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -3802,6 +3995,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2084878486}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873899715}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1873899713 stripped
 GameObject:
@@ -3830,7 +4035,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 3
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.01, y: 0.01, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1873899723 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -3886,13 +4094,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e4b4cfc33632b489617ebcd7c13405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Groups: []
+  GroupsToShuffleIntoDeck: []
   Deck: {fileID: 1551031834517146001}
 --- !u!1001 &1901180363
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1458513858821145713, guid: 0909642e9a1eb99448a7cbf34d61ba4c, type: 3}
@@ -3944,12 +4153,16 @@ PrefabInstance:
       value: Tabletop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0909642e9a1eb99448a7cbf34d61ba4c, type: 3}
 --- !u!1001 &1910871825
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246232433208794, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -4075,6 +4288,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2639291437605776710, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565666710}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1910871828}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1910871826 stripped
 GameObject:
@@ -4103,7 +4328,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 3
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0.01, y: 0.01, z: -0.01}
+  SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!114 &1910871836 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -4275,7 +4503,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4557,6 +4787,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
@@ -4643,6 +4874,21 @@ PrefabInstance:
     - {fileID: 8810276264457499711, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 6434116258965713194, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 2118785339087565572, guid: 979624791065b604c86842ec546f76a9, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8761025072723690564, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1725887627}
+    - targetCorrespondingSourceObject: {fileID: 8761025072723690564, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551031834517146009}
+    - targetCorrespondingSourceObject: {fileID: 8761025072723690564, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551031834517146018}
+    - targetCorrespondingSourceObject: {fileID: 6771553595360687229, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 979624791065b604c86842ec546f76a9, type: 3}
 --- !u!114 &1551031834517146001 stripped
 MonoBehaviour:
@@ -4667,6 +4913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!114 &1551031834517146018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4679,11 +4926,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1720aeaed9d2f4686ea7d7e579907a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!1001 &6155219491839174570
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1995129741305969142, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
@@ -4758,4 +5007,13 @@ PrefabInstance:
     - {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 3090792073704058525, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6089223669796112708, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729462009}
+    - targetCorrespondingSourceObject: {fileID: 6089223669796112708, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729462010}
   m_SourcePrefab: {fileID: 100100000, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}

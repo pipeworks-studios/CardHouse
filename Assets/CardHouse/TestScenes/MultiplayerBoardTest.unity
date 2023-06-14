@@ -918,6 +918,7 @@ MonoBehaviour:
   UseMyScale: 0
   CardsPerRow: 3
   MarginalCardOffset: 0.05
+  Straighten: 1
 --- !u!114 &558556780 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842246233212263734, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -2876,6 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0676e8234728a4b8bc571acbee2482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunOnStart: 1
   PlayerBoard: {fileID: 161218950}
   PlayerCount: 4
   SpacingMultiplier: 1.2
@@ -2916,7 +2918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6894986c8c3e4248bd3ec61ceac255d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunOnStart: 1
   CardPrefab: {fileID: 6462243022253552644, guid: 93b7f5d60e554c54bb8ee95e357b9082, type: 3}
-  DeckDefinition: {fileID: 11400000, guid: 705d63ccdaceefa49be36802cf202833, type: 2}
+  DeckDefinition: {fileID: 11400000, guid: 495c412a13163034fa6583f19cbf5437, type: 2}
   Deck: {fileID: 992578275}
   OnSetupCompleteEventChain: []

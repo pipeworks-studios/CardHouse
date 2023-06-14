@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -216,7 +216,7 @@ MonoBehaviour:
   Strategy: {fileID: 11400000, guid: 4f3197afcfc76be49be49822b3d923d8, type: 2}
 --- !u!95 &20010326
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -233,7 +233,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &101277220
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,12 +308,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -391,12 +392,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -419,7 +420,7 @@ GameObject:
   - component: {fileID: 168508424}
   - component: {fileID: 168508423}
   m_Layer: 0
-  m_Name: FantasyPokerCard (3)
+  m_Name: PokerCard (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,8 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -512,7 +515,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -543,6 +548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 20010326}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 20010325}
   FaceTurning: {fileID: 20010324}
   FaceScaling: {fileID: 20010321}
@@ -566,6 +574,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -647,7 +674,7 @@ GameObject:
   - component: {fileID: 359385375}
   - component: {fileID: 359385374}
   m_Layer: 0
-  m_Name: FantasyPokerCard (5)
+  m_Name: PokerCard (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,8 +731,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -740,7 +769,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -771,6 +802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 571186188}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 571186187}
   FaceTurning: {fileID: 571186186}
   FaceScaling: {fileID: 571186183}
@@ -794,6 +828,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -848,13 +901,16 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.15, z: -0.01}
   SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!1001 &463484852
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -939,6 +995,15 @@ PrefabInstance:
       objectReference: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
     m_RemovedComponents:
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 558556783}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -980,9 +1045,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1046,8 +1119,10 @@ MonoBehaviour:
   ForcedFacing: 2
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.15, z: -0.01}
   SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!1 &571186182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1216,7 @@ MonoBehaviour:
   Strategy: {fileID: 11400000, guid: 4f3197afcfc76be49be49822b3d923d8, type: 2}
 --- !u!95 &571186188
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1158,7 +1233,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &613418651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,12 +1312,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c584763aa22a9f4191b0dadf2b51a40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee52390b82fd7c14aa78a47a978cc7f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1355,7 +1431,7 @@ MonoBehaviour:
   Strategy: {fileID: 11400000, guid: 4f3197afcfc76be49be49822b3d923d8, type: 2}
 --- !u!95 &646252068
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1372,12 +1448,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &716545218
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -1462,6 +1540,15 @@ PrefabInstance:
       objectReference: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
     m_RemovedComponents:
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1829838055}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &967857881
 GameObject:
@@ -1540,12 +1627,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5157bcd67875d0146b61d8c6db3f008c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7af30cd1678c0140bca7699c9be742d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1813,6 +1900,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2842246233212263736, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
@@ -1897,6 +1985,15 @@ PrefabInstance:
       objectReference: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
     m_RemovedComponents:
     - {fileID: 4350721168162902219, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2842246233212263741, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 360917716}
+    - targetCorrespondingSourceObject: {fileID: 224513812576709892, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 15b2fa0757a34e74ebc87108fb6b9402, type: 3}
 --- !u!1 &1462004013
 GameObject:
@@ -1975,12 +2072,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b8367096fb96d404992b8328147d91a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59473f65c49854142ac090023e3a5e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2018,7 +2115,7 @@ GameObject:
   - component: {fileID: 1553717751}
   - component: {fileID: 1553717750}
   m_Layer: 0
-  m_Name: FantasyPokerCard (4)
+  m_Name: PokerCard (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2075,8 +2172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -2111,7 +2210,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2142,6 +2243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 646252068}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 646252067}
   FaceTurning: {fileID: 646252066}
   FaceScaling: {fileID: 646252063}
@@ -2165,6 +2269,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2219,8 +2342,10 @@ MonoBehaviour:
   ForcedFacing: 1
   ForcedInteractability: 0
   DragMountingMode: 0
+  UseMyScale: 0
   MarginalCardOffset: {x: 0, y: -0.15, z: -0.01}
   SecondaryCollider: {fileID: 0}
+  Straighten: 1
 --- !u!1 &1851164597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,12 +2503,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -2394,6 +2519,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1458513858821145713, guid: 0909642e9a1eb99448a7cbf34d61ba4c, type: 3}
@@ -2445,6 +2571,9 @@ PrefabInstance:
       value: Tabletop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0909642e9a1eb99448a7cbf34d61ba4c, type: 3}
 --- !u!1 &1920940510
 GameObject:
@@ -2665,7 +2794,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2712,7 +2843,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2759,7 +2892,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  DropGates:
+  GroupDropGates:
+    Gates: []
+  TargetCardGates:
     Gates: []
   OnDragEnd:
     m_PersistentCalls:
@@ -2820,7 +2955,7 @@ MonoBehaviour:
   - {fileID: 282332550262028108}
 --- !u!95 &2241088107659431953
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2837,10 +2972,11 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!95 &2241088108825188968
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2857,10 +2993,11 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!95 &2241088109402192487
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2877,7 +3014,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3320165275037948514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2890,8 +3028,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -2908,8 +3048,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -2926,8 +3068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0773f75c1d3f6499bfe77e421fc5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyDragDetector: {fileID: 0}
   DragAction: 1
   DragSwell: 1.2
+  PointUpWhenDragged: 1
   PresentationSeekers:
     Homing: {fileID: 0}
     Turning: {fileID: 0}
@@ -3087,6 +3231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 2241088107659431953}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 7792711140188327291}
   FaceTurning: {fileID: 8922238289532569402}
   FaceScaling: {fileID: 902705499869823072}
@@ -3114,6 +3261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 2241088108825188968}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 7792711141454743298}
   FaceTurning: {fileID: 8922238288366816579}
   FaceScaling: {fileID: 902705501119990297}
@@ -3141,6 +3291,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Group: {fileID: 0}
   FlipAnimator: {fileID: 2241088109402192487}
+  CanBeUpsideDown: 0
+  UpsideDownChance: 0.5
+  RootToRotateWhenUpsideDown: {fileID: 0}
   FaceHoming: {fileID: 7792711141931083533}
   FaceTurning: {fileID: 8922238288859376972}
   FaceScaling: {fileID: 902705501616744982}
@@ -3159,6 +3312,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1995129741305969142, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
@@ -3233,6 +3387,9 @@ PrefabInstance:
     - {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 3090792073704058525, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
 --- !u!1 &6462243021187098268
 GameObject:
@@ -3307,12 +3464,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -3392,12 +3549,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05a44cfcad171d943a5a513f6f4d023d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3aa2275fa01afa24a99caf9667f892c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3420,7 +3577,7 @@ GameObject:
   - component: {fileID: 3933146396514327422}
   - component: {fileID: 4422412828125581133}
   m_Layer: 0
-  m_Name: FantasyPokerCard (1)
+  m_Name: PokerCard (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,12 +3705,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9fdb1f2c873a323418bcad57060dc1a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 122128a9c9c5de14c9f8a812b67556c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3600,12 +3757,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -3724,7 +3881,7 @@ GameObject:
   - component: {fileID: 3933146397730935047}
   - component: {fileID: 4422412827160626484}
   m_Layer: 0
-  m_Name: FantasyPokerCard (2)
+  m_Name: PokerCard (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3819,12 +3976,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc342bd60b5cda54baa03f1b68531bdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231712f549277ba44987520a75e78ffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.76}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -3927,7 +4084,7 @@ GameObject:
   - component: {fileID: 3933146398261276936}
   - component: {fileID: 4422412827725014331}
   m_Layer: 0
-  m_Name: FantasyPokerCard
+  m_Name: PokerCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4006,12 +4163,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62638a8bcdd484042a868d3a52ca773e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba844d28f3330d14d9e5c14335678319, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4099,6 +4256,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4125,6 +4301,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4151,6 +4346,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0

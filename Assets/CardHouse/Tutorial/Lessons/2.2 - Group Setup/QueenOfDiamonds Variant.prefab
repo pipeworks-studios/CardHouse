@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3515954158333295532, guid: 61efc4a9b37650c418a10fa9d2daca82, type: 3}
@@ -53,11 +54,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3515954158333295535, guid: 61efc4a9b37650c418a10fa9d2daca82, type: 3}
       propertyPath: m_Name
-      value: QueenOfDiamonds
+      value: QueenOfDiamonds Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3515954158887616058, guid: 61efc4a9b37650c418a10fa9d2daca82, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1c1faff55bb7f504e8f28382d39ce85e, type: 3}
+      objectReference: {fileID: 21300000, guid: 2226e184d054c1a49a39e3b1f6e2e59a, type: 3}
+    - target: {fileID: 3515954158887616058, guid: 61efc4a9b37650c418a10fa9d2daca82, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61efc4a9b37650c418a10fa9d2daca82, type: 3}
