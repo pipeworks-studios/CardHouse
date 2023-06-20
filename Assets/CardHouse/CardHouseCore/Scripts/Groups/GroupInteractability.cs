@@ -1,7 +1,10 @@
-public enum GroupInteractability
+namespace CardHouse
 {
-    None,
-    Active,
-    Inactive,
-    OnlyTopActive
+    public enum GroupInteractability
+    {
+        None,
+        Active,
+        Inactive,
+        OnlyTopActive
+    }
 }

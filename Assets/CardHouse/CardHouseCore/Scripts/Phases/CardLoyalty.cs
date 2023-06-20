@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CardLoyalty : MonoBehaviour
+namespace CardHouse
 {
-    public int PlayerIndex;
+    public class CardLoyalty : MonoBehaviour
+    {
+        public int PlayerIndex;
+    }
 }

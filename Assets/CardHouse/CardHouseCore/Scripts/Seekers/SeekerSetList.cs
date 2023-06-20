@@ -1,21 +1,24 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class SeekerSetList : List<SeekerSet>
+namespace CardHouse
 {
-    public SeekerSet GetSeekerSetFor(Card card)
+    public class SeekerSetList : List<SeekerSet>
     {
-        foreach (var seekerSet in this)
+        public SeekerSet GetSeekerSetFor(Card card)
         {
-            if (seekerSet == null)
-                continue;
-
-            if (seekerSet.Card == card)
+            foreach (var seekerSet in this)
             {
-                return seekerSet;
-            }
-        }
+                if (seekerSet == null)
+                    continue;
 
-        return this.FirstOrDefault(x => x != null && x.Card == null);
+                if (seekerSet.Card == card)
+                {
+                    return seekerSet;
+                }
+            }
+
+            return this.FirstOrDefault(x => x != null && x.Card == null);
+        }
     }
 }

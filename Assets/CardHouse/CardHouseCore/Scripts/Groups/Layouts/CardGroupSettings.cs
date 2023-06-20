@@ -1,43 +1,45 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CardGroupSettings : MonoBehaviour
+namespace CardHouse
 {
-    public int CardLimit = -1; // Limit < 0 means no limit
-    public float MountedCardAltitude = 0.01f;
-    public CardFacing ForcedFacing;
-    public GroupInteractability ForcedInteractability;
-    public MountingMode DragMountingMode = MountingMode.Top;
-    public bool UseMyScale = false;
-
-    public void Apply(List<Card> cards, bool instaFlip = false, SeekerSetList seekerSets = null)
+    public abstract class CardGroupSettings : MonoBehaviour
     {
-        for (var i = 0; i < cards.Count; i++)
+        public int CardLimit = -1; // Limit < 0 means no limit
+        public float MountedCardAltitude = 0.01f;
+        public CardFacing ForcedFacing;
+        public GroupInteractability ForcedInteractability;
+        public MountingMode DragMountingMode = MountingMode.Top;
+        public bool UseMyScale = false;
+
+        public void Apply(List<Card> cards, bool instaFlip = false, SeekerSetList seekerSets = null)
         {
-            var card = cards[i];
-            if (ForcedFacing != CardFacing.None)
+            for (var i = 0; i < cards.Count; i++)
             {
-                var flipSpeed = 1f;
-                if (seekerSets != null && seekerSets.Count > 0 && seekerSets[0] != null)
+                var card = cards[i];
+                if (ForcedFacing != CardFacing.None)
                 {
-                    flipSpeed = seekerSets[0].FlipSpeed;
+                    var flipSpeed = 1f;
+                    if (seekerSets != null && seekerSets.Count > 0 && seekerSets[0] != null)
+                    {
+                        flipSpeed = seekerSets[0].FlipSpeed;
+                    }
+                    cards[i].SetFacing(ForcedFacing, immediate: instaFlip, spd: flipSpeed);
                 }
-                cards[i].SetFacing(ForcedFacing, immediate: instaFlip, spd: flipSpeed );
-            }
-            if (ForcedInteractability != GroupInteractability.None)
-            {
-                var col = card.GetComponent<Collider2D>();
-                if (col)
+                if (ForcedInteractability != GroupInteractability.None)
                 {
-                    col.enabled = ForcedInteractability == GroupInteractability.Active 
-                        || ForcedInteractability == GroupInteractability.OnlyTopActive && i == cards.Count - 1;
+                    var col = card.GetComponent<Collider2D>();
+                    if (col)
+                    {
+                        col.enabled = ForcedInteractability == GroupInteractability.Active
+                                      || ForcedInteractability == GroupInteractability.OnlyTopActive && i == cards.Count - 1;
+                    }
                 }
             }
+
+            ApplySpacing(cards, seekerSets);
         }
 
-        ApplySpacing(cards, seekerSets);
+        protected abstract void ApplySpacing(List<Card> cards, SeekerSetList seekerSets);
     }
-
-    protected abstract void ApplySpacing(List<Card> cards, SeekerSetList seekerSets);
 }

@@ -1,26 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Waypoint Curve")]
-public class WaypointCurveFloatSeekerScriptable : SeekerScriptable<float>
+namespace CardHouse
 {
-    public float Duration = 2f;
-    public AnimationCurve ProgressCurve;
-
-    public override Seeker<float> GetStrategy(params object[] args)
+    [CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Waypoint Curve")]
+    public class WaypointCurveFloatSeekerScriptable : SeekerScriptable<float>
     {
-        var waypoints = new List<float>();
-        foreach (var arg in args)
+        public float Duration = 2f;
+        public AnimationCurve ProgressCurve;
+
+        public override Seeker<float> GetStrategy(params object[] args)
         {
-            if (arg is float floatArg)
+            var waypoints = new List<float>();
+            foreach (var arg in args)
             {
-                waypoints.Add(floatArg);
+                if (arg is float floatArg)
+                {
+                    waypoints.Add(floatArg);
+                }
+                else if (arg is IEnumerable<float> floatEnumerable)
+                {
+                    waypoints.AddRange(floatEnumerable);
+                }
             }
-            else if (arg is IEnumerable<float> floatEnumerable)
-            {
-                waypoints.AddRange(floatEnumerable);
-            }
+            return new WaypointCurveFloatSeeker(Duration, ProgressCurve, waypoints);
         }
-        return new WaypointCurveFloatSeeker(Duration, ProgressCurve, waypoints);
     }
 }

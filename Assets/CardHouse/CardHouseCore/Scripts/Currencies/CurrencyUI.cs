@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CurrencyUI : MonoBehaviour
+namespace CardHouse
 {
-    public Image Image;
-    public Text Text;
-
-    public void Apply(CurrencyContainer resource)
+    public class CurrencyUI : MonoBehaviour
     {
-        Image.sprite = resource.CurrencyType.Sprite;
-        var text = resource.Amount.ToString();
-        if (resource.HasMax)
+        public Image Image;
+        public Text Text;
+
+        public void Apply(CurrencyContainer resource)
         {
-            text += "/" + resource.Max.ToString();
+            Image.sprite = resource.CurrencyType.Sprite;
+            var text = resource.Amount.ToString();
+            if (resource.HasMax)
+            {
+                text += "/" + resource.Max.ToString();
+            }
+            Text.text = text;
         }
-        Text.text = text;
     }
 }

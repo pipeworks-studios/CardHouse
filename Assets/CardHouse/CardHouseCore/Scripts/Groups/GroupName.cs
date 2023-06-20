@@ -1,12 +1,15 @@
-public enum GroupName
+namespace CardHouse
 {
-    None,
-    Discard,
-    Deck,
-    Hand,
-    Board,
-    A,
-    B,
-    C,
-    D
+    public enum GroupName
+    {
+        None,
+        Discard,
+        Deck,
+        Hand,
+        Board,
+        A,
+        B,
+        C,
+        D
+    }
 }

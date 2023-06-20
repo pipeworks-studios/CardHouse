@@ -2,25 +2,28 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteColorOperator : SpriteOperator
+namespace CardHouse
 {
-    [Serializable]
-    public class NamedColor
+    public class SpriteColorOperator : SpriteOperator
     {
-        public string Name;
-        public Color Color;
-    }
-
-    public List<NamedColor> Colors;
-
-    protected override void ChangeSprite(string name)
-    {
-        foreach (var namedColor in Colors)
+        [Serializable]
+        public class NamedColor
         {
-            if (namedColor.Name == name)
+            public string Name;
+            public Color Color;
+        }
+
+        public List<NamedColor> Colors;
+
+        protected override void ChangeSprite(string name)
+        {
+            foreach (var namedColor in Colors)
             {
-                SpriteTarget.color = namedColor.Color;
-                break;
+                if (namedColor.Name == name)
+                {
+                    SpriteTarget.color = namedColor.Color;
+                    break;
+                }
             }
         }
     }

@@ -1,17 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlotLayout : CardGroupSettings
+namespace CardHouse
 {
-    protected override void ApplySpacing(List<Card> cards, SeekerSetList seekerSets = null)
+    public class SlotLayout : CardGroupSettings
     {
-        for (var i = 0; i < cards.Count; i++)
+        protected override void ApplySpacing(List<Card> cards, SeekerSetList seekerSets = null)
         {
-            var card = cards[i];
-            var seekerSet = seekerSets?.GetSeekerSetFor(card);
-            card.Homing.StartSeeking(transform.position + Vector3.back * MountedCardAltitude, seekerSet?.Homing);
-            card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
-            card.Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
+            for (var i = 0; i < cards.Count; i++)
+            {
+                var card = cards[i];
+                var seekerSet = seekerSets?.GetSeekerSetFor(card);
+                card.Homing.StartSeeking(transform.position + Vector3.back * MountedCardAltitude, seekerSet?.Homing);
+                card.Turning.StartSeeking(transform.rotation.eulerAngles.z, seekerSet?.Turning);
+                card.Scaling.StartSeeking(UseMyScale ? transform.lossyScale.y : 1, seekerSet?.Scaling);
+            }
         }
     }
 }

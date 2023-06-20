@@ -1,8 +1,11 @@
-public enum PokerSuit
+namespace CardHouse
 {
-    None,
-    Hearts,
-    Spades,
-    Clubs,
-    Diamonds
+    public enum PokerSuit
+    {
+        None,
+        Hearts,
+        Spades,
+        Clubs,
+        Diamonds
+    }
 }

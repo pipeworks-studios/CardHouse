@@ -1,61 +1,62 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class DeckSetup : MonoBehaviour
+namespace CardHouse
 {
-    public bool RunOnStart = true;
-    public GameObject CardPrefab;
-    public DeckDefinition DeckDefinition;
-    public CardGroup Deck;
-    public List<TimedEvent> OnSetupCompleteEventChain;
-
-    void Start()
+    public class DeckSetup : MonoBehaviour
     {
-        if (RunOnStart)
+        public bool RunOnStart = true;
+        public GameObject CardPrefab;
+        public DeckDefinition DeckDefinition;
+        public CardGroup Deck;
+        public List<TimedEvent> OnSetupCompleteEventChain;
+
+        void Start()
         {
-            DoSetup();
-        }
-    }
-
-    public void DoSetup()
-    {
-        StartCoroutine(SetupCoroutine());
-    }
-
-    IEnumerator SetupCoroutine()
-    {
-        var newCardList = new List<Card>();
-        foreach (var cardDef in DeckDefinition.CardCollection)
-        {
-            var newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation);
-            newCardList.Add(newThing.GetComponent<Card>());
-            var card = newThing.GetComponent<CardSetup>();
-            
-            if (card != null)
+            if (RunOnStart)
             {
-                var copyCardDef = cardDef;     
-                 
-                if (cardDef.BackArt == null && DeckDefinition.CardBackArt != null)
-                {
-                    copyCardDef = Instantiate(cardDef);
-                    copyCardDef.BackArt = DeckDefinition.CardBackArt;
-                }
-                card.Apply(copyCardDef);
+                DoSetup();
             }
         }
 
-        yield return new WaitForEndOfFrame();
-
-        foreach (var card in newCardList)
+        public void DoSetup()
         {
-            Deck.Mount(card, instaFlip: true);
+            StartCoroutine(SetupCoroutine());
         }
 
-        Deck.Shuffle();
+        IEnumerator SetupCoroutine()
+        {
+            var newCardList = new List<Card>();
+            foreach (var cardDef in DeckDefinition.CardCollection)
+            {
+                var newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation);
+                newCardList.Add(newThing.GetComponent<Card>());
+                var card = newThing.GetComponent<CardSetup>();
 
-        StartCoroutine(TimedEvent.ExecuteChain(OnSetupCompleteEventChain));
+                if (card != null)
+                {
+                    var copyCardDef = cardDef;
+
+                    if (cardDef.BackArt == null && DeckDefinition.CardBackArt != null)
+                    {
+                        copyCardDef = Instantiate(cardDef);
+                        copyCardDef.BackArt = DeckDefinition.CardBackArt;
+                    }
+                    card.Apply(copyCardDef);
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+
+            foreach (var card in newCardList)
+            {
+                Deck.Mount(card, instaFlip: true);
+            }
+
+            Deck.Shuffle();
+
+            StartCoroutine(TimedEvent.ExecuteChain(OnSetupCompleteEventChain));
+        }
     }
 }

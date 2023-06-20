@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class WaterPlantAction : CardTargetCardOperator
+namespace CardHouse.Tutorial
 {
-    protected override void ActOnTarget()
+    public class WaterPlantAction : CardTargetCardOperator
     {
-        var plant = Target.GetComponent<Plant>();
-        if (plant != null)
+        protected override void ActOnTarget()
         {
-            plant.Water();
+            var plant = Target.GetComponent<Plant>();
+            if (plant != null)
+            {
+                plant.Water();
+            }
         }
     }
 }

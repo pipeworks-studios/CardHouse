@@ -4,28 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class TimedEvent
+namespace CardHouse
 {
-    public float Duration;
-    public UnityEvent Event;
-
-    public IEnumerator ActivateAndDelay()
+    [System.Serializable]
+    public class TimedEvent
     {
-        Event.Invoke();
-        yield return new WaitForSeconds(Duration);
-    }
+        public float Duration;
+        public UnityEvent Event;
 
-    public static IEnumerator ExecuteChain(List<TimedEvent> events, Action callback = null)
-    {
-        if (events != null)
+        public IEnumerator ActivateAndDelay()
         {
-            foreach (var e in events)
-            {
-                yield return e.ActivateAndDelay();
-            }
+            Event.Invoke();
+            yield return new WaitForSeconds(Duration);
         }
 
-        callback?.Invoke();
+        public static IEnumerator ExecuteChain(List<TimedEvent> events, Action callback = null)
+        {
+            if (events != null)
+            {
+                foreach (var e in events)
+                {
+                    yield return e.ActivateAndDelay();
+                }
+            }
+
+            callback?.Invoke();
+        }
     }
 }

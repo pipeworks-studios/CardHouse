@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MatureCropDragGate : Gate<NoParams>
+namespace CardHouse.Tutorial
 {
-    Card MyCard;
-
-    private void Awake()
+    public class MatureCropDragGate : Gate<NoParams>
     {
-        MyCard = GetComponent<Card>();
-    }
+        Card MyCard;
 
-    protected override bool IsUnlockedInternal(NoParams gateParams)
-    {
-        if (MyCard.Group != GroupRegistry.Instance.Get(GroupName.Board, null))
-            return true;
+        private void Awake()
+        {
+            MyCard = GetComponent<Card>();
+        }
 
-        return MyCard.GetComponent<Plant>()?.CanBeWatered() != true;
+        protected override bool IsUnlockedInternal(NoParams gateParams)
+        {
+            if (MyCard.Group != GroupRegistry.Instance.Get(GroupName.Board, null))
+                return true;
+
+            return MyCard.GetComponent<Plant>()?.CanBeWatered() != true;
+        }
     }
 }

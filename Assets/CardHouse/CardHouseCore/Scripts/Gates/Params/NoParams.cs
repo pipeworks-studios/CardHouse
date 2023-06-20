@@ -1,3 +1,6 @@
-public class NoParams
+namespace CardHouse
 {
+    public class NoParams
+    {
+    }
 }

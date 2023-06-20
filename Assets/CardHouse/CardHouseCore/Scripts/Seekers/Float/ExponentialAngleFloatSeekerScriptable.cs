@@ -1,13 +1,16 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Exponential (angle)")]
-public class ExponentialAngleFloatSeekerScriptable : SeekerScriptable<float>
+namespace CardHouse
 {
-    public float Gain = 8f;
-    public float ArrivalDistance = 0.01f;
-
-    public override Seeker<float> GetStrategy(params object[] args)
+    [CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Exponential (angle)")]
+    public class ExponentialAngleFloatSeekerScriptable : SeekerScriptable<float>
     {
-        return new ExponentialAngleFloatSeeker(Gain, ArrivalDistance);
+        public float Gain = 8f;
+        public float ArrivalDistance = 0.01f;
+
+        public override Seeker<float> GetStrategy(params object[] args)
+        {
+            return new ExponentialAngleFloatSeeker(Gain, ArrivalDistance);
+        }
     }
 }

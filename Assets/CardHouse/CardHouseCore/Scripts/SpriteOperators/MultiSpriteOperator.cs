@@ -1,37 +1,39 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiSpriteOperator : MonoBehaviour
+namespace CardHouse
 {
-    public List<SpriteOperator> SpriteOperators;
-
-    public void Activate(string name)
+    public class MultiSpriteOperator : MonoBehaviour
     {
-        Activate(name, this);
-    }
+        public List<SpriteOperator> SpriteOperators;
 
-    public void Activate(string name, Object voter)
-    {
-        foreach (var handler in SpriteOperators)
+        public void Activate(string name)
         {
-            handler?.Activate(name, voter);
+            Activate(name, this);
         }
-    }
 
-    public void Remove(Object voter)
-    {
-        foreach (var handler in SpriteOperators)
+        public void Activate(string name, Object voter)
         {
-            handler?.Remove(voter);
+            foreach (var handler in SpriteOperators)
+            {
+                handler?.Activate(name, voter);
+            }
         }
-    }
 
-    public void RemoveVote()
-    {
-        foreach (var handler in SpriteOperators)
+        public void Remove(Object voter)
         {
-            handler?.Remove(this);
+            foreach (var handler in SpriteOperators)
+            {
+                handler?.Remove(voter);
+            }
+        }
+
+        public void RemoveVote()
+        {
+            foreach (var handler in SpriteOperators)
+            {
+                handler?.Remove(this);
+            }
         }
     }
 }

@@ -1,30 +1,32 @@
-using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class DragDetector : Toggleable
+namespace CardHouse
 {
-    public GateCollection<NoParams> DragGates;
-    public UnityEvent OnDragStart;
-
-    [FormerlySerializedAs("DropGates")]
-    public GateCollection<DropParams> GroupDropGates;
-    public GateCollection<TargetCardParams> TargetCardGates;
-    public UnityEvent OnDragEnd;
-
-    void OnMouseDown()
+    public class DragDetector : Toggleable
     {
-        if (!IsActive || !DragGates.AllUnlocked(null))
-            return;
+        public GateCollection<NoParams> DragGates;
+        public UnityEvent OnDragStart;
 
-        OnDragStart.Invoke();
-    }
+        [FormerlySerializedAs("DropGates")]
+        public GateCollection<DropParams> GroupDropGates;
+        public GateCollection<TargetCardParams> TargetCardGates;
+        public UnityEvent OnDragEnd;
 
-    void OnMouseUp()
-    {
-        if (!IsActive || !DragGates.AllUnlocked(null))
-            return;
+        void OnMouseDown()
+        {
+            if (!IsActive || !DragGates.AllUnlocked(null))
+                return;
 
-        OnDragEnd.Invoke();
+            OnDragStart.Invoke();
+        }
+
+        void OnMouseUp()
+        {
+            if (!IsActive || !DragGates.AllUnlocked(null))
+                return;
+
+            OnDragEnd.Invoke();
+        }
     }
 }

@@ -1,27 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Card))]
-public class MountDetector : MonoBehaviour
+namespace CardHouse
 {
-    public UnityEvent OnMount;
-    Card MyCard;
-
-    void Start()
+    [RequireComponent(typeof(Card))]
+    public class MountDetector : MonoBehaviour
     {
-        MyCard = GetComponent<Card>();
-        MyCard.OnMount += HandleMount;
-    }
+        public UnityEvent OnMount;
+        Card MyCard;
 
-    void OnDestroy()
-    {
-        MyCard.OnMount -= HandleMount;
-    }
+        void Start()
+        {
+            MyCard = GetComponent<Card>();
+            MyCard.OnMount += HandleMount;
+        }
 
-    void HandleMount(Card card, CardGroup group)
-    {
-        OnMount?.Invoke();
+        void OnDestroy()
+        {
+            MyCard.OnMount -= HandleMount;
+        }
+
+        void HandleMount(Card card, CardGroup group)
+        {
+            OnMount?.Invoke();
+        }
     }
 }

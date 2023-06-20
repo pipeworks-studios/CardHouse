@@ -1,13 +1,16 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Animated Curve")]
-public class AnimCurveFloatSeekerScriptable : SeekerScriptable<float>
+namespace CardHouse
 {
-    public float Duration = 2f;
-    public AnimationCurve ProgressCurve;
-
-    public override Seeker<float> GetStrategy(params object[] args)
+    [CreateAssetMenu(menuName = "CardHouse/Seekers/Float/Animated Curve")]
+    public class AnimCurveFloatSeekerScriptable : SeekerScriptable<float>
     {
-        return new AnimCurveFloatSeeker(Duration, ProgressCurve);
+        public float Duration = 2f;
+        public AnimationCurve ProgressCurve;
+
+        public override Seeker<float> GetStrategy(params object[] args)
+        {
+            return new AnimCurveFloatSeeker(Duration, ProgressCurve);
+        }
     }
 }

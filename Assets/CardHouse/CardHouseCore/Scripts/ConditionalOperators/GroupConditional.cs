@@ -1,30 +1,31 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
-public class GroupConditional : Activatable
+namespace CardHouse
 {
-    public Card MyCard;
-    public List<GroupNameUnityActionKvp> Responses;
-
-    protected override void OnActivate()
+    public class GroupConditional : Activatable
     {
-        foreach (var kvp in Responses)
+        public Card MyCard;
+        public List<GroupNameUnityActionKvp> Responses;
+
+        protected override void OnActivate()
         {
-            if (kvp.Key == GroupRegistry.Instance?.GetGroupName(MyCard.Group))
+            foreach (var kvp in Responses)
             {
-                kvp.Value.Invoke();
-                break;
+                if (kvp.Key == GroupRegistry.Instance?.GetGroupName(MyCard.Group))
+                {
+                    kvp.Value.Invoke();
+                    break;
+                }
             }
         }
     }
-}
 
-[Serializable]
-public class GroupNameUnityActionKvp
-{
-    public GroupName Key;
-    public UnityEvent Value;
+    [Serializable]
+    public class GroupNameUnityActionKvp
+    {
+        public GroupName Key;
+        public UnityEvent Value;
+    }
 }

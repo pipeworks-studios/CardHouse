@@ -1,19 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LifetimeDestructor : MonoBehaviour
+namespace CardHouse
 {
-    public float Lifetime = 1f;
-
-    void Start()
+    public class LifetimeDestructor : MonoBehaviour
     {
-        StartCoroutine(DieAfterTime(Lifetime));
-    }
+        public float Lifetime = 1f;
 
-    IEnumerator DieAfterTime(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
+        void Start()
+        {
+            StartCoroutine(DieAfterTime(Lifetime));
+        }
+
+        IEnumerator DieAfterTime(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            Destroy(gameObject);
+        }
     }
 }

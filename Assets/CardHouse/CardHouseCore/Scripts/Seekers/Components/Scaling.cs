@@ -1,27 +1,30 @@
 
 using UnityEngine;
 
-public class Scaling : BaseSeekerComponent<float>
+namespace CardHouse
 {
-    protected override Seeker<float> GetDefaultSeeker()
+    public class Scaling : BaseSeekerComponent<float>
     {
-        return new ExponentialAngleFloatSeeker();
-    }
-
-    protected override float GetCurrentValue()
-    {
-        return UseLocalSpace ? transform.localScale.x : transform.lossyScale.x;
-    }
-
-    protected override void SetNewValue(float value)
-    {
-        if (!UseLocalSpace && transform.parent != null)
+        protected override Seeker<float> GetDefaultSeeker()
         {
-            transform.localScale = Vector3.one * value / transform.parent.lossyScale.x;
+            return new ExponentialAngleFloatSeeker();
         }
-        else
+
+        protected override float GetCurrentValue()
         {
-            transform.localScale = Vector3.one * value;
+            return UseLocalSpace ? transform.localScale.x : transform.lossyScale.x;
+        }
+
+        protected override void SetNewValue(float value)
+        {
+            if (!UseLocalSpace && transform.parent != null)
+            {
+                transform.localScale = Vector3.one * value / transform.parent.lossyScale.x;
+            }
+            else
+            {
+                transform.localScale = Vector3.one * value;
+            }
         }
     }
 }

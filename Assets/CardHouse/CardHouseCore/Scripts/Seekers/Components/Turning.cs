@@ -1,27 +1,30 @@
 
 using UnityEngine;
 
-public class Turning : BaseSeekerComponent<float>
+namespace CardHouse
 {
-    protected override Seeker<float> GetDefaultSeeker()
+    public class Turning : BaseSeekerComponent<float>
     {
-        return new ExponentialAngleFloatSeeker();
-    }
-
-    protected override float GetCurrentValue()
-    {
-        return UseLocalSpace ? transform.localRotation.eulerAngles.z : transform.rotation.eulerAngles.z;
-    }
-
-    protected override void SetNewValue(float value)
-    {
-        if (UseLocalSpace)
+        protected override Seeker<float> GetDefaultSeeker()
         {
-            transform.localRotation = Quaternion.Euler(0, 0, value);
+            return new ExponentialAngleFloatSeeker();
         }
-        else
+
+        protected override float GetCurrentValue()
         {
-            transform.rotation = Quaternion.Euler(0, 0, value);
+            return UseLocalSpace ? transform.localRotation.eulerAngles.z : transform.rotation.eulerAngles.z;
+        }
+
+        protected override void SetNewValue(float value)
+        {
+            if (UseLocalSpace)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, value);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, value);
+            }
         }
     }
 }

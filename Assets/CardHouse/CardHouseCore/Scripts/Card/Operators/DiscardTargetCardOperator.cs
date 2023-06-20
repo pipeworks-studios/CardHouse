@@ -1,30 +1,31 @@
-using UnityEngine;
-
-public class DiscardTargetCardOperator : CardTargetCardOperator
+namespace CardHouse
 {
-    public SeekerScriptableSet TargetDiscardSeekers;
-
-    protected override void ActOnTarget()
+    public class DiscardTargetCardOperator : CardTargetCardOperator
     {
-        var discardGroup = Target.GetDiscardGroup();
-        if (discardGroup != null)
+        public SeekerScriptableSet TargetDiscardSeekers;
+
+        protected override void ActOnTarget()
         {
-            var seekerSets = new SeekerSetList { new SeekerSet { Card = Target, Homing = TargetDiscardSeekers.Homing?.GetStrategy() } };
-            var presentationTransform = PhaseManager.Instance?.CurrentPhase?.CardPresentationPosition;
-            if (presentationTransform != null)
+            var discardGroup = Target.GetDiscardGroup();
+            if (discardGroup != null)
             {
-                seekerSets.Add(new SeekerSet 
-                { 
-                    Card = MyCard, 
-                    Homing = DiscardSeekers.Homing.GetStrategy(presentationTransform.position),
-                    Turning = DiscardSeekers.Turning.GetStrategy(CardHouse.Utils.CorrectAngle(presentationTransform.rotation.eulerAngles.z)),
-                    Scaling = DiscardSeekers.Scaling.GetStrategy(presentationTransform.lossyScale.x)
-                });
+                var seekerSets = new SeekerSetList { new SeekerSet { Card = Target, Homing = TargetDiscardSeekers.Homing?.GetStrategy() } };
+                var presentationTransform = PhaseManager.Instance?.CurrentPhase?.CardPresentationPosition;
+                if (presentationTransform != null)
+                {
+                    seekerSets.Add(new SeekerSet
+                    {
+                        Card = MyCard,
+                        Homing = DiscardSeekers.Homing.GetStrategy(presentationTransform.position),
+                        Turning = DiscardSeekers.Turning.GetStrategy(CardHouse.Utils.CorrectAngle(presentationTransform.rotation.eulerAngles.z)),
+                        Scaling = DiscardSeekers.Scaling.GetStrategy(presentationTransform.lossyScale.x)
+                    });
+                }
+                discardGroup.Mount(Target,
+                    seekerSets: seekerSets,
+                    seekersForUnmounting: new SeekerSet { Homing = DiscardSeekers.Homing?.GetStrategy() }
+                );
             }
-            discardGroup.Mount(Target,
-                seekerSets: seekerSets,
-                seekersForUnmounting: new SeekerSet { Homing = DiscardSeekers.Homing?.GetStrategy() }
-            );
         }
     }
 }

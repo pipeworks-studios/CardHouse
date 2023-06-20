@@ -1,54 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ClosestCardHighlighter : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    bool IsActive;
-    CardGroup MyGroup;
-
-    private void Start()
+    public class ClosestCardHighlighter : MonoBehaviour
     {
-        MyGroup = GetComponent<CardGroup>();
-        CardGroup.OnNewActiveGroup += HandleNewActiveGroup;
-    }
+        bool IsActive;
+        CardGroup MyGroup;
 
-    void HandleNewActiveGroup(CardGroup group)
-    {
-        IsActive = group == MyGroup;
-    }
+        private void Start()
+        {
+            MyGroup = GetComponent<CardGroup>();
+            CardGroup.OnNewActiveGroup += HandleNewActiveGroup;
+        }
 
-    void Update()
-    {
-        
-        var dragTarget = Dragging.Instance?.GetTarget();
-        if (IsActive && dragTarget != null)
+        void HandleNewActiveGroup(CardGroup group)
+        {
+            IsActive = group == MyGroup;
+        }
+
+        void Update()
         {
 
-            var closestIndex = MyGroup.GetClosestMountedCardIndex(dragTarget.transform.position);
-            if (closestIndex == null)
-                return;
-
-            var diff = MyGroup.MountedCards[(int)closestIndex].transform.position - dragTarget.transform.position;
-            var insertPoint = diff.x > 0 ? closestIndex : closestIndex + 1;
-
-            for (var i = 0; i < MyGroup.MountedCards.Count; i++)
+            var dragTarget = Dragging.Instance?.GetTarget();
+            if (IsActive && dragTarget != null)
             {
-                SetHighlightState(MyGroup.MountedCards[i], i == insertPoint);
+
+                var closestIndex = MyGroup.GetClosestMountedCardIndex(dragTarget.transform.position);
+                if (closestIndex == null)
+                    return;
+
+                var diff = MyGroup.MountedCards[(int)closestIndex].transform.position - dragTarget.transform.position;
+                var insertPoint = diff.x > 0 ? closestIndex : closestIndex + 1;
+
+                for (var i = 0; i < MyGroup.MountedCards.Count; i++)
+                {
+                    SetHighlightState(MyGroup.MountedCards[i], i == insertPoint);
+                }
             }
+            else
+            {
+                foreach (var card in MyGroup.MountedCards)
+                {
+                    SetHighlightState(card, true);
+                }
+            }
+
         }
-        else
+
+        void SetHighlightState(Card card, bool state)
         {
-            foreach (var card in MyGroup.MountedCards)
-            {
-                SetHighlightState(card, true);
-            }
+            card.GetComponentInChildren<SpriteColorOperator>().Activate(state ? "Active" : "Dim");
         }
-        
-    }
-
-    void SetHighlightState(Card card, bool state)
-    {
-        card.GetComponentInChildren<SpriteColorOperator>().Activate(state ? "Active" : "Dim");
     }
 }

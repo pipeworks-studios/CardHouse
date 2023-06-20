@@ -2,40 +2,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-[Serializable]
-public class CurrencyWallet : ICloneable
+namespace CardHouse
 {
-    public List<CurrencyContainer> Currencies;
-
-    public CurrencyContainer FindCurrency(string name)
+    [Serializable]
+    public class CurrencyWallet : ICloneable
     {
-        foreach (var resource in Currencies)
+        public List<CurrencyContainer> Currencies;
+
+        public CurrencyContainer FindCurrency(string name)
         {
-            if (resource.CurrencyType.Name == name)
+            foreach (var resource in Currencies)
             {
-                return resource;
+                if (resource.CurrencyType.Name == name)
+                {
+                    return resource;
+                }
             }
+
+            return null;
         }
 
-        return null;
-    }
-
-    public bool CanAfford(List<CurrencyQuantity> Cost)
-    {
-        foreach (var holder in Cost)
+        public bool CanAfford(List<CurrencyQuantity> Cost)
         {
-            var myHolder = FindCurrency(holder.CurrencyType.Name);
-            if (myHolder == null || myHolder.Amount < holder.Amount)
+            foreach (var holder in Cost)
             {
-                return false;
+                var myHolder = FindCurrency(holder.CurrencyType.Name);
+                if (myHolder == null || myHolder.Amount < holder.Amount)
+                {
+                    return false;
+                }
             }
+
+            return true;
         }
 
-        return true;
-    }
-
-    public object Clone()
-    {
-        return new CurrencyWallet { Currencies = Currencies.Select(x => (CurrencyContainer)x.Clone()).ToList() };
+        public object Clone()
+        {
+            return new CurrencyWallet { Currencies = Currencies.Select(x => (CurrencyContainer)x.Clone()).ToList() };
+        }
     }
 }

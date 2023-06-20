@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DiscardCardOperator : MonoBehaviour
+namespace CardHouse
 {
-    public void Activate()
+    public class DiscardCardOperator : MonoBehaviour
     {
-        var card = GetComponentInParent<Card>();
-        var discardGroup = card.GetDiscardGroup();
-        if (discardGroup != null)
+        public void Activate()
         {
-            discardGroup.Mount(card);
+            var card = GetComponentInParent<Card>();
+            var discardGroup = card.GetDiscardGroup();
+            if (discardGroup != null)
+            {
+                discardGroup.Mount(card);
+            }
         }
     }
 }

@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TarotCard : CardSetup
+namespace CardHouse
 {
-    public enum Arcana
+    public class TarotCard : CardSetup
     {
-        Minor,
-        Major
-    }
-
-    public SpriteRenderer Image;
-
-    public ArcanaData ArcanaData { get; private set; }
-    public Arcana ArcanaType { get { return ArcanaData?.Arcana == null ? Arcana.Minor : Arcana.Major; } }
-
-    public override void Apply(CardDefinition cardDef)
-    {
-        if (cardDef is TarotCardDefinition tarotCard)
+        public enum Arcana
         {
-            ArcanaData = tarotCard.Data;
-            Image.sprite = tarotCard.Art;
+            Minor,
+            Major
+        }
+
+        public SpriteRenderer Image;
+
+        public ArcanaData ArcanaData { get; private set; }
+        public Arcana ArcanaType { get { return ArcanaData?.Arcana == null ? Arcana.Minor : Arcana.Major; } }
+
+        public override void Apply(CardDefinition cardDef)
+        {
+            if (cardDef is TarotCardDefinition tarotCard)
+            {
+                ArcanaData = tarotCard.Data;
+                Image.sprite = tarotCard.Art;
+            }
         }
     }
 }

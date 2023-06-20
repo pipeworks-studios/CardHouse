@@ -1,57 +1,60 @@
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class Plant : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public TMP_Text NameText;
-    public TMP_Text DescriptionText;
-    public SpriteRenderer Sprite;
-    public GameObject CostJewel;
-    public TMP_Text CostText;
-
-    public List<PlantGrowthScriptable> PossiblePlants;
-    List<PlantMaturityInfo> Stages;
-
-    public int Value = 10;
-
-    int WaterLevel = -1;
-
-    private void Start()
+    public class Plant : MonoBehaviour
     {
-        Stages = PossiblePlants[UnityEngine.Random.Range(0, PossiblePlants.Count)].Stages;
-        Water();
-    }
+        public TMP_Text NameText;
+        public TMP_Text DescriptionText;
+        public SpriteRenderer Sprite;
+        public GameObject CostJewel;
+        public TMP_Text CostText;
 
-    public void Water()
-    {
-        if (CanBeWatered())
+        public List<PlantGrowthScriptable> PossiblePlants;
+        List<PlantMaturityInfo> Stages;
+
+        public int Value = 10;
+
+        int WaterLevel = -1;
+
+        private void Start()
         {
-            WaterLevel++;
-            NameText.text = Stages[WaterLevel].Name;
-            DescriptionText.text = Stages[WaterLevel].Description;
-            Sprite.sprite = Stages[WaterLevel].Sprite;
+            Stages = PossiblePlants[UnityEngine.Random.Range(0, PossiblePlants.Count)].Stages;
+            Water();
+        }
 
-            if (!CanBeWatered() && CostJewel != null)
+        public void Water()
+        {
+            if (CanBeWatered())
             {
-                CostJewel.SetActive(true);
-                CostText.text = Value.ToString();
+                WaterLevel++;
+                NameText.text = Stages[WaterLevel].Name;
+                DescriptionText.text = Stages[WaterLevel].Description;
+                Sprite.sprite = Stages[WaterLevel].Sprite;
+
+                if (!CanBeWatered() && CostJewel != null)
+                {
+                    CostJewel.SetActive(true);
+                    CostText.text = Value.ToString();
+                }
             }
         }
-    }
 
-    public void HideCost()
-    {
-        CostJewel.SetActive(false);
-    }
+        public void HideCost()
+        {
+            CostJewel.SetActive(false);
+        }
 
-    public void Payoff()
-    {
-        CurrencyRegistry.Instance.AdjustCurrency("Gold", PhaseManager.Instance.PlayerIndex, Value);
-    }
+        public void Payoff()
+        {
+            CurrencyRegistry.Instance.AdjustCurrency("Gold", PhaseManager.Instance.PlayerIndex, Value);
+        }
 
-    public bool CanBeWatered()
-    {
-        return WaterLevel < Stages.Count - 1;
+        public bool CanBeWatered()
+        {
+            return WaterLevel < Stages.Count - 1;
+        }
     }
 }

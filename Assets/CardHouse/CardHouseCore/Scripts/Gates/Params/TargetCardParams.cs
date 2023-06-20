@@ -1,5 +1,8 @@
-public class TargetCardParams
+namespace CardHouse
 {
-    public Card Source;
-    public Card Target;
+    public class TargetCardParams
+    {
+        public Card Source;
+        public Card Target;
+    }
 }

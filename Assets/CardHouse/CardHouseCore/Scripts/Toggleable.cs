@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Toggleable : MonoBehaviour
+namespace CardHouse
 {
-    public bool IsActive = true;
-
-    public void SetIsActive(bool newValue)
+    public class Toggleable : MonoBehaviour
     {
-        IsActive = newValue;
+        public bool IsActive = true;
+
+        public void SetIsActive(bool newValue)
+        {
+            IsActive = newValue;
+        }
     }
 }

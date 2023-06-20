@@ -1,16 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventChain : MonoBehaviour
+namespace CardHouse
 {
-    public List<TimedEvent> Events = new List<TimedEvent>();
-
-    public UnityEvent OnChainFinished;
-
-    public void Activate()
+    public class EventChain : MonoBehaviour
     {
-        StartCoroutine(TimedEvent.ExecuteChain(Events, () => OnChainFinished?.Invoke()));
+        public List<TimedEvent> Events = new List<TimedEvent>();
+
+        public UnityEvent OnChainFinished;
+
+        public void Activate()
+        {
+            StartCoroutine(TimedEvent.ExecuteChain(Events, () => OnChainFinished?.Invoke()));
+        }
     }
 }

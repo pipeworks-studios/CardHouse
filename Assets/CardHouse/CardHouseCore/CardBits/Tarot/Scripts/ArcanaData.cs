@@ -1,9 +1,12 @@
 using System;
 
-[Serializable]
-public class ArcanaData
+namespace CardHouse
 {
-    public MajorArcanaName Arcana;
-    public TarotSuit Suit;
-    public int Rank;
+    [Serializable]
+    public class ArcanaData
+    {
+        public MajorArcanaName Arcana;
+        public TarotSuit Suit;
+        public int Rank;
+    }
 }

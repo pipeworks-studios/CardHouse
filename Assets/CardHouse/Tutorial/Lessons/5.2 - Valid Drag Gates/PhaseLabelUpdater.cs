@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class PhaseLabelUpdater : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public TMP_Text PhaseText;
-
-    public void UpdatePhaseLabel()
+    public class PhaseLabelUpdater : MonoBehaviour
     {
-        PhaseText.text = PhaseManager.Instance.CurrentPhase.Name;
+        public TMP_Text PhaseText;
+
+        public void UpdatePhaseLabel()
+        {
+            PhaseText.text = PhaseManager.Instance.CurrentPhase.Name;
+        }
     }
 }

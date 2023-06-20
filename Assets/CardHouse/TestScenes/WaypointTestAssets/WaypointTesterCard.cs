@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointTesterCard : MonoBehaviour
+namespace CardHouse.TestScenes
 {
-    public SeekerScriptableSet WaypointSeekers;
-
-    public void Test()
+    public class WaypointTesterCard : MonoBehaviour
     {
-        var card = GetComponent<Card>();
-        var tester = card?.Group.GetComponent<WaypointTesterGroup>();
-        if (tester != null)
+        public SeekerScriptableSet WaypointSeekers;
+
+        public void Test()
         {
-            tester.Test(card, WaypointSeekers.Homing, WaypointSeekers.Turning, WaypointSeekers.Scaling);
+            var card = GetComponent<Card>();
+            var tester = card?.Group.GetComponent<WaypointTesterGroup>();
+            if (tester != null)
+            {
+                tester.Test(card, WaypointSeekers.Homing, WaypointSeekers.Turning, WaypointSeekers.Scaling);
+            }
         }
     }
 }

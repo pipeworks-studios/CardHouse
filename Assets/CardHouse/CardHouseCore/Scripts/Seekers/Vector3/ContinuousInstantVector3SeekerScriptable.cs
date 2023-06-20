@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CardHouse/Seekers/Vector3/Continuous")]
-public class ContinuousInstantVector3SeekerScriptable : SeekerScriptable<Vector3>
+namespace CardHouse
 {
-    public override Seeker<Vector3> GetStrategy(params object[] args)
+    [CreateAssetMenu(menuName = "CardHouse/Seekers/Vector3/Continuous")]
+    public class ContinuousInstantVector3SeekerScriptable : SeekerScriptable<Vector3>
     {
-        return new ContinuousInstantVector3Seeker();
+        public override Seeker<Vector3> GetStrategy(params object[] args)
+        {
+            return new ContinuousInstantVector3Seeker();
+        }
     }
 }

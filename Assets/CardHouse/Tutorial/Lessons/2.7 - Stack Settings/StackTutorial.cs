@@ -1,65 +1,65 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StackTutorial : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public Slider XOffsetSlider;
-    public TMP_Text XOffsetText;
-    public Slider YOffsetSlider;
-    public TMP_Text YOffsetText;
-
-    public StackLayout Stack;
-
-    public void AdjustXOffset()
+    public class StackTutorial : MonoBehaviour
     {
-        SetXOffset(XOffsetSlider.value);
-    }
+        public Slider XOffsetSlider;
+        public TMP_Text XOffsetText;
+        public Slider YOffsetSlider;
+        public TMP_Text YOffsetText;
 
-    public void AdjustYOffset()
-    {
-        SetYOffset(YOffsetSlider.value);
-    }
+        public StackLayout Stack;
 
-    void SetXOffset(float value)
-    {
-        XOffsetText.text = $"X Offset: {value:0.000}";
-        Stack.MarginalCardOffset += Vector3.right * (value - Stack.MarginalCardOffset.x);
-        XOffsetSlider.value = value;
-        Stack.Apply(Stack.GetComponent<CardGroup>().MountedCards);
-    }
-    void SetYOffset(float value)
-    {
-        YOffsetText.text = $"Y Offset: {value:0.000}";
-        Stack.MarginalCardOffset += Vector3.up * (value - Stack.MarginalCardOffset.y);
-        YOffsetSlider.value = value;
-        Stack.Apply(Stack.GetComponent<CardGroup>().MountedCards);
-    }
+        public void AdjustXOffset()
+        {
+            SetXOffset(XOffsetSlider.value);
+        }
 
-    public void UseColumnPreset()
-    {
-        SetXOffset(0);
-        SetYOffset(-0.2f);
-    }
+        public void AdjustYOffset()
+        {
+            SetYOffset(YOffsetSlider.value);
+        }
 
-    public void UseDeckPreset()
-    {
-        SetXOffset(0.03f);
-        SetYOffset(0.03f);
-    }
+        void SetXOffset(float value)
+        {
+            XOffsetText.text = $"X Offset: {value:0.000}";
+            Stack.MarginalCardOffset += Vector3.right * (value - Stack.MarginalCardOffset.x);
+            XOffsetSlider.value = value;
+            Stack.Apply(Stack.GetComponent<CardGroup>().MountedCards);
+        }
+        void SetYOffset(float value)
+        {
+            YOffsetText.text = $"Y Offset: {value:0.000}";
+            Stack.MarginalCardOffset += Vector3.up * (value - Stack.MarginalCardOffset.y);
+            YOffsetSlider.value = value;
+            Stack.Apply(Stack.GetComponent<CardGroup>().MountedCards);
+        }
 
-    public void UseCompactDeckPreset()
-    {
-        SetXOffset(0.003f);
-        SetYOffset(0.003f);
-    }
+        public void UseColumnPreset()
+        {
+            SetXOffset(0);
+            SetYOffset(-0.2f);
+        }
 
-    public void UseRowPreset()
-    {
-        SetXOffset(1f);
-        SetYOffset(0f);
+        public void UseDeckPreset()
+        {
+            SetXOffset(0.03f);
+            SetYOffset(0.03f);
+        }
+
+        public void UseCompactDeckPreset()
+        {
+            SetXOffset(0.003f);
+            SetYOffset(0.003f);
+        }
+
+        public void UseRowPreset()
+        {
+            SetXOffset(1f);
+            SetYOffset(0f);
+        }
     }
 }

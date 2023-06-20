@@ -1,6 +1,9 @@
-public enum CardFacing
+namespace CardHouse
 {
-    None,
-    FaceUp,
-    FaceDown
+    public enum CardFacing
+    {
+        None,
+        FaceUp,
+        FaceDown
+    }
 }

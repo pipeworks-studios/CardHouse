@@ -1,8 +1,11 @@
 using System;
 
-[Serializable]
-public class GroupTransition
+namespace CardHouse
 {
-    public CardGroup Source;
-    public CardGroup Destination;
+    [Serializable]
+    public class GroupTransition
+    {
+        public CardGroup Source;
+        public CardGroup Destination;
+    }
 }

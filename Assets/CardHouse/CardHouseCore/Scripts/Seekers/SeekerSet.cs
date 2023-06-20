@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class SeekerSet
+namespace CardHouse
 {
-    public Card Card;
-    public Seeker<Vector3> Homing;
-    public Seeker<float> Turning;
-    public Seeker<float> Scaling;
-    public float FlipSpeed = 1f;
+    public class SeekerSet
+    {
+        public Card Card;
+        public Seeker<Vector3> Homing;
+        public Seeker<float> Turning;
+        public Seeker<float> Scaling;
+        public float FlipSpeed = 1f;
+    }
 }

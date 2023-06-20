@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CardGroup))]
-public class BlockAllDrops : Gate<DropParams>
+namespace CardHouse
 {
-    protected override bool IsUnlockedInternal(DropParams gateParams)
+    [RequireComponent(typeof(CardGroup))]
+    public class BlockAllDrops : Gate<DropParams>
     {
-        return false;
+        protected override bool IsUnlockedInternal(DropParams gateParams)
+        {
+            return false;
+        }
     }
 }

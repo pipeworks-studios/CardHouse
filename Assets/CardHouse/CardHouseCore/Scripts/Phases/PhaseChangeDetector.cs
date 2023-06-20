@@ -1,33 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PhaseChangeDetector : MonoBehaviour
+namespace CardHouse
 {
-    public UnityEvent OnPhaseChange;
-
-    PhaseManager MyPhaseManager;
-
-    void Start()
+    public class PhaseChangeDetector : MonoBehaviour
     {
-        MyPhaseManager = PhaseManager.Instance;
-        if (MyPhaseManager != null)
+        public UnityEvent OnPhaseChange;
+
+        PhaseManager MyPhaseManager;
+
+        void Start()
         {
-            MyPhaseManager.OnPhaseChanged += HandlePhaseChanged;
+            MyPhaseManager = PhaseManager.Instance;
+            if (MyPhaseManager != null)
+            {
+                MyPhaseManager.OnPhaseChanged += HandlePhaseChanged;
+            }
         }
-    }
 
-    void OnDestroy()
-    {
-        if (MyPhaseManager != null)
+        void OnDestroy()
         {
-            MyPhaseManager.OnPhaseChanged -= HandlePhaseChanged;
+            if (MyPhaseManager != null)
+            {
+                MyPhaseManager.OnPhaseChanged -= HandlePhaseChanged;
+            }
         }
-    }
 
-    void HandlePhaseChanged(Phase phase)
-    {
-        OnPhaseChange.Invoke();
+        void HandlePhaseChanged(Phase phase)
+        {
+            OnPhaseChange.Invoke();
+        }
     }
 }

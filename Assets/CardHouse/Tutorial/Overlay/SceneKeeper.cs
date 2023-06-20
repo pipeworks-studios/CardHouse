@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneKeeper : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    void Start()
+    public class SceneKeeper : MonoBehaviour
     {
-        DontDestroyOnLoad(this);
+        void Start()
+        {
+            DontDestroyOnLoad(this);
+        }
     }
 }

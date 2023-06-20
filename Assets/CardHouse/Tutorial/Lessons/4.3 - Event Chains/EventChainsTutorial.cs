@@ -1,29 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class EventChainsTutorial : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public EventChain NoChaining;
-    public EventChain Chaining;
-    public EventChain SafeChaining;
-
-    public TMP_Dropdown Dropdown;
-
-    public void StartTransition()
+    public class EventChainsTutorial : MonoBehaviour
     {
-        switch (Dropdown.value)
+        public EventChain NoChaining;
+        public EventChain Chaining;
+        public EventChain SafeChaining;
+
+        public TMP_Dropdown Dropdown;
+
+        public void StartTransition()
         {
-            case 0:
-                NoChaining.Activate();
-                break;
-            case 1:
-                Chaining.Activate();
-                break; 
-            case 2:
-                SafeChaining.Activate();
-                break;
+            switch (Dropdown.value)
+            {
+                case 0:
+                    NoChaining.Activate();
+                    break;
+                case 1:
+                    Chaining.Activate();
+                    break;
+                case 2:
+                    SafeChaining.Activate();
+                    break;
+            }
         }
     }
 }

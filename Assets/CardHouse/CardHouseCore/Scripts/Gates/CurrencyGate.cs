@@ -1,25 +1,28 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CurrencyCost))]
-public class CurrencyGate : Gate<NoParams>
+namespace CardHouse
 {
-    CurrencyCost MyCost;
-
-    void Awake()
+    [RequireComponent(typeof(CurrencyCost))]
+    public class CurrencyGate : Gate<NoParams>
     {
-        MyCost = GetComponent<CurrencyCost>();
-    }
+        CurrencyCost MyCost;
 
-    protected override bool IsUnlockedInternal(NoParams gateParams)
-    {
-        foreach (var resourceCost in MyCost.Cost)
+        void Awake()
         {
-            var amountPlayerHas = CurrencyRegistry.Instance.GetCurrency(resourceCost.Cost.CurrencyType, PhaseManager.Instance.PlayerIndex);
-            if (amountPlayerHas < resourceCost.Cost.Amount)
-            {
-                return false;
-            }
+            MyCost = GetComponent<CurrencyCost>();
         }
-        return true;
+
+        protected override bool IsUnlockedInternal(NoParams gateParams)
+        {
+            foreach (var resourceCost in MyCost.Cost)
+            {
+                var amountPlayerHas = CurrencyRegistry.Instance.GetCurrency(resourceCost.Cost.CurrencyType, PhaseManager.Instance.PlayerIndex);
+                if (amountPlayerHas < resourceCost.Cost.Amount)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

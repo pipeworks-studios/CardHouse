@@ -1,15 +1,18 @@
 using System;
 using UnityEngine.Serialization;
 
-[Serializable]
-public class CurrencyQuantity : ICloneable
+namespace CardHouse
 {
-    [FormerlySerializedAs("ResourceType")]
-    public CurrencyScriptable CurrencyType;
-    public int Amount;
-
-    public virtual object Clone()
+    [Serializable]
+    public class CurrencyQuantity : ICloneable
     {
-        return new CurrencyQuantity { CurrencyType = CurrencyType, Amount = Amount };
+        [FormerlySerializedAs("ResourceType")]
+        public CurrencyScriptable CurrencyType;
+        public int Amount;
+
+        public virtual object Clone()
+        {
+            return new CurrencyQuantity { CurrencyType = CurrencyType, Amount = Amount };
+        }
     }
 }

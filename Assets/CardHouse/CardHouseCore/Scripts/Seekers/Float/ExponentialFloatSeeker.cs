@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class ExponentialFloatSeeker : Seeker<float>
+namespace CardHouse
 {
-    protected float Gain;
-    protected float ArrivalDistance;
-
-    public ExponentialFloatSeeker(float gain = 8f, float arrivalDist = 0.01f)
+    public class ExponentialFloatSeeker : Seeker<float>
     {
-        Gain = gain;
-        ArrivalDistance = arrivalDist;
-    }
+        protected float Gain;
+        protected float ArrivalDistance;
 
-    public override Seeker<float> MakeCopy()
-    {
-        return new ExponentialFloatSeeker(Gain, ArrivalDistance);
-    }
+        public ExponentialFloatSeeker(float gain = 8f, float arrivalDist = 0.01f)
+        {
+            Gain = gain;
+            ArrivalDistance = arrivalDist;
+        }
 
-    public override float Pump(float currentValue, float TimeSinceLastFrame)
-    {
-        return Mathf.Lerp(currentValue, End, Gain * TimeSinceLastFrame);
-    }
+        public override Seeker<float> MakeCopy()
+        {
+            return new ExponentialFloatSeeker(Gain, ArrivalDistance);
+        }
 
-    public override bool IsDone(float currentValue)
-    {
-        return Mathf.Abs(currentValue - End) <= ArrivalDistance;
+        public override float Pump(float currentValue, float TimeSinceLastFrame)
+        {
+            return Mathf.Lerp(currentValue, End, Gain * TimeSinceLastFrame);
+        }
+
+        public override bool IsDone(float currentValue)
+        {
+            return Mathf.Abs(currentValue - End) <= ArrivalDistance;
+        }
     }
 }

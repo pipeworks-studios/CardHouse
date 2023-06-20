@@ -1,45 +1,48 @@
 using UnityEngine;
 
-public abstract class BaseSeekerComponent<T> : MonoBehaviour
+namespace CardHouse
 {
-    protected Seeker<T> MyStrategy;
-
-    protected bool IsSeeking;
-    protected bool UseLocalSpace;
-
-    public SeekerScriptable<T> Strategy;
-
-    void Awake()
+    public abstract class BaseSeekerComponent<T> : MonoBehaviour
     {
-        MyStrategy = Strategy?.GetStrategy() ?? GetDefaultSeeker();
-    }
+        protected Seeker<T> MyStrategy;
 
-    public void StartSeeking(T destination, Seeker<T> strategy = null, bool useLocalSpace = false)
-    {
-        IsSeeking = true;
-        UseLocalSpace = useLocalSpace;
-        MyStrategy = strategy?.MakeCopy() ?? Strategy?.GetStrategy() ?? GetDefaultSeeker();
-        MyStrategy.StartSeeking(GetCurrentValue(), destination);
-    }
+        protected bool IsSeeking;
+        protected bool UseLocalSpace;
 
-    void Update()
-    {
-        if (!IsSeeking)
-            return;
+        public SeekerScriptable<T> Strategy;
 
-        var newValue = MyStrategy.Pump(GetCurrentValue(), Time.deltaTime);
-        SetNewValue(newValue);
-
-        if (MyStrategy.IsDone(newValue))
+        void Awake()
         {
-            SetNewValue(MyStrategy.End);
-            IsSeeking = false;
+            MyStrategy = Strategy?.GetStrategy() ?? GetDefaultSeeker();
         }
+
+        public void StartSeeking(T destination, Seeker<T> strategy = null, bool useLocalSpace = false)
+        {
+            IsSeeking = true;
+            UseLocalSpace = useLocalSpace;
+            MyStrategy = strategy?.MakeCopy() ?? Strategy?.GetStrategy() ?? GetDefaultSeeker();
+            MyStrategy.StartSeeking(GetCurrentValue(), destination);
+        }
+
+        void Update()
+        {
+            if (!IsSeeking)
+                return;
+
+            var newValue = MyStrategy.Pump(GetCurrentValue(), Time.deltaTime);
+            SetNewValue(newValue);
+
+            if (MyStrategy.IsDone(newValue))
+            {
+                SetNewValue(MyStrategy.End);
+                IsSeeking = false;
+            }
+        }
+
+        protected abstract Seeker<T> GetDefaultSeeker();
+
+        protected abstract T GetCurrentValue();
+
+        protected abstract void SetNewValue(T value);
     }
-
-    protected abstract Seeker<T> GetDefaultSeeker();
-
-    protected abstract T GetCurrentValue();
-
-    protected abstract void SetNewValue(T value);
 }

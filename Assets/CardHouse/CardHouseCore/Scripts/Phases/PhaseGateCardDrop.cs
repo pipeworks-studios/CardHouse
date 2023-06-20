@@ -1,17 +1,20 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CardGroup))]
-public class PhaseGateCardDrop : Gate<DropParams>
+namespace CardHouse
 {
-    CardGroup MyGroup;
-
-    void Awake()
+    [RequireComponent(typeof(CardGroup))]
+    public class PhaseGateCardDrop : Gate<DropParams>
     {
-        MyGroup = GetComponent<CardGroup>();
-    }
+        CardGroup MyGroup;
 
-    protected override bool IsUnlockedInternal(DropParams gateParams)
-    {
-        return PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true;
+        void Awake()
+        {
+            MyGroup = GetComponent<CardGroup>();
+        }
+
+        protected override bool IsUnlockedInternal(DropParams gateParams)
+        {
+            return PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true;
+        }
     }
 }

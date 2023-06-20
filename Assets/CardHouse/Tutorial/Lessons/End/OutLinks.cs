@@ -1,28 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OutLinks : MonoBehaviour, IPointerClickHandler
+namespace CardHouse.Tutorial
 {
-    public TMP_Text Text;
-
-    public void OnPointerClick(PointerEventData eventData)
+    public class OutLinks : MonoBehaviour, IPointerClickHandler
     {
-        var linkIndex = TMP_TextUtilities.FindIntersectingLink(Text, Input.mousePosition, null);
-        var linkId = Text.textInfo.linkInfo[linkIndex].GetLinkID();
+        public TMP_Text Text;
 
-        var url = linkId switch
+        public void OnPointerClick(PointerEventData eventData)
         {
-            "GitHubIssues" => "https://github.com/pipeworks-studios/CardHouse/issues",
-            "Pipeworks" => "https://www.pipeworks.com/",
-            _ => ""
-        };
+            var linkIndex = TMP_TextUtilities.FindIntersectingLink(Text, Input.mousePosition, null);
+            var linkId = Text.textInfo.linkInfo[linkIndex].GetLinkID();
 
-        if (url != "")
-        {
-            Application.OpenURL(url);
+            var url = linkId switch
+            {
+                "GitHubIssues" => "https://github.com/pipeworks-studios/CardHouse/issues",
+                "Pipeworks" => "https://www.pipeworks.com/",
+                _ => ""
+            };
+
+            if (url != "")
+            {
+                Application.OpenURL(url);
+            }
         }
     }
 }

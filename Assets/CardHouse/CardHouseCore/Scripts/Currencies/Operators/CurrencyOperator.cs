@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public abstract class CurrencyOperator : MonoBehaviour
+namespace CardHouse
 {
-    protected CurrencyRegistry MyRegistry;
-
-    void Start()
+    public abstract class CurrencyOperator : MonoBehaviour
     {
-        MyRegistry = CurrencyRegistry.Instance;
-        if (MyRegistry == null)
+        protected CurrencyRegistry MyRegistry;
+
+        void Start()
         {
-            Debug.LogWarningFormat("{0}: Missing SpriteRenderer for Sprite Response to operate on", name);
+            MyRegistry = CurrencyRegistry.Instance;
+            if (MyRegistry == null)
+            {
+                Debug.LogWarningFormat("{0}: Missing SpriteRenderer for Sprite Response to operate on", name);
+            }
         }
+
+        public void Activate()
+        {
+            if (MyRegistry == null)
+                return;
+
+            AdjustCurrencies();
+        }
+
+        protected abstract void AdjustCurrencies();
     }
-
-    public void Activate()
-    {
-        if (MyRegistry == null)
-            return;
-
-        AdjustCurrencies();
-    }
-
-    protected abstract void AdjustCurrencies();
 }

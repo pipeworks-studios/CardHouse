@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class InstantVector3Seeker : Seeker<Vector3>
+namespace CardHouse
 {
-    public override Seeker<Vector3> MakeCopy()
+    public class InstantVector3Seeker : Seeker<Vector3>
     {
-        return new InstantVector3Seeker();
-    }
+        public override Seeker<Vector3> MakeCopy()
+        {
+            return new InstantVector3Seeker();
+        }
 
-    public override Vector3 Pump(Vector3 currentValue, float TimeSinceLastFrame)
-    {
-        return End;
-    }
+        public override Vector3 Pump(Vector3 currentValue, float TimeSinceLastFrame)
+        {
+            return End;
+        }
 
-    public override bool IsDone(Vector3 currentValue)
-    {
-        return true;
+        public override bool IsDone(Vector3 currentValue)
+        {
+            return true;
+        }
     }
 }

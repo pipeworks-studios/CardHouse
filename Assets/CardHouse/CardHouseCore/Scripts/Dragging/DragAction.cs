@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum DragAction
+namespace CardHouse
 {
-    None,
-    Mount,
-    UseAndDiscard,
-    UseOnTargetAndDiscard
+    public enum DragAction
+    {
+        None,
+        Mount,
+        UseAndDiscard,
+        UseOnTargetAndDiscard
+    }
 }

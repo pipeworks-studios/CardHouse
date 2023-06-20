@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSpawner : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public string SceneToSpawn;
-    void Start()
+    public class SceneSpawner : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneToSpawn, LoadSceneMode.Additive);
+        public string SceneToSpawn;
+        void Start()
+        {
+            SceneManager.LoadScene(SceneToSpawn, LoadSceneMode.Additive);
+        }
     }
 }

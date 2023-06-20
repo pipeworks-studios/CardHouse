@@ -1,69 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using TMPro;
 
-public class SpriteVoterTutorial : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public UnityEvent OnStart;
-
-    private void Start()
+    public class SpriteVoterTutorial : MonoBehaviour
     {
-        OnStart?.Invoke();
-    }
+        public UnityEvent OnStart;
 
-    public void OnColorDropdownUpdated()
-    {
-        var value = GetComponent<TMP_Dropdown>().value;
-        switch (value)
+        private void Start()
         {
-            case 0:
-                RemoveColorVote();
-                break;
-            case 1:
-                RegisterColorVote("Active");
-                break;
-            case 2:
-                RegisterColorVote("Dim");
-                break;
+            OnStart?.Invoke();
         }
-    }
 
-    public void OnImageDropdownUpdated()
-    {
-        var value = GetComponent<TMP_Dropdown>().value;
-        switch (value)
+        public void OnColorDropdownUpdated()
         {
-            case 0:
-                RemoveImageVote();
-                break;
-            case 1:
-                RegisterImageVote("Bat");
-                break;
-            case 2:
-                RegisterImageVote("Spider");
-                break;
+            var value = GetComponent<TMP_Dropdown>().value;
+            switch (value)
+            {
+                case 0:
+                    RemoveColorVote();
+                    break;
+                case 1:
+                    RegisterColorVote("Active");
+                    break;
+                case 2:
+                    RegisterColorVote("Dim");
+                    break;
+            }
         }
-    }
 
-    void RegisterColorVote(string vote)
-    {
-        SpriteOperatorTutorial.Instance.RegisterColorVote(this, vote);
-    }
+        public void OnImageDropdownUpdated()
+        {
+            var value = GetComponent<TMP_Dropdown>().value;
+            switch (value)
+            {
+                case 0:
+                    RemoveImageVote();
+                    break;
+                case 1:
+                    RegisterImageVote("Bat");
+                    break;
+                case 2:
+                    RegisterImageVote("Spider");
+                    break;
+            }
+        }
 
-    void RemoveColorVote()
-    {
-        SpriteOperatorTutorial.Instance.RemoveColorVote(this);
-    }
+        void RegisterColorVote(string vote)
+        {
+            SpriteOperatorTutorial.Instance.RegisterColorVote(this, vote);
+        }
 
-    void RegisterImageVote(string vote)
-    {
-        SpriteOperatorTutorial.Instance.RegisterImageVote(this, vote);
-    }
+        void RemoveColorVote()
+        {
+            SpriteOperatorTutorial.Instance.RemoveColorVote(this);
+        }
 
-    void RemoveImageVote()
-    {
-        SpriteOperatorTutorial.Instance.RemoveImageVote(this);
+        void RegisterImageVote(string vote)
+        {
+            SpriteOperatorTutorial.Instance.RegisterImageVote(this, vote);
+        }
+
+        void RemoveImageVote()
+        {
+            SpriteOperatorTutorial.Instance.RemoveImageVote(this);
+        }
     }
 }

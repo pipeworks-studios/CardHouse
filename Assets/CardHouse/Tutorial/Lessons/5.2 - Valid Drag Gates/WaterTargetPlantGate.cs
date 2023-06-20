@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-
-public class WaterTargetPlantGate : Gate<TargetCardParams>
+namespace CardHouse.Tutorial
 {
-    protected override bool IsUnlockedInternal(TargetCardParams gateParams)
+    public class WaterTargetPlantGate : Gate<TargetCardParams>
     {
-        return gateParams.Target.GetComponent<Plant>()?.CanBeWatered() ?? false;
+        protected override bool IsUnlockedInternal(TargetCardParams gateParams)
+        {
+            return gateParams.Target.GetComponent<Plant>()?.CanBeWatered() ?? false;
+        }
     }
 }

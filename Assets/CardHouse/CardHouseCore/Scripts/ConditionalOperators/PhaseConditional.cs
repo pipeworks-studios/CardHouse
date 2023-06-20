@@ -1,29 +1,30 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
-public class PhaseConditional : Activatable
+namespace CardHouse
 {
-    public List<StringUnityActionKvp> Responses;
-
-    protected override void OnActivate()
+    public class PhaseConditional : Activatable
     {
-        foreach (var kvp in Responses)
+        public List<StringUnityActionKvp> Responses;
+
+        protected override void OnActivate()
         {
-            if (kvp.Key == PhaseManager.Instance?.CurrentPhase.Name)
+            foreach (var kvp in Responses)
             {
-                kvp.Value.Invoke();
-                break;
+                if (kvp.Key == PhaseManager.Instance?.CurrentPhase.Name)
+                {
+                    kvp.Value.Invoke();
+                    break;
+                }
             }
         }
     }
-}
 
-[Serializable]
-public class StringUnityActionKvp
-{
-    public string Key;
-    public UnityEvent Value;
+    [Serializable]
+    public class StringUnityActionKvp
+    {
+        public string Key;
+        public UnityEvent Value;
+    }
 }

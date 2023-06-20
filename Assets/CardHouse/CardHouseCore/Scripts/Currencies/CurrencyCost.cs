@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CurrencyCost : MonoBehaviour
+namespace CardHouse
 {
-    [Serializable]
-    public class CostWithLabel
+    public class CurrencyCost : MonoBehaviour
     {
-        public CurrencyQuantity Cost;
-        public TextMeshPro Label;
-    }
-
-    public List<CostWithLabel> Cost;
-
-    void Start()
-    {
-        foreach (var cost in Cost)
+        [Serializable]
+        public class CostWithLabel
         {
-            if (cost.Label != null)
+            public CurrencyQuantity Cost;
+            public TextMeshPro Label;
+        }
+
+        public List<CostWithLabel> Cost;
+
+        void Start()
+        {
+            foreach (var cost in Cost)
             {
-                cost.Label.text = cost.Cost.Amount.ToString();
+                if (cost.Label != null)
+                {
+                    cost.Label.text = cost.Cost.Amount.ToString();
+                }
             }
         }
-    }
 
-    public void Activate()
-    {
-        foreach (var resource in Cost)
+        public void Activate()
         {
-            CurrencyRegistry.Instance.AdjustCurrency(resource.Cost.CurrencyType.Name, PhaseManager.Instance.PlayerIndex, -1 * resource.Cost.Amount);
+            foreach (var resource in Cost)
+            {
+                CurrencyRegistry.Instance.AdjustCurrency(resource.Cost.CurrencyType.Name, PhaseManager.Instance.PlayerIndex, -1 * resource.Cost.Amount);
+            }
         }
     }
 }

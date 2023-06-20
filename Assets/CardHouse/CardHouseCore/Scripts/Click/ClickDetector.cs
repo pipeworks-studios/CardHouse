@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickDetector : Toggleable
+namespace CardHouse
 {
-    public UnityEvent OnPress;
-    public UnityEvent OnButtonClicked;
-
-    public GateCollection<NoParams> ClickGates;
-
-    void OnMouseDown()
+    public class ClickDetector : Toggleable
     {
-        if (IsActive && ClickGates.AllUnlocked(null))
+        public UnityEvent OnPress;
+        public UnityEvent OnButtonClicked;
+
+        public GateCollection<NoParams> ClickGates;
+
+        void OnMouseDown()
         {
-            OnPress.Invoke();
+            if (IsActive && ClickGates.AllUnlocked(null))
+            {
+                OnPress.Invoke();
+            }
         }
-    }
 
-    void OnMouseUpAsButton()
-    {
-        if (IsActive && ClickGates.AllUnlocked(null))
+        void OnMouseUpAsButton()
         {
-            OnButtonClicked.Invoke();
+            if (IsActive && ClickGates.AllUnlocked(null))
+            {
+                OnButtonClicked.Invoke();
+            }
         }
     }
 }

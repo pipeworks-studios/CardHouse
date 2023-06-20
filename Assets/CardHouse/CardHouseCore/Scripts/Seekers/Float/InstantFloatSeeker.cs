@@ -1,19 +1,20 @@
-using UnityEngine;
-
-public class InstantFloatSeeker : Seeker<float>
+namespace CardHouse
 {
-    public override Seeker<float> MakeCopy()
+    public class InstantFloatSeeker : Seeker<float>
     {
-        return new InstantFloatSeeker();
-    }
+        public override Seeker<float> MakeCopy()
+        {
+            return new InstantFloatSeeker();
+        }
 
-    public override float Pump(float currentValue, float TimeSinceLastFrame)
-    {
-        return End;
-    }
+        public override float Pump(float currentValue, float TimeSinceLastFrame)
+        {
+            return End;
+        }
 
-    public override bool IsDone(float currentValue)
-    {
-        return true;
+        public override bool IsDone(float currentValue)
+        {
+            return true;
+        }
     }
 }

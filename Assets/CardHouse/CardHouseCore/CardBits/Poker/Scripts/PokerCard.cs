@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PokerCard : CardSetup
+namespace CardHouse
 {
-    public SpriteRenderer Image;
-    public SpriteRenderer BackImage;
-    public PokerSuit Suit { get; private set; }
-    public int Rank { get; private set; }
-
-    public override void Apply(CardDefinition data)
+    public class PokerCard : CardSetup
     {
-        if (data is PokerCardDefinition pokerCard)
+        public SpriteRenderer Image;
+        public SpriteRenderer BackImage;
+        public PokerSuit Suit { get; private set; }
+        public int Rank { get; private set; }
+
+        public override void Apply(CardDefinition data)
         {
-            Image.sprite = pokerCard.Art;
-            if (pokerCard.BackArt != null)
+            if (data is PokerCardDefinition pokerCard)
             {
-                BackImage.sprite = pokerCard.BackArt;
+                Image.sprite = pokerCard.Art;
+                if (pokerCard.BackArt != null)
+                {
+                    BackImage.sprite = pokerCard.BackArt;
+                }
+                Rank = pokerCard.Rank;
+                Suit = pokerCard.Suit;
             }
-            Rank = pokerCard.Rank;
-            Suit = pokerCard.Suit;
         }
     }
 }

@@ -1,9 +1,12 @@
 using System;
 
-[Flags]
-public enum Loyalty
+namespace CardHouse
 {
-    None = 0,
-    Self = 1,
-    Other = 2
+    [Flags]
+    public enum Loyalty
+    {
+        None = 0,
+        Self = 1,
+        Other = 2
+    }
 }

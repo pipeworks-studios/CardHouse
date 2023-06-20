@@ -1,19 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Card)), RequireComponent(typeof(DragDetector))]
-public class LoyaltyGateCardDrop : Gate<DropParams>
+namespace CardHouse
 {
-    public Loyalty Loyalty;
-    public List<GroupName> Destinations;
-
-    void Awake()
+    [RequireComponent(typeof(Card)), RequireComponent(typeof(DragDetector))]
+    public class LoyaltyGateCardDrop : Gate<DropParams>
     {
-    }
+        public Loyalty Loyalty;
+        public List<GroupName> Destinations;
 
-    protected override bool IsUnlockedInternal(DropParams gateParams)
-    {
-        var groupLoyalty = GroupRegistry.Instance.GetLoyalty(gateParams.Target, PhaseManager.Instance.PlayerIndex);
-        return (Loyalty & groupLoyalty) != 0;
+        void Awake()
+        {
+        }
+
+        protected override bool IsUnlockedInternal(DropParams gateParams)
+        {
+            var groupLoyalty = GroupRegistry.Instance.GetLoyalty(gateParams.Target, PhaseManager.Instance.PlayerIndex);
+            return (Loyalty & groupLoyalty) != 0;
+        }
     }
 }

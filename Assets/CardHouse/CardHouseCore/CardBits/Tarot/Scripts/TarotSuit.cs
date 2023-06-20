@@ -1,8 +1,11 @@
-public enum TarotSuit
+namespace CardHouse
 {
-    None,
-    Swords,
-    Cups,
-    Pentacles,
-    Wands
+    public enum TarotSuit
+    {
+        None,
+        Swords,
+        Cups,
+        Pentacles,
+        Wands
+    }
 }

@@ -1,19 +1,22 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Card)), RequireComponent(typeof(DragOperator))]
-public class PhaseGateCardDragStart : Gate<NoParams>
+namespace CardHouse
 {
-    Card MyCard;
-    DragOperator MyDraggable;
-
-    void Awake()
+    [RequireComponent(typeof(Card)), RequireComponent(typeof(DragOperator))]
+    public class PhaseGateCardDragStart : Gate<NoParams>
     {
-        MyCard = GetComponent<Card>();
-        MyDraggable = GetComponent<DragOperator>();
-    }
+        Card MyCard;
+        DragOperator MyDraggable;
 
-    protected override bool IsUnlockedInternal(NoParams gateParams)
-    {
-        return PhaseManager.Instance.IsValidDragStart(MyCard.Group, MyDraggable.DragAction);
+        void Awake()
+        {
+            MyCard = GetComponent<Card>();
+            MyDraggable = GetComponent<DragOperator>();
+        }
+
+        protected override bool IsUnlockedInternal(NoParams gateParams)
+        {
+            return PhaseManager.Instance.IsValidDragStart(MyCard.Group, MyDraggable.DragAction);
+        }
     }
 }

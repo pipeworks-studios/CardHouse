@@ -1,25 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class TriggerEnterRelay : Toggleable
+namespace CardHouse
 {
-    public CardGroup Relay;
-
-    void OnTriggerEnter2D(Collider2D col)
+    public class TriggerEnterRelay : Toggleable
     {
-        if (!IsActive)
-            return;
+        public CardGroup Relay;
 
-        Relay.HandleTriggerEnter2D(col);
-    }
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (!IsActive)
+                return;
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (!IsActive)
-            return;
+            Relay.HandleTriggerEnter2D(col);
+        }
 
-        Relay.HandleTriggerExit2D(col);
+        void OnTriggerExit2D(Collider2D col)
+        {
+            if (!IsActive)
+                return;
+
+            Relay.HandleTriggerExit2D(col);
+        }
     }
 }

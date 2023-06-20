@@ -1,17 +1,20 @@
-public abstract class Seeker<T>
+namespace CardHouse
 {
-    protected T Start;
-    public T End;
-
-    public abstract Seeker<T> MakeCopy();
-
-    public void StartSeeking(T from, T to)
+    public abstract class Seeker<T>
     {
-        Start = from;
-        End = to;
-    }
-    
-    public abstract T Pump(T currentValue, float TimeSinceLastFrame);
+        protected T Start;
+        public T End;
 
-    public abstract bool IsDone(T currentValue);
+        public abstract Seeker<T> MakeCopy();
+
+        public void StartSeeking(T from, T to)
+        {
+            Start = from;
+            End = to;
+        }
+
+        public abstract T Pump(T currentValue, float TimeSinceLastFrame);
+
+        public abstract bool IsDone(T currentValue);
+    }
 }

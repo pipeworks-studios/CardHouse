@@ -1,17 +1,19 @@
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CurrencyRefillOperator : CurrencyOperator
+namespace CardHouse
 {
-    [FormerlySerializedAs("ResourcesToRefill")]
-    public List<CurrencyScriptable> CurrenciesToRefill;
-
-    protected override void AdjustCurrencies()
+    public class CurrencyRefillOperator : CurrencyOperator
     {
-        foreach (var resource in CurrenciesToRefill)
+        [FormerlySerializedAs("ResourcesToRefill")]
+        public List<CurrencyScriptable> CurrenciesToRefill;
+
+        protected override void AdjustCurrencies()
         {
-            MyRegistry.Refill(resource.name, PhaseManager.Instance.PlayerIndex);
+            foreach (var resource in CurrenciesToRefill)
+            {
+                MyRegistry.Refill(resource.name, PhaseManager.Instance.PlayerIndex);
+            }
         }
     }
 }

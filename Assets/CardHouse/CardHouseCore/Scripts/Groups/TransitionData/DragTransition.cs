@@ -1,7 +1,10 @@
 using System;
 
-[Serializable]
-public class DragTransition : GroupTransition
+namespace CardHouse
 {
-    public DragAction DragAction;
+    [Serializable]
+    public class DragTransition : GroupTransition
+    {
+        public DragAction DragAction;
+    }
 }

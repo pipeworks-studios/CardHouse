@@ -1,37 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteOperatorTutorial : MonoBehaviour
+namespace CardHouse.Tutorial
 {
-    public MultiSpriteOperator ColorOperator;
-    public SpriteImageOperator ImageOperator;
-
-    public static SpriteOperatorTutorial Instance;
-
-
-    private void Awake()
+    public class SpriteOperatorTutorial : MonoBehaviour
     {
-        Instance = this;
-    }
+        public MultiSpriteOperator ColorOperator;
+        public SpriteImageOperator ImageOperator;
 
-    public void RegisterColorVote(Object voter, string vote)
-    {
-        ColorOperator.Activate(vote, voter);
-    }
+        public static SpriteOperatorTutorial Instance;
 
-    public void RemoveColorVote(Object voter)
-    {
-        ColorOperator.Remove(voter);
-    }
 
-    public void RegisterImageVote(Object voter, string vote)
-    {
-        ImageOperator.Activate(vote, voter);
-    }
+        private void Awake()
+        {
+            Instance = this;
+        }
 
-    public void RemoveImageVote(Object voter)
-    {
-        ImageOperator.Remove(voter);
+        public void RegisterColorVote(Object voter, string vote)
+        {
+            ColorOperator.Activate(vote, voter);
+        }
+
+        public void RemoveColorVote(Object voter)
+        {
+            ColorOperator.Remove(voter);
+        }
+
+        public void RegisterImageVote(Object voter, string vote)
+        {
+            ImageOperator.Activate(vote, voter);
+        }
+
+        public void RemoveImageVote(Object voter)
+        {
+            ImageOperator.Remove(voter);
+        }
     }
 }

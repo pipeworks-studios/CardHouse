@@ -1,6 +1,9 @@
-public enum MountingMode
+namespace CardHouse
 {
-    Top,
-    Bottom,
-    Closest
+    public enum MountingMode
+    {
+        Top,
+        Bottom,
+        Closest
+    }
 }

@@ -1,25 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ShuffleOperator : Activatable
+namespace CardHouse
 {
-    [FormerlySerializedAs("Groups")]
-    public List<CardGroup> GroupsToShuffleIntoDeck;
-    public CardGroup Deck;
-
-    protected override void OnActivate()
+    public class ShuffleOperator : Activatable
     {
-        foreach (var slot in GroupsToShuffleIntoDeck)
-        {
-            foreach (var card in slot.MountedCards.ToList())
-            {
-                Deck.Mount(card);
-            }
-        }
+        [FormerlySerializedAs("Groups")]
+        public List<CardGroup> GroupsToShuffleIntoDeck;
+        public CardGroup Deck;
 
-        Deck.Shuffle();
+        protected override void OnActivate()
+        {
+            foreach (var slot in GroupsToShuffleIntoDeck)
+            {
+                foreach (var card in slot.MountedCards.ToList())
+                {
+                    Deck.Mount(card);
+                }
+            }
+
+            Deck.Shuffle();
+        }
     }
 }

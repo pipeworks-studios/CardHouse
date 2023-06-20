@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Activatable : MonoBehaviour
+namespace CardHouse
 {
-    public void Activate()
+    public class Activatable : MonoBehaviour
     {
-        OnActivate();
-    }
+        public void Activate()
+        {
+            OnActivate();
+        }
 
-    protected virtual void OnActivate() { }
+        protected virtual void OnActivate() { }
+    }
 }

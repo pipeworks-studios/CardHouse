@@ -1,14 +1,15 @@
-using UnityEngine;
-
-public abstract class Gate<T> : Toggleable
+namespace CardHouse
 {
-    public bool IsUnlocked(T argObject)
+    public abstract class Gate<T> : Toggleable
     {
-        if (!IsActive)
-            return true;
+        public bool IsUnlocked(T argObject)
+        {
+            if (!IsActive)
+                return true;
 
-        return IsUnlockedInternal(argObject);
+            return IsUnlockedInternal(argObject);
+        }
+
+        protected abstract bool IsUnlockedInternal(T argObject);
     }
-
-    protected abstract bool IsUnlockedInternal(T argObject);
 }

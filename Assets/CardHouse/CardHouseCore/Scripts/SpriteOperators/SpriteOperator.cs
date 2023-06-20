@@ -2,70 +2,73 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public abstract class SpriteOperator : MonoBehaviour
+namespace CardHouse
 {
-    public string FavoredState;
-    protected SpriteRenderer SpriteTarget;
-    Dictionary<Object, string> Votes = new Dictionary<Object, string>();
-
-    void Awake()
+    [RequireComponent(typeof(SpriteRenderer))]
+    public abstract class SpriteOperator : MonoBehaviour
     {
-        SpriteTarget = GetComponent<SpriteRenderer>();
-    }
+        public string FavoredState;
+        protected SpriteRenderer SpriteTarget;
+        Dictionary<Object, string> Votes = new Dictionary<Object, string>();
 
-    public void Activate(string name)
-    {
-        Activate(name, this);
-    }
-
-    public void Activate(string name, Object voter)
-    {
-        Votes[voter] = name;
-
-        if (SpriteTarget == null)
-            return;
-        
-        UpdateState();
-    }
-
-    public void Remove(Object voter)
-    {
-        Votes.Remove(voter);
-
-        UpdateState();
-    }
-
-    void UpdateState()
-    {
-        var allVotes = Votes.Values.ToList();
-        if (allVotes.Contains(FavoredState) || allVotes.Count == 0)
+        void Awake()
         {
-            ChangeSprite(FavoredState);
+            SpriteTarget = GetComponent<SpriteRenderer>();
         }
-        else if (AllSame(allVotes))
-        {
-            ChangeSprite(allVotes[0]);
-        }
-    }
 
-    bool AllSame(List<string> stringList)
-    {
-        var counts = new Dictionary<string, int>();
-        foreach (var item in stringList)
+        public void Activate(string name)
         {
-            if (!counts.ContainsKey(item))
+            Activate(name, this);
+        }
+
+        public void Activate(string name, Object voter)
+        {
+            Votes[voter] = name;
+
+            if (SpriteTarget == null)
+                return;
+
+            UpdateState();
+        }
+
+        public void Remove(Object voter)
+        {
+            Votes.Remove(voter);
+
+            UpdateState();
+        }
+
+        void UpdateState()
+        {
+            var allVotes = Votes.Values.ToList();
+            if (allVotes.Contains(FavoredState) || allVotes.Count == 0)
             {
-                counts[item] = 1;
+                ChangeSprite(FavoredState);
             }
-            else
+            else if (AllSame(allVotes))
             {
-                counts[item] += 1;
+                ChangeSprite(allVotes[0]);
             }
         }
 
-        return counts.Count == 1;
-    }
+        bool AllSame(List<string> stringList)
+        {
+            var counts = new Dictionary<string, int>();
+            foreach (var item in stringList)
+            {
+                if (!counts.ContainsKey(item))
+                {
+                    counts[item] = 1;
+                }
+                else
+                {
+                    counts[item] += 1;
+                }
+            }
 
-    protected abstract void ChangeSprite(string name);
+            return counts.Count == 1;
+        }
+
+        protected abstract void ChangeSprite(string name);
+    }
 }

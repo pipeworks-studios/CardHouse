@@ -2,25 +2,28 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteImageOperator : SpriteOperator
+namespace CardHouse
 {
-    [Serializable]
-    public class NamedSprite
+    public class SpriteImageOperator : SpriteOperator
     {
-        public string Name;
-        public Sprite Sprite;
-    }
-
-    public List<NamedSprite> Sprites;
-
-    protected override void ChangeSprite(string name)
-    {
-        foreach (var sprite in Sprites)
+        [Serializable]
+        public class NamedSprite
         {
-            if (sprite.Name == name)
+            public string Name;
+            public Sprite Sprite;
+        }
+
+        public List<NamedSprite> Sprites;
+
+        protected override void ChangeSprite(string name)
+        {
+            foreach (var sprite in Sprites)
             {
-                SpriteTarget.sprite = sprite.Sprite;
-                break;
+                if (sprite.Name == name)
+                {
+                    SpriteTarget.sprite = sprite.Sprite;
+                    break;
+                }
             }
         }
     }

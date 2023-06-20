@@ -1,34 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class CurrencyChangeDetector : MonoBehaviour
+namespace CardHouse
 {
-    [FormerlySerializedAs("OnResourceChange")]
-    public UnityEvent OnCurrencyChange;
-    CurrencyRegistry MyCurrencyRegistry;
-    
-    void Start()
+    public class CurrencyChangeDetector : MonoBehaviour
     {
-        MyCurrencyRegistry = CurrencyRegistry.Instance;
-        if (MyCurrencyRegistry != null)
-        {
-            MyCurrencyRegistry.OnCurrencyChanged += HandleCurrencyChanged;
-        }
-    }
+        [FormerlySerializedAs("OnResourceChange")]
+        public UnityEvent OnCurrencyChange;
+        CurrencyRegistry MyCurrencyRegistry;
 
-    void OnDestroy()
-    {
-        if (MyCurrencyRegistry != null)
+        void Start()
         {
-            MyCurrencyRegistry.OnCurrencyChanged -= HandleCurrencyChanged;
+            MyCurrencyRegistry = CurrencyRegistry.Instance;
+            if (MyCurrencyRegistry != null)
+            {
+                MyCurrencyRegistry.OnCurrencyChanged += HandleCurrencyChanged;
+            }
         }
-    }
 
-    void HandleCurrencyChanged(int playerIndex, CurrencyWallet newResources)
-    {
-        OnCurrencyChange.Invoke();
+        void OnDestroy()
+        {
+            if (MyCurrencyRegistry != null)
+            {
+                MyCurrencyRegistry.OnCurrencyChanged -= HandleCurrencyChanged;
+            }
+        }
+
+        void HandleCurrencyChanged(int playerIndex, CurrencyWallet newResources)
+        {
+            OnCurrencyChange.Invoke();
+        }
     }
 }

@@ -1,28 +1,31 @@
 using UnityEngine;
 
-[RequireComponent(typeof(DragDetector))]
-public class DragGateDimmer : Toggleable
+namespace CardHouse
 {
-    public MultiSpriteOperator Handler;
-    public string ActiveMessage;
-    public string InactiveMessage;
-
-    DragDetector MyDraggable;
-
-    void Start()
+    [RequireComponent(typeof(DragDetector))]
+    public class DragGateDimmer : Toggleable
     {
-        MyDraggable = GetComponent<DragDetector>();
-    }
+        public MultiSpriteOperator Handler;
+        public string ActiveMessage;
+        public string InactiveMessage;
 
-    public void UpdateHandler()
-    {
-        if (!IsActive || Handler == null)
-            return;
+        DragDetector MyDraggable;
 
-        Handler.Activate(
-            MyDraggable.DragGates.AllUnlocked(null)
-                ? ActiveMessage
-                : InactiveMessage,
-            this);
+        void Start()
+        {
+            MyDraggable = GetComponent<DragDetector>();
+        }
+
+        public void UpdateHandler()
+        {
+            if (!IsActive || Handler == null)
+                return;
+
+            Handler.Activate(
+                MyDraggable.DragGates.AllUnlocked(null)
+                    ? ActiveMessage
+                    : InactiveMessage,
+                this);
+        }
     }
 }
