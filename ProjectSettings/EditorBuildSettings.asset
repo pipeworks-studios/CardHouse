@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CardHouse/Sample Games/Tarot/Scenes/TarotSpreads.unity
+    path: Assets/CardHouse/SampleGames/Tarot/Scenes/TarotSpreads.unity
     guid: 4ce141ded9e280a4880fa23280414bdb
   m_configObjects: {}
