@@ -44,7 +44,7 @@ namespace CardHouse
             var card = dragDetector.GetComponent<Card>();
             if (draggable == null || card == null)
             {
-                Debug.LogWarningFormat("{0}: Dropped object {1} needs DragHandler and Card components to use PhaseDroppabilityDimmer", gameObject, dragDetector.gameObject);
+                Debug.LogWarningFormat("{0}: Dropped object {1} needs DragHandler and Card components to use GroupDropGateDimmer", gameObject, dragDetector.gameObject);
                 return;
             }
 
