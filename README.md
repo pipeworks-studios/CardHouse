@@ -5,7 +5,7 @@ https://pipeworks-studios.github.io/CardHouse/
 
 ## Getting Started
 To get started, open the CardHouse Unity project or import the Unity package. The recommended Unity version is 2022.3.0f1. Then try one of the following:
-- Launch the interactive tutorial with the "CardHouse -> Launch Tutorial" menu option
+- Launch the interactive tutorial with the "Tools -> CardHouse -> Launch Tutorial" menu option
 - Duplicate a sample game and start modifying it under _CardHouse/SampleGames/_
 - Duplicate the "Card Table" scene and start modifying it under _CardHouse/CardHouseCore/Scenes/_
 - Create a new scene, add the "System" prefab from _CardHouse/CardHouseCore/_, and then add the card groups you'll need from the _CardHouse/CardHouseCore/CardGroupPrefabs/_ folder. Most of what you'll need to do to set up a game's rules can be done with CardTransferOperators and the PhaseManager.
