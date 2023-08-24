@@ -1,0 +1,8 @@
+--- FONTS ---
+Bebas Neue
+	Open Font License. See "OFL.txt" in font folders for details.
+Montserrat
+	Open Font License. See "OFL.txt" in font folders for details.
+
+--- ART ---
+All art in this package has been released under the CC0 1.0 Universal license. See "CC0_Creative_Commons_License.txt" for details. See the "_License.txt" and README files in art directories for more details.

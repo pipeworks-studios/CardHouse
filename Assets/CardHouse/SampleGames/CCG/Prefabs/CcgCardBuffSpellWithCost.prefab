@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 658557633422961169, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
@@ -107,11 +108,25 @@ PrefabInstance:
       propertyPath: DropGates.Gates.Array.data[0]
       value: 
       objectReference: {fileID: 4741016076892422613}
+    - target: {fileID: 4744435203602791552, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
+      propertyPath: GroupDropGates.Gates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744435203602791552, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
+      propertyPath: GroupDropGates.Gates.Array.data[0]
+      value: 
+      objectReference: {fileID: 4741016076892422613}
     - target: {fileID: 8969089666882758391, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
       propertyPath: Cost.Array.data[0].Cost.Amount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 658557633976004603, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4741016076892422613}
   m_SourcePrefab: {fileID: 100100000, guid: 714a647ab9490d54bb88d098b7164df8, type: 3}
 --- !u!1 &361605365472948799 stripped
 GameObject:
@@ -130,5 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ac1a75f75c3f841b0a2a761b60fb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   Loyalty: 1
   Destinations: 04000000

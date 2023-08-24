@@ -177,6 +177,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2372499279454403302, guid: 15506913820fd884a8167f791f9d0f65, type: 3}
@@ -253,6 +254,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4499189061742767263, guid: 15506913820fd884a8167f791f9d0f65, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3147709442397729030, guid: 15506913820fd884a8167f791f9d0f65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 454244291}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3147709442397729027, guid: 15506913820fd884a8167f791f9d0f65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 240887710}
   m_SourcePrefab: {fileID: 100100000, guid: 15506913820fd884a8167f791f9d0f65, type: 3}
 --- !u!1 &8433662383606087795 stripped
 GameObject:
@@ -276,8 +286,10 @@ MonoBehaviour:
   ForcedFacing: 0
   ForcedInteractability: 1
   DragMountingMode: 2
+  UseMyScale: 0
   CardsPerRow: 5
   MarginalCardOffset: 0.05
+  Straighten: 1
 --- !u!4 &8433662383606087798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3147709442397729030, guid: 15506913820fd884a8167f791f9d0f65, type: 3}

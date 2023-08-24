@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa553a8a71f6834ebab61fb6be15b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunOnStart: 1
   GroupPopulationList:
   - Group: {fileID: 0}
     CardPrefab: {fileID: 0}
@@ -73,6 +74,7 @@ MonoBehaviour:
     CardPrefab: {fileID: 0}
     CardCount: 0
   GroupsToShuffle: []
+  OnSetupCompleteEventChain: []
 --- !u!114 &6155219491839174573
 MonoBehaviour:
   m_ObjectHideFlags: 0

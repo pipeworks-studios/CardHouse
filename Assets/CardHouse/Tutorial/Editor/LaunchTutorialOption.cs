@@ -49,7 +49,7 @@ namespace CardHouse.Tutorial
             }
         }
 
-        [MenuItem("CardHouse/Launch Tutorial", false, 1)]
+        [MenuItem("Tools/CardHouse/Launch Tutorial", false, 1)]
         static void LaunchTutorial()
         {
             var launchData = GetLaunchData();
@@ -125,13 +125,13 @@ namespace CardHouse.Tutorial
             return AssetDatabase.LoadAssetAtPath<LaunchDataScriptable>("Assets/CardHouse/Tutorial/LaunchData.asset");
         }
 
-        [MenuItem("CardHouse/Documentation", false, 2)]
+        [MenuItem("Tools/CardHouse/Documentation", false, 2)]
         static void OpenDocumentationPage()
         {
             Application.OpenURL("https://pipeworks-studios.github.io/CardHouse/");
         }
 
-        [MenuItem("CardHouse/Report a Bug", false, 3)]
+        [MenuItem("Tools/CardHouse/Report a Bug", false, 3)]
         static void OpenIssuesPage()
         {
             Application.OpenURL("https://github.com/pipeworks-studios/CardHouse/issues");
