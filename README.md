@@ -11,7 +11,7 @@ To get started, open the CardHouse Unity project or import the Unity package. Th
 - Create a new scene, add the "System" prefab from _CardHouse/CardHouseCore/_, and then add the card groups you'll need from the _CardHouse/CardHouseCore/CardGroupPrefabs/_ folder. Most of what you'll need to do to set up a game's rules can be done with CardTransferOperators and the PhaseManager.
 
 ## Intro
-Card games are complicated! They have all these rules about what you can play and when, and coding state machines to govern all this behavior can be a headache. CardHouse gives you a starting point for adding card-based mechanics to any genre of game! This toolkit includes systems for common card operations like shuffling and dealing cards, resource management, and local multiplayer (pass-and-play style). Plus, CardHouse is written with extensibility in mind. Components focus on using UnityActions to orchestrate behavior so you can hook in your own custom game logic wherever you need!
+Card games are complicated! They have all these rules about what you can play and when, and coding state machines to govern all this behavior can be a headache. CardHouse gives you a starting point for adding card-based mechanics to any Unity project! This toolkit includes systems for common card operations like shuffling and dealing cards, resource management, and local multiplayer (pass-and-play style). Plus, CardHouse is written with extensibility in mind. Components focus on using UnityActions to orchestrate behavior so you can hook in your own custom game logic wherever you need!
 
 ## Contents
 In this package you will find:
