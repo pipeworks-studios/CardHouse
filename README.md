@@ -11,9 +11,7 @@ To get started, open the CardHouse Unity project or import the Unity package. Th
 - Create a new scene, add the "System" prefab from _CardHouse/CardHouseCore/_, and then add the card groups you'll need from the _CardHouse/CardHouseCore/CardGroupPrefabs/_ folder. Most of what you'll need to do to set up a game's rules can be done with CardTransferOperators and the PhaseManager.
 
 ## Intro
-Card games are more complicated than one might think. If you can do something with physical cards, then it should be easy to program, right? Well, if you've ever tried to make a card game before, you'll probably have realized that there are layers of complexity that are taken for granted in the design phase - rules that are easy to enforce when you're sitting at a table, but are tricky to structure in an application. When I move a card from my deck to my hand, of course it should be face up. Of course my hand should be splayed out in a radial pattern. Of course when I shuffle my deck the discard pile should go into it. When setting up a card game, none of these things come for free.
-
-CardHouse is a set of components and prefabs that were created to make constructing card games easier. Their focus is on defining valid player actions for different phases (within a turn, or as turns themselves), how different card groups behave, and what general movements cards themselves are capable of.
+Card games are complicated! They have all these rules about what you can play and when, and coding state machines to govern all this behavior can be a headache. CardHouse gives you a starting point for adding card-based mechanics to any genre of game! This toolkit includes systems for common card operations like shuffling and dealing cards, resource management, and local multiplayer (pass-and-play style). Plus, CardHouse is written with extensibility in mind. Components focus on using UnityActions to orchestrate behavior so you can hook in your own custom game logic wherever you need!
 
 ## Contents
 In this package you will find:
