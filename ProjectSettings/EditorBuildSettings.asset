@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CardHouse/SampleGames/Tarot/Scenes/TarotSpreads.unity
     guid: 4ce141ded9e280a4880fa23280414bdb
+  - enabled: 1
+    path: Assets/CardHouse/SampleGames/Tarot/Scenes/FreeformTarot.unity
+    guid: c92db3e966f6ea444ad3009b65ed528e
   m_configObjects: {}

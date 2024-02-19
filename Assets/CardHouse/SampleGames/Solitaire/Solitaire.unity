@@ -3180,10 +3180,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8761025072723690575, guid: 979624791065b604c86842ec546f76a9, type: 3}
       propertyPath: DropGates.Gates.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8761025072723690575, guid: 979624791065b604c86842ec546f76a9, type: 3}
+      propertyPath: DropGates.Gates.Array.data[0]
+      value: 
+      objectReference: {fileID: 1462302604}
     m_RemovedComponents:
-    - {fileID: 8810276264457499711, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 6434116258965713194, guid: 979624791065b604c86842ec546f76a9, type: 3}
     - {fileID: 2118785339087565572, guid: 979624791065b604c86842ec546f76a9, type: 3}
     m_RemovedGameObjects: []
@@ -3202,6 +3205,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 318865ee4312095429feca847343d7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1462302604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8810276264457499711, guid: 979624791065b604c86842ec546f76a9, type: 3}
+  m_PrefabInstance: {fileID: 1462302602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3cad9f9ec754d4daae7090f94e286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1525692096
@@ -4796,7 +4810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3069252580710560106, guid: 979624791065b604c86842ec546f76a9, type: 3}
       propertyPath: ForcedInteractability
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8761025072723690561, guid: 979624791065b604c86842ec546f76a9, type: 3}
       propertyPath: m_RootOrder
@@ -5001,10 +5015,33 @@ PrefabInstance:
       objectReference: {fileID: 6462243022253552644, guid: 50c2f4d1903b9f8439917b0dd334b45c, type: 3}
     - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: Phases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].Name
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].ValidDrags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].ValidClickTargets.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].ValidDrags.Array.data[0].Source
+      value: 
+      objectReference: {fileID: 1551031834517146001}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].ValidDrags.Array.data[0].DragAction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: Phases.Array.data[0].ValidDrags.Array.data[0].Destination
+      value: 
+      objectReference: {fileID: 1462302603}
     m_RemovedComponents:
-    - {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     - {fileID: 3090792073704058525, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
     m_RemovedGameObjects: []

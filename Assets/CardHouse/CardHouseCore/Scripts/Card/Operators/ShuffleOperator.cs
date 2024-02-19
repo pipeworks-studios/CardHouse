@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace CardHouse
@@ -9,6 +10,9 @@ namespace CardHouse
         [FormerlySerializedAs("Groups")]
         public List<CardGroup> GroupsToShuffleIntoDeck;
         public CardGroup Deck;
+        public bool ShouldOverrideUpsideDownChance;
+        [Range(0f, 1f)]
+        public float UpsideDownChance;
 
         protected override void OnActivate()
         {
@@ -20,7 +24,7 @@ namespace CardHouse
                 }
             }
 
-            Deck.Shuffle();
+            Deck.Shuffle(upsideDownChance: ShouldOverrideUpsideDownChance ? UpsideDownChance : -1);
         }
     }
 }

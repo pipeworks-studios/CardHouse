@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -12,6 +13,10 @@ namespace CardHouse.SampleGames.Tarot
         public CardGroup Deck;
         public GameObject SpreadOrderLabelPrefab;
         public TMP_Text Key;
+
+        public ShuffleOperator Shuffler;
+        public Text ReverseChanceLabel;
+        public Slider ReverseChanceSlider;
 
         public List<TarotSpread> Spreads;
         List<GameObject> CurrentSpreadLabels = new List<GameObject>();
@@ -28,6 +33,9 @@ namespace CardHouse.SampleGames.Tarot
                 }
             }
             AdjustSpread(0);
+
+            ReverseChanceSlider.value = 10f;
+            UpdateReverseChanceLabel(0.1f);
         }
 
         public void NextSpread()
@@ -87,7 +95,8 @@ namespace CardHouse.SampleGames.Tarot
 
             if (areCardsInPlay)
             {
-                Deck.Shuffle();
+                Shuffler.UpsideDownChance = ReverseChanceSlider.value / 100f;
+                Shuffler.Activate();
             }
         }
 
@@ -97,6 +106,11 @@ namespace CardHouse.SampleGames.Tarot
                 return;
 
             Spreads[CurrentSpreadIndex].FillNext(Deck.MountedCards[Deck.MountedCards.Count - 1]);
+        }
+
+        public void UpdateReverseChanceLabel(Single newVal)
+        {
+            ReverseChanceLabel.text = $"Reverse Chance:\n{ReverseChanceSlider.value:F1}%";
         }
     }
 }

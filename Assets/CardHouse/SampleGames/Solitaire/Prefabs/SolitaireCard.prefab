@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1250395176001841023, guid: 93b7f5d60e554c54bb8ee95e357b9082, type: 3}
+      propertyPath: DragGates.Gates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250395176001841023, guid: 93b7f5d60e554c54bb8ee95e357b9082, type: 3}
       propertyPath: OnDragEnd.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}

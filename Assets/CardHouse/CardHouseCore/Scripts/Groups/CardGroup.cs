@@ -466,7 +466,7 @@ namespace CardHouse
             return null;
         }
 
-        public void Shuffle(bool isInstant = false)
+        public void Shuffle(bool isInstant = false, float upsideDownChance = -1)
         {
             var newMountedCards = new List<Card>();
             while (MountedCards.Count > 0)
@@ -494,7 +494,7 @@ namespace CardHouse
             {
                 if (card.CanBeUpsideDown)
                 {
-                    card.SetUpsideDown(UnityEngine.Random.Range(0f, 1f) < card.UpsideDownChance);
+                    card.SetUpsideDown(UnityEngine.Random.Range(0f, 1f) < (upsideDownChance >= 0 ? upsideDownChance : card.UpsideDownChance));
                 }
             }
 
