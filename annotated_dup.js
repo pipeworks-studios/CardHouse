@@ -168,5 +168,7 @@ var annotated_dup =
       [ "SpriteImageOperator", "classCardHouse_1_1SpriteImageOperator.html", "classCardHouse_1_1SpriteImageOperator" ],
       [ "SpriteOperator", "classCardHouse_1_1SpriteOperator.html", "classCardHouse_1_1SpriteOperator" ],
       [ "Toggleable", "classCardHouse_1_1Toggleable.html", "classCardHouse_1_1Toggleable" ]
-    ] ]
+    ] ],
+    [ "FreeformTarotManager", "classFreeformTarotManager.html", "classFreeformTarotManager" ],
+    [ "SceneChanger", "classSceneChanger.html", "classSceneChanger" ]
 ];

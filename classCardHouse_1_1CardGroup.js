@@ -11,7 +11,7 @@ var classCardHouse_1_1CardGroup =
     [ "Mount", "classCardHouse_1_1CardGroup.html#ab3d1a1dc4ce0152e5c42661873fa088a", null ],
     [ "SafeMount", "classCardHouse_1_1CardGroup.html#a177edd9b533453633304b9a8502f1150", null ],
     [ "SetHilightState", "classCardHouse_1_1CardGroup.html#aed15b3fc5a4084c46d5b6e4fad6aeb8c", null ],
-    [ "Shuffle", "classCardHouse_1_1CardGroup.html#a15f273d09a94af8e954d5cc8af3085b0", null ],
+    [ "Shuffle", "classCardHouse_1_1CardGroup.html#ac06cc7af513516640c975efdb9275ed7", null ],
     [ "ShuffleIn", "classCardHouse_1_1CardGroup.html#ab5f56d8b3af6f4a3d8d01794b58ff62d", null ],
     [ "UnMount", "classCardHouse_1_1CardGroup.html#a9301e2d88d83fd81a5c400e3c24ac503", null ],
     [ "UnMount", "classCardHouse_1_1CardGroup.html#a64d149799ac52e2e0b4b340ef8cae270", null ],

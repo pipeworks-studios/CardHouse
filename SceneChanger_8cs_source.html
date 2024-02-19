@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CardHouse: Member List</title>
+<title>CardHouse: SceneChanger.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classCardHouse_1_1ShuffleOperator.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('SceneChanger_8cs_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,23 +84,27 @@ $(document).ready(function(){initNavTree('classCardHouse_1_1ShuffleOperator.html
 
 <div class="header">
   <div class="headertitle">
-<div class="title">CardHouse.ShuffleOperator Member List</div>  </div>
+<div class="title">SceneChanger.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Activate</b>() (defined in <a class="el" href="classCardHouse_1_1Activatable.html">CardHouse.Activatable</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1Activatable.html">CardHouse.Activatable</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Deck</b> (defined in <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GroupsToShuffleIntoDeck</b> (defined in <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>OnActivate</b>() (defined in <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ShouldOverrideUpsideDownChance</b> (defined in <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>UpsideDownChance</b> (defined in <a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a>)</td><td class="entry"><a class="el" href="classCardHouse_1_1ShuffleOperator.html">CardHouse.ShuffleOperator</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine.SceneManagement;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classSceneChanger.html">    4</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classSceneChanger.html">SceneChanger</a> : MonoBehaviour</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> SceneToSpawn;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> Activate()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        SceneManager.LoadScene(SceneToSpawn);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="aclassSceneChanger_html"><div class="ttname"><a href="classSceneChanger.html">SceneChanger</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00004">SceneChanger.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_8b3c6b618f7d2c0a8b3acc6a1f133a49.html">CardHouse</a></li><li class="navelem"><a class="el" href="dir_b20e61dfe1a7f26d1849cae0291e852a.html">SampleGames</a></li><li class="navelem"><a class="el" href="dir_bd7081916bcd0b8c711b772c4a1b3e80.html">Tarot</a></li><li class="navelem"><a class="el" href="dir_2f202f8446d714944b9b3c59f35b0683.html">Scripts</a></li><li class="navelem"><b>SceneChanger.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

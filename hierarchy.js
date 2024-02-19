@@ -144,7 +144,9 @@ var hierarchy =
       [ "CardHouse.Tutorial.StackTutorial", "classCardHouse_1_1Tutorial_1_1StackTutorial.html", null ],
       [ "CardHouse.Tutorial.TransferOperatorTutorialUI", "classCardHouse_1_1Tutorial_1_1TransferOperatorTutorialUI.html", null ],
       [ "CardHouse.Tutorial.TutorialButton", "classCardHouse_1_1Tutorial_1_1TutorialButton.html", null ],
-      [ "CardHouse.Tutorial.ValidDragTutorial", "classCardHouse_1_1Tutorial_1_1ValidDragTutorial.html", null ]
+      [ "CardHouse.Tutorial.ValidDragTutorial", "classCardHouse_1_1Tutorial_1_1ValidDragTutorial.html", null ],
+      [ "FreeformTarotManager", "classFreeformTarotManager.html", null ],
+      [ "SceneChanger", "classSceneChanger.html", null ]
     ] ],
     [ "CardHouse.SpriteColorOperator.NamedColor", "classCardHouse_1_1SpriteColorOperator_1_1NamedColor.html", null ],
     [ "CardHouse.GroupRegistry.NamedGroup", "classCardHouse_1_1GroupRegistry_1_1NamedGroup.html", null ],
