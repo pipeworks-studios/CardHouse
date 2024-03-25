@@ -10,6 +10,9 @@ namespace CardHouse
         public GameObject CardPrefab;
         public DeckDefinition DeckDefinition;
         public CardGroup Deck;
+        [SerializeField]
+        [Tooltip("Group all cards under what parent object")]
+        private Transform _deckParent;
         public List<TimedEvent> OnSetupCompleteEventChain;
 
         void Start()
@@ -30,7 +33,15 @@ namespace CardHouse
             var newCardList = new List<Card>();
             foreach (var cardDef in DeckDefinition.CardCollection)
             {
-                var newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation);
+                GameObject newThing;
+                if (_deckParent != null)
+                {
+                    newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation, _deckParent.transform);
+                }
+                else
+                {
+                    newThing = Instantiate(CardPrefab, Deck.transform.position, Deck.transform.rotation);
+                }
                 newCardList.Add(newThing.GetComponent<Card>());
                 var card = newThing.GetComponent<CardSetup>();
 
