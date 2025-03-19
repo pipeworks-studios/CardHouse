@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
+
 using UnityEngine.SceneManagement;
 using CompilationPipeline = UnityEditor.Compilation.CompilationPipeline;
 using Object = UnityEngine.Object;
@@ -1025,7 +1025,7 @@ namespace AssetStoreTools.Validator
                     return ShaderUtil.ShaderHasError(shader);
                 case ComputeShader shader:
                     return ShaderUtil.GetComputeShaderMessageCount(shader) > 0;
-                case RayTracingShader shader:
+                case UnityEngine.Rendering.RayTracingShader shader:
                     return ShaderUtil.GetRayTracingShaderMessageCount(shader) > 0;
                 default:
                     return false;

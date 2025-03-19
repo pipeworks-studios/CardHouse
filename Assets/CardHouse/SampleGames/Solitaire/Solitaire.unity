@@ -639,6 +639,8 @@ MonoBehaviour:
   - {fileID: 1525692107}
   - {fileID: 756446538}
   Deck: {fileID: 1551031834517146001}
+  ShouldOverrideUpsideDownChance: 0
+  UpsideDownChance: 0
 --- !u!1001 &254810152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4110,6 +4112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroupsToShuffleIntoDeck: []
   Deck: {fileID: 1551031834517146001}
+  ShouldOverrideUpsideDownChance: 0
+  UpsideDownChance: 0
 --- !u!1001 &1901180363
 PrefabInstance:
   m_ObjectHideFlags: 0
