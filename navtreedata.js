@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "CardHouse", "index.html", [
     [ "Packages", "namespaces.html", [
-      [ "Packages", "namespaces.html", "namespaces_dup" ]
+      [ "Package List", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -42,10 +42,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Activatable_8cs_source.html",
-"classCardHouse_1_1CardGroup.html#a4e5170663dd69cb4065e7a3c99fd27c2",
-"classCardHouse_1_1InstantVector3Seeker.html#ac5c547f4bb423555f70041e50fa3a169",
-"classCardHouse_1_1Toggleable.html#ad9cf7a313efe09b32ac119749d172f33",
-"classCardHouse_1_1WaypointCurveFloatAngleSeeker.html"
+"classCardHouse_1_1DropParams.html",
+"dir_4895e3d0d1cf4c679dbc6fc4f1dfc57b.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freeformtarotmanager_66',['FreeformTarotManager',['../classFreeformTarotManager.html',1,'']]]
+  ['freeformtarotmanager_0',['FreeformTarotManager',['../classFreeformTarotManager.html',1,'']]]
 ];
